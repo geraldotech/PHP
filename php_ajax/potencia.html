@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="event.preventDefault(); return myform()" method="post">
+      N1:<input type="number" name="n1" value="5" />
+      <input type="submit" name="calc" value="Confirmar" />
+    </form>
+    <div id="res"></div>
+
+    <script>
+      function myform() {
+        const n1 = document.querySelector("input[name='n1']").value;
+        const ajaxn = new XMLHttpRequest();
+        let params = "name=" + n1;
+        console.log("params", params);
+
+        ajaxn.open("POST", "./potencia.php");
+        /*   
+        opcional para validacao if-status === entao...
+        ajaxn.onreadystatechange = function () {
+          console.log(ajaxn.readyState);
+          console.log(ajaxn.responseText);
+        }; */
+        ajaxn.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        ajaxn.send(`n1=${n1}`);
+        ajaxn.onload = function () {
+          document.getElementById("res").innerHTML = this.responseText;
+        };
+      }
+    </script>
+  </body>
+</html>

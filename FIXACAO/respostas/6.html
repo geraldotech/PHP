@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Ajax envia a data para o php que trata e reenvia o resultado</h3>
+    <form onsubmit="event.preventDefault(); return myform()" method="post">
+      N1:<input type="number" name="n1" value="2" /><br />
+      N2:<input type="number" name="n2" value="6" />
+      <input type="submit" name="calc" value="Confirmar" />
+    </form>
+    <div id="res"></div>
+
+    <script>
+      function myform() {
+        const n1 = document.querySelector("input[name='n1']").value;
+        const n2 = document.querySelector("input[name='n2']").value;
+        const ajaxn = new XMLHttpRequest();
+        let params = "name=" + n1;
+        console.log("params", params);
+
+        ajaxn.open("POST", "./6.php");
+        ajaxn.onreadystatechange = function () {
+          console.log(ajaxn.readyState);
+          console.log(ajaxn.responseText);
+        };
+        ajaxn.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        ajaxn.send(`n1=${n1}&n2=${n2}`);
+        ajaxn.onload = function () {
+          document.getElementById("res").innerHTML = this.responseText;
+        };
+      }
+    </script>
+  </body>
+</html>
