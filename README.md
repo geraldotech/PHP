@@ -21,25 +21,15 @@ echo "Hello";
 ?>
 ```
 
-- Varibles concatenação:
-
-```php
-<?php
-$nome = 'Geraldo';
-$idade = '29 anos';
-?>
-```
-
-
  - Variables:
 ```php
 <?php
-$nome = 'Geraldo '
+$nome = "Geraldo";
 
 echo $nome;
 
-
 ?>
+
 ```
 ## Concatenação:
   
