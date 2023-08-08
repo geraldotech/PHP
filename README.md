@@ -8,6 +8,10 @@ Awesome youtube channel about HTML/CSS/JS/PHP:
 
 PHP é uma linguagem de programação voltada para o desenvolvimento de aplicados para web, muito usado na stack back-end. Sites como o Wordpress.org, Facebook entre outros usam PHP. Para mim tem um significado nostalgico ao mexer com PHP, aqui vai uma lembraça de 2006 quando jogava MuGNN e no site de vez em quando aparecia alguns erros do tipo `error on line...` coisas que agente nunca esquece, naquela época nem pensava em ser developer.
 
+O que significa PHP?
+- Antigamente Personal Home Page hoje em dia Hypertext Preprocessor
+
+
 - Formato.php e echo:
 
 Crie um novo documento e salve como `index.php`, o código deve ser declarado  `<?php //code// ?>`, um exemplo com echo:
@@ -44,10 +48,6 @@ $pws = '1';
 ?>
 ```
 
-O que significa PHP?
-- Antigamente Personal Home Page hoje em dia Hypertext Preprocessor
-
-
 Strings de forma simplificada
 ```php
 <?php
@@ -56,7 +56,7 @@ $idade = '29 anos';
 
 echo 'Meu nome é '; echo $nome; echo ‘ e tenho ‘; echo ‘ $idade’;
 ```
-Example de concatenação:
+Concatenação:
 ```php
 <?php
 $nome = 'Geraldo ';
@@ -165,7 +165,7 @@ echo '<br />';
 echo 'Testando soma';
 ?>
 ```
-Function basic usage
+Function basic usage:
 ```php
 <?php
 
