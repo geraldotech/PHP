@@ -104,7 +104,7 @@ echo 'iguais';
 ?>
 ```
 
-Um sinal de igual `=` quer dizer que estamos atribuindo um valor, sempre retorna verdadeiro.
+- Um sinal de igual `=` quer dizer que estamos atribuindo um valor, sempre retorna verdadeiro.
 ```php
 <?php
 
@@ -120,7 +120,7 @@ if ($v1 === $v2){
 ?>
 ```
 
-Comparamos para ver se são diferentes (tipo e valor)
+- Comparamos para ver se são diferentes (tipo e valor)
 ```php
 <?php
 
@@ -232,4 +232,19 @@ $pws = '1';
 		echo 'nao foram encontradas combinacoes';
 	}
 ?>
+```
+
+# How run php Visual Studio Code:
+
+- inside output terminal:
+install extension: [code-runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+
+CTRL + P `settings.json`:
+
+```js
+  "code-runner.executorMap": {
+        "javascript": "node",
+        "php": "C:\\php\\php.exe",
+        "python": "python"
+    }
 ```
