@@ -12,68 +12,72 @@ O que significa PHP?
 - Antigamente Personal Home Page hoje em dia Hypertext Preprocessor
 
 
-- Formato.php e echo:
+## echo
 
-Crie um novo documento e salve como `index.php`, o código deve ser declarado  `<?php //code// ?>`, um exemplo com echo:
+Crie um novo documento e salve como `index.php`
 ```php
 <?php
 echo "Hello";
 ?>
 ```
 
-- Também temos o `print_r` que mostras as informações de variáveis, arrays;
+- Varibles concatenação:
+
+```php
+<?php
+$nome = 'Geraldo';
+$idade = '29 anos';
+?>
+```
+
+
+ - Variables:
+```php
+<?php
+$nome = 'Geraldo '
+
+echo $nome;
+
+
+?>
+```
+## Concatenação:
+  
+- Aspas simples:
+  
+```php
+$nome = 'Geraldo ';
+$idade = 10;
+
+echo 'Meu nome e '.$nome.' Filho';
+
+echo 'Meu nome é '; echo $nome; echo ' e tenho '; echo ' $idade';
+
+```
+ - Aspas duplas:
+
+```php
+
+<?php
+$nome = "Geraldo";
+
+echo "Meu nome is $nome Filho";
+?>
+```
+
+## print_r
+> mostras as informações de variáveis, arrays;
 
 ```php
 const arr = ["Geraldo","gmapdev"];
 print_r(arr); // Array ( [0] => Geraldo [1] => gmapdev )
 
+$myvar = "Hello from Networks";
+print_r($myvar) // Hello from Networks
+
 ```
 
-- switch
-
-```php
-<?php
-$pws = '1';
-	switch ($pws){
-		case '1':
-			echo 'um';
-			break;
-
-			case '2';
-			echo 'dois';
-			break;
-		default:
-		echo 'nao foram encontradas combinacoes';
-	}
-?>
-```
-
-Strings de forma simplificada
-```php
-<?php
-$nome = 'Geraldo';
-$idade = '29 anos';
-
-echo 'Meu nome é '; echo $nome; echo ‘ e tenho ‘; echo ‘ $idade’;
-```
-Concatenação:
-```php
-<?php
-$nome = 'Geraldo ';
-echo 'Meu nome e '.$nome.' Filho';
-?>
-```
-
-Variáveis com aspas duplas:
-
-```php
-
-<?php
-$nome = 'Geraldo ';
-echo 'Meu nome e '.$nome.' Filho';
-?>
-```
-Variável com define (Constants)
+- Constants:
 
 ```php
 <?php
@@ -95,7 +99,7 @@ if(NOME == NOME2){
 
 ?>
 ```
-Comparando variáveis iguais x diferentes
+- Comparando variáveis iguais x diferentes
 
 ```php
 <?php
@@ -143,7 +147,7 @@ else {
 ?>
 ```
 
-Somando valores:
+- Somando valores:
 
 ```php
 <?php
@@ -165,7 +169,8 @@ echo '<br />';
 echo 'Testando soma';
 ?>
 ```
-Function basic usage:
+- Function basic usage:
+
 ```php
 <?php
 
@@ -179,7 +184,7 @@ function printNumero($n){
 
 ?>
 ```
-Arrays
+- Arrays
 
 ```php
 <?php
@@ -217,5 +222,24 @@ echo $opcoes[0]['chave1'];
 echo '<br />';
 echo $opcoes[100]['chave3'];
 
+?>
+```
+
+- switch
+
+```php
+<?php
+$pws = '1';
+	switch ($pws){
+		case '1':
+			echo 'um';
+			break;
+
+			case '2';
+			echo 'dois';
+			break;
+		default:
+		echo 'nao foram encontradas combinacoes';
+	}
 ?>
 ```
