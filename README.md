@@ -234,6 +234,16 @@ $pws = '1';
 ?>
 ```
 
+## PHP GET URL Params
+```php
+ echo   $_SERVER['REQUEST_URI'];
+ echo "<br/>";
+ echo   trim($_SERVER['REQUEST_URI'],'/\\');
+ echo "<br/>";
+echo $_SERVER['QUERY_STRING'];
+
+``` 
+
 # How run php Visual Studio Code:
 
 - inside output terminal:
