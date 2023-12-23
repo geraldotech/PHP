@@ -212,6 +212,18 @@ echo $opcoes[0]['chave1'];
 echo '<br />';
 echo $opcoes[100]['chave3'];
 
+$papelaria = array('livros',' canetas',' lapis',' papel oficio');
+
+#percorrer array
+foreach ($papelaria as $key => $value) {
+  echo "<ul><li>$value</li></ul>";
+	
+}
+
+$lista = [1,2,3,4,5];
+foreach($lista as  $value){
+  echo $value;
+}
 ?>
 ```
 
