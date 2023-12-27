@@ -254,9 +254,33 @@ $pws = '1';
  echo "<br/>";
 echo $_SERVER['QUERY_STRING'];
 
+
+// or create a file.php with:
+
+<?php
+/* get url params */
+if(isset($_GET['id'])){
+  echo $_GET['id'];
+  echo $_GET['nome'];
+}
+
+
+if(isset($_POST['send'])){
+  echo "Welcome ". $_POST['name'];
+}
+
+?>
+<a href="?id=1212&nome=geraldofilho">Atualizar</a>
+
+<form action="" method="POST">
+<input type="text" name="name" />
+<input type="submit" name="send" value="Send" />
+
+
+</form>
 ``` 
 
-# How run php Visual Studio Code:
+## How run php Visual Studio Code:
 
 - inside output terminal:
 install extension: [code-runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
