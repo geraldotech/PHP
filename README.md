@@ -291,7 +291,36 @@ if(isset($_POST['send'])){
 
 
 </form>
-``` 
+```
+## Display PHP Variables In HTML
+
+
+```php
+<!-- 1 -->
+<?php
+$username = 'Geraldo';
+?>
+<h1><?php echo $username?></h1>
+
+<!-- 2 -->
+<?php
+$newway = 'gmapdev.com';
+?>
+<h1><?=$newway?></h1>
+
+<!-- 3 -->
+<?php
+printf("<h1>%s</h1>", $newway);
+?>
+
+<!-- 4 -->
+<?php
+echo "<h1>$username</h1>";
+echo '<h1>' .$username. '</h1>';
+?>
+```
+
+
 
 ## How run php Visual Studio Code:
 
