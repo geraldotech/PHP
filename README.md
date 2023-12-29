@@ -224,6 +224,19 @@ $lista = [1,2,3,4,5];
 foreach($lista as  $value){
   echo $value;
 }
+ // Indexed arrays without key https://www.php.net/manual/en/language.types.array.php
+$arr = array("foo", "menu", "bar");
+
+foreach($arr as $item){
+  echo "<h2>".$item."</h2>";
+}
+
+// or
+
+foreach($arr as $i) : echo "<h2>".$i."<h2>";
+endforeach;
+
+
 ?>
 ```
 
