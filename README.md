@@ -11,6 +11,10 @@ PHP é uma linguagem de programação voltada para o desenvolvimento de aplicado
 O que significa PHP?
 - Antigamente Personal Home Page hoje em dia Hypertext Preprocessor
 
+Verificar informações do php instalado no server:
+
+`$ echo '<?php phpinfo() ?>' >> info.php`
+
 
 ## echo
 
