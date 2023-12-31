@@ -1,10 +1,12 @@
 ### PHP Docs
 
 Manual:  
-[https://www.php.net/manual/en/](https://www.php.net/manual/en/)
+- [https://www.php.net/manual/en/](https://www.php.net/manual/en/)
+
+- [https://br.phptherightway.com/](https://br.phptherightway.com/)
 
 Awesome youtube channel about HTML/CSS/JS/PHP:  
-[https://www.youtube.com/c/CodeBoxx/videos](https://www.youtube.com/c/CodeBoxx/videos)
+- [https://www.youtube.com/c/CodeBoxx/videos](https://www.youtube.com/c/CodeBoxx/videos)
 
 PHP é uma linguagem de programação voltada para o desenvolvimento de aplicados para web, muito usado na stack back-end. Sites como o Wordpress.org, Facebook entre outros usam PHP. Para mim tem um significado nostalgico ao mexer com PHP, aqui vai uma lembraça de 2006 quando jogava MuGNN e no site de vez em quando aparecia alguns erros do tipo `error on line...` coisas que agente nunca esquece, naquela época nem pensava em ser developer.
 
