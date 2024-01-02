@@ -71,6 +71,9 @@ print_r(arr); // Array ( [0] => Geraldo [1] => gmapdev )
 $myvar = "Hello from Networks";
 print_r($myvar) // Hello from Networks
 
+ echo($_SERVER); // ❌Warning: Array to string conversion in
+ print_r($_SERVER); ✅// mostra todas as var dentro da var - large output
+
 ```
 
 - Constants:
@@ -263,6 +266,19 @@ $pws = '1';
 		echo 'nao foram encontradas combinacoes';
 	}
 ?>
+```
+
+### Server and execution environment information
+
+```php
+ echo $_SERVER['SERVER_NAME']; // localhost
+ echo '<br>';
+ echo $_SERVER['PHP_SELF']; // local/aulas_curso_php/test.php
+ echo '<br>';
+ echo $_SERVER['DOCUMENT_ROOT']; // C:/xampp/htdocs
+ echo '<br>';
+ echo($_SERVER); // ❌Warning: Array to string conversion in
+ print_r($_SERVER); ✅// mostra todas as var dentro da var - large output
 ```
 
 ## PHP GET URL Params
