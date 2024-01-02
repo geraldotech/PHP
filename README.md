@@ -354,6 +354,50 @@ echo '<h1>' .$username. '</h1>';
 ?>
 ```
 
+## render html list
+```php
+<?php 
+$nomes = ['Geraldo', 'Felipe', 'Costa'];
+?>
+
+<h1>write html 1</h1>
+
+<ul>
+  <?php 
+  foreach($nomes as $values) { 
+    echo "<li>$values</li>"; 
+  }    
+  ?>
+  </ul> 
+  
+  
+  <h1>write html 2</h1>
+<ul>
+<?php
+  foreach($nomes as $values) { 
+?>
+  <li><?= $values ?></li>
+<?php }?>
+</ul>
+
+<h1>
+  write html 3
+</h1>
+<?php
+foreach($nomes as $nome) :
+echo $nome;
+endforeach;
+?>
+
+<h1>write html 4</h1>
+<ul>
+<?php foreach($nomes as $nome) : ?>
+  <li><?= $nome ?></li>  
+<?php endforeach; ?>
+</ul>
+
+```
+
 
 
 ## How run php Visual Studio Code:
