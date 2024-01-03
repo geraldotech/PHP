@@ -58,6 +58,10 @@ echo 'Meu nome é '; echo $nome; echo ' e tenho '; echo ' $idade';
 $nome = "Geraldo";
 
 echo "Meu nome is $nome Filho";
+
+$className = 'red';
+echo "<div class=\"$className\"> Title</div>";
+echo "<div class=$className>Title 2<div>"; // better
 ?>
 ```
 
@@ -256,6 +260,13 @@ foreach($arr as $item){
 
 foreach($arr as $i) : echo "<h2>".$i."<h2>";
 endforeach;
+
+
+$meuArr = ['Geraldo'];
+$meuArr[1] = ['Isabella'];
+$meuArr['key02'] = ['Devs'];
+$meuArr['key03'] = [1,2,3,4]; // novo arr with key
+print_r($meuArr);
 
 
 ?>
