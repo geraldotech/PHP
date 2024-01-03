@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+}
+code {
+  color: green;
+}
+.clear {
+  clear: both;
+}
+
+.center {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+header {
+  background: #32a5fa;
+  padding: 10px 0;
+}
+
+.logo {
+  float: left;
+  color: white;
+}
+
+nav {
+  float: right;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding: 0 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+.chamada {
+  text-transform: uppercase;
+  padding: 40px 15px;
+  background: #1e88e5;
+  text-align: center;
+}
+.chamada h2 {
+  text-align: center;
+  width: 400px;
+  display: inline-block;
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+.principal {
+  padding: 40px 0;
+}
+
+.principal h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.about p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #4b4b4b;
+}
+
+.contato {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.contato form {
+  max-width: 600px;
+  display: inline-block;
+}
+
+.contato input[type='text'] {
+  width: 100%;
+  max-width: 600px;
+  height: 40px;
+  padding-left: 8px;
+  display: block;
+}
+
+.contato textarea {
+  margin-top: 8px;
+  width: 100%;
+  display: block;
+  min-width: 600px;
+  height: 120px;
+  padding: 10px;
+}
+
+.contato input[type='submit'] {
+  width: 100px;
+  background: #32a5fa;
+  color: white;
+  border: 0;
+  height: 40px;
+  cursor: pointer;
+  margin-block: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  background: #32a5fa;
+}
+
+.alerta {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #4b4b4b;
+  padding: 2vh;
+}
+
+.alerta h3 {
+  color: #4b4b4b;
+  font-size: 18px;
+}
