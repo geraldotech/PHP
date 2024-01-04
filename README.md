@@ -1,33 +1,37 @@
 ### PHP Docs
 
-Manual:  
+Manual:
+
 - [https://www.php.net/manual/en/](https://www.php.net/manual/en/)
 
 - [https://br.phptherightway.com/](https://br.phptherightway.com/)
 
-Awesome youtube channel about HTML/CSS/JS/PHP:  
+Awesome youtube channel about HTML/CSS/JS/PHP:
+
 - [https://www.youtube.com/c/CodeBoxx/videos](https://www.youtube.com/c/CodeBoxx/videos)
 
 PHP é uma linguagem de programação voltada para o desenvolvimento de aplicados para web, muito usado na stack back-end. Sites como o Wordpress.org, Facebook entre outros usam PHP. Para mim tem um significado nostalgico ao mexer com PHP, aqui vai uma lembraça de 2006 quando jogava MuGNN e no site de vez em quando aparecia alguns erros do tipo `error on line...` coisas que agente nunca esquece, naquela época nem pensava em ser developer.
 
 O que significa PHP?
+
 - Antigamente Personal Home Page hoje em dia Hypertext Preprocessor
 
 Verificar informações do php instalado no server:
 
 `$ echo '<?php phpinfo() ?>' >> info.php`
 
-
 ## echo
 
 Crie um novo documento e salve como `index.php`
+
 ```php
 <?php
 echo "Hello";
 ?>
 ```
 
- - Variables:
+- Variables:
+
 ```php
 <?php
 $nome = "Geraldo";
@@ -37,10 +41,11 @@ echo $nome;
 ?>
 
 ```
+
 ## Concatenação:
-  
+
 - Aspas simples:
-  
+
 ```php
 $nome = 'Geraldo ';
 $idade = 10;
@@ -50,7 +55,8 @@ echo 'Meu nome e '.$nome.' Filho';
 echo 'Meu nome é '; echo $nome; echo ' e tenho '; echo ' $idade';
 
 ```
- - Aspas duplas:
+
+- Aspas duplas:
 
 ```php
 
@@ -66,6 +72,7 @@ echo "<div class=$className>Title 2<div>"; // better
 ```
 
 ## print_r
+
 > mostras as informações de variáveis, arrays;
 
 ```php
@@ -102,6 +109,7 @@ if(NOME == NOME2){
 
 ?>
 ```
+
 - Comparando variáveis iguais x diferentes
 
 ```php
@@ -118,6 +126,7 @@ echo 'iguais';
 ```
 
 - Um sinal de igual `=` quer dizer que estamos atribuindo um valor, sempre retorna verdadeiro.
+
 ```php
 <?php
 
@@ -134,6 +143,7 @@ if ($v1 === $v2){
 ```
 
 - Comparamos para ver se são diferentes (tipo e valor)
+
 ```php
 <?php
 
@@ -172,21 +182,23 @@ echo '<br />';
 echo 'Testando soma';
 ?>
 ```
+
 - Function basic usage:
 
 ```php
 <?php
 
 
-printnumero (30); 
+printnumero (30);
 echo '<br>';
-printnumero (500); 
+printnumero (500);
 function printNumero($n){
     echo $n;
 }
 
 ?>
 ```
+
 - Arrays
 
 ```php
@@ -233,7 +245,7 @@ $papelaria = array('livros',' canetas',' lapis',' papel oficio');
 
 #percorrer array
 foreach ($papelaria as $key => $value) {
-  echo "<ul><li>$value</li></ul>";	
+  echo "<ul><li>$value</li></ul>";
 }
 
 // filter strlen
@@ -267,6 +279,10 @@ $meuArr[1] = ['Isabella'];
 $meuArr['key02'] = ['Devs'];
 $meuArr['key03'] = [1,2,3,4]; // novo arr with key
 print_r($meuArr);
+
+
+
+
 
 
 ?>
@@ -305,6 +321,7 @@ $pws = '1';
 ```
 
 ## PHP GET URL Params
+
 ```php
  echo   $_SERVER['REQUEST_URI'];
  echo "<br/>";
@@ -337,8 +354,8 @@ if(isset($_POST['send'])){
 
 </form>
 ```
-## Display PHP Variables In HTML
 
+## Display PHP Variables In HTML
 
 ```php
 <!-- 1 -->
@@ -352,6 +369,8 @@ $username = 'Geraldo';
 $newway = 'gmapdev.com';
 ?>
 <h1><?=$newway?></h1>
+// support strings too
+<h1><?='Hello' ?></h1>
 
 <!-- 3 -->
 <?php
@@ -366,26 +385,27 @@ echo '<h1>' .$username. '</h1>';
 ```
 
 ## render html list
+
 ```php
-<?php 
+<?php
 $nomes = ['Geraldo', 'Felipe', 'Costa'];
 ?>
 
 <h1>write html 1</h1>
 
 <ul>
-  <?php 
-  foreach($nomes as $values) { 
-    echo "<li>$values</li>"; 
-  }    
+  <?php
+  foreach($nomes as $values) {
+    echo "<li>$values</li>";
+  }
   ?>
-  </ul> 
-  
-  
+  </ul>
+
+
   <h1>write html 2</h1>
 <ul>
 <?php
-  foreach($nomes as $values) { 
+  foreach($nomes as $values) {
 ?>
   <li><?= $values ?></li>
 <?php }?>
@@ -403,7 +423,7 @@ endforeach;
 <h1>write html 4</h1>
 <ul>
 <?php foreach($nomes as $nome) : ?>
-  <li><?= $nome ?></li>  
+  <li><?= $nome ?></li>
 <?php endforeach; ?>
 </ul>
 
@@ -437,12 +457,10 @@ function isAppoved($n1, $n2){
 isAppoved(5.8, 5.7);
 ```
 
-
-
 ## How run php Visual Studio Code:
 
 - inside output terminal:
-install extension: [code-runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+  install extension: [code-runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 
 CTRL + P `settings.json`:
 
@@ -455,10 +473,7 @@ CTRL + P `settings.json`:
 ```
 
 # PHP Server + Visual Studio Code
+
 [https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver)
 
-- Windows: variáveis de ambiente > choose: "C:\Program Files (x86)\Common Files\Oracle\Java\javapath" click edit > "novo" > add "C:\php" > restart VSCode 
-
-
-
-
+- Windows: variáveis de ambiente > choose: "C:\Program Files (x86)\Common Files\Oracle\Java\javapath" click edit > "novo" > add "C:\php" > restart VSCode

@@ -1,10 +1,6 @@
 <?php
-
-
 	$paginas = ['home'=>'Minha home','sobre'=>'estou no sobre','contato'=>'contact page','FAQ'=>'PERGUNTAS AQUI'];
 	$paginas ['contato']= 'meu contato page2';
-
-
 ?>
 
 <!DOCTYPE html>

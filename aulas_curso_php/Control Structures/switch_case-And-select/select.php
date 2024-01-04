@@ -1,12 +1,9 @@
 <form method="post">
-
-
 <select name="opt">
 <option value="">Select</option>
 <option value="sum">img 1</option>
 <option value="mul">img 2</option>
-
-	</select>
+</select>
 
 <input type="submit" name="calc" value="Calcular">
 
