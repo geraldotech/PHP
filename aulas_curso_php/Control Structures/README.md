@@ -13,7 +13,7 @@ echo '<hr>';
 
 if(10 < 5) // false
 echo 'Maior que 5'; // a condição vai mudar apenas 1 linha a abaixo
-echo '<h1>nao associado ao if sem chaves</h1>'; // aqui continua normal independendo do if
+echo '<h1>nao associado ao if sem chaves</h1>'; // aqui continua normal independente do if
 echo 'okay';
 
 echo '<hr>';

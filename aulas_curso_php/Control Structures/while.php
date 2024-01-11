@@ -1,8 +1,8 @@
 <?php
 
-//laco de repeticao while
+// laço de repeticao while
 
-//Tem que declamar a variavel antes
+// Declerar a variavel antes
 
 $contador = 0;
 	while($contador <= 10){
