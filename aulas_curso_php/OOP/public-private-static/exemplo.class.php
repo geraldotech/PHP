@@ -14,8 +14,7 @@
   // mesmo coisa public e private para os methods
   
 public function metodo(){
-  echo "methodo()";
-  
+  echo "methodo()";  
 }
 
 private function metodo2(){
@@ -33,8 +32,6 @@ public function setVar($num){
 
 public function pegaVar1(){
   return $this->var1;
+  }
 }
-
-
- }
 ?>
