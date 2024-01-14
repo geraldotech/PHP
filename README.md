@@ -323,6 +323,14 @@ $pws = '1';
 ## PHP GET URL Params
 
 ```php
+// specific params
+  $params = $_GET['post_id'];
+   echo $params;
+
+  // access http://localhost/test.php?post_id=343434
+
+
+// getl all params file.php?geraldo
  echo   $_SERVER['REQUEST_URI'];
  echo "<br/>";
  echo   trim($_SERVER['REQUEST_URI'],'/\\');
@@ -350,9 +358,9 @@ if(isset($_POST['send'])){
 <form action="" method="POST">
 <input type="text" name="name" />
 <input type="submit" name="send" value="Send" />
-
-
 </form>
+
+
 ```
 
 ## Display PHP Variables In HTML
