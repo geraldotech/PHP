@@ -24,12 +24,12 @@ date_default_timezone_set('America/Sao_Paulo');
 
 </head>
 <body>
-  <h1>hello</h1>
+
 <form action="" method="post">
   <input type="text" name="nome" required />
   <input type="text" name="sobrenome" required />
   <input type="submit" value="Enviar" name="acao" />
 </form>
-
+  
 </body>
 </html>
