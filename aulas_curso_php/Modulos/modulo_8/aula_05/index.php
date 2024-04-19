@@ -1,8 +1,9 @@
 <?php
 	$pdo = new PDO('mysql:host=localhost;dbname=modulo_8','root','');
 
-	/*
+/* 
 	$sql = $pdo->prepare("SELECT * FROM posts WHERE categoria_id = ?");
+	// open ?categoria_id=1
 
 	$sql->execute(array($_GET['categoria_id']));
 
@@ -15,28 +16,23 @@
 		echo 'Noticia: '.$value['conteudo'];
 		echo '<hr>';
 	}
-
-	*/
 	
-
-	/*
 	for($i = 0; $i < count($info); $i++){
 		echo 'Titulo: '.$info[$i]['titulo'];
 		echo '<br />';
 		echo 'Noticia: '.$info[$i]['conteudo'];
 		echo '<hr>';
-	}
-	*/
+	} */
+	
 
-	/*
+	
    $sql = $pdo->prepare("SELECT * FROM categorias");
 
 	$sql->execute();
 
 	$info = $sql->fetchAll();
-	*/
 
-	/*
+	
 	foreach ($info as $key => $value) {
 		$categoria_id = $value['id'];
 		echo 'Exibindo posts de: '.$value['nome'];
@@ -50,10 +46,10 @@
 			echo 'Noticia: '.$value['conteudo'];
 			echo '<hr>';
 		}
-	}
-	*/
+	} 
+	
 
-	$sql = $pdo->prepare("SELECT `posts`.*,`categorias`.*,`posts`.`id` AS `post_id` FROM `posts` INNER JOIN `categorias` ON `posts`.`categoria_id` = `categorias`.`id`");
+/* 	$sql = $pdo->prepare("SELECT `posts`.*,`categorias`.*,`posts`.`id` AS `post_id` FROM `posts` INNER JOIN `categorias` ON `posts`.`categoria_id` = `categorias`.`id`");
 
 	$sql->execute();
 
@@ -61,5 +57,5 @@
 	
 	echo '<pre>';
 	print_r($info);
-	echo '</pre>';
+	echo '</pre>'; */
 ?>

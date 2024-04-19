@@ -17,12 +17,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cadastro no banco</title>
+	<title>Cadastro Clientes</title>
 </head>
 <body>
 <form method="post">
-	<input type="text" name="nome" required />
-	<input type="text" name="sobrenome" required />
+	<input type="text" name="nome" placeholder="nome" required />
+	<input type="text" name="sobrenome" placeholder="sobrenome" required />
 	<input type="submit" name="acao" value="Enviar!" />
 </form>
 </body>

@@ -1,5 +1,6 @@
 <?php
-$content = file_get_contents('http://cursos.dankicode.com/');
+//$content = file_get_contents('arquivo.txt');
+$content = file_get_contents('https://technotesbr.blogspot.com/');
 
 
 echo $content;
