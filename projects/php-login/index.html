@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <title>PHP Login system</title>
+  </head>
+  <body>
+    <!--  https://codeshack.io/secure-login-system-php-mysql/#requirements -->
+    <form action="authenticate.php" method="post">
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Use email to login" />
+      <input
+        type="password"
+        name="password"
+        placeholder="password"
+        id="password" />
+      <input type="submit" value="Login" />
+    </form>
+  </body>
+</html>

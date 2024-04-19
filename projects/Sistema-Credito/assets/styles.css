@@ -1,0 +1,118 @@
+body {
+  text-align: center;
+  font-family: arial;
+}
+
+.top-nav {
+  display: flex;
+  max-width: 850px;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.top-nav a {
+  text-decoration: none;
+  color: white;
+  background: #333;
+  padding: 8px;
+  border-radius: 8px;
+}
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+p.edit {
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input,
+li {
+  margin-block: 10px;
+}
+
+/* editar */
+input {
+  padding: 5px;
+  display: inline-block;
+}
+input {
+  padding: 7px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  margin: auto;
+}
+
+th {
+  background: coral;
+}
+
+tr,
+td {
+  padding: 8px;
+}
+h1 {
+  color: dodgerblue;
+}
+
+footer a {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  color: rgb(57, 189, 17);
+  text-align: center;
+  margin: auto;
+}
+
+form {
+  padding: 1em;
+  background: #f9f9f9;
+  border: 1px solid #c1c1c1;
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
+form input {
+  margin-bottom: 1rem;
+  background: #fff;
+  border: 1px solid #9c9c9c;
+}
+form input[type='submit'] {
+  background: lightgrey;
+  padding: 0.7em;
+  border: 0;
+}
+
+label {
+  text-align: right;
+  float: left;
+  display: block;
+  padding: 0.5em 1.5em 0.5em 0;
+}
+
+input {
+  width: 100%;
+  padding: 0.7em;
+  margin-bottom: 0.5rem;
+}
+
+input:focus {
+  outline: 3px solid gold;
+}
+
+input[type='range'] {
+  cursor: pointer;
+  color: rebeccapurple;
+}
