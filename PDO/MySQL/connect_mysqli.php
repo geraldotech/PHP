@@ -11,6 +11,7 @@ $username = "root";
 $password ="";
 
 // Create connection
+//  MySQLi, que suporta apenas MySQL.
 $conn = new mysqli($servername, $username, $password);
 
 // Check connection
