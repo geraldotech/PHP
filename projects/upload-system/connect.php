@@ -1,9 +1,9 @@
 <?php 
  // Database connection parameters
 $host = 'localhost';
-$dbname = 'uploadsystem';
-$username = 'root';
-$password = '';
+$dbname = 'id22114591_casa';
+$username = 'id22114591_casaroot';
+$password = 'Mo2@54op';
 
 try {
     $connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

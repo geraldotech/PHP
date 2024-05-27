@@ -1,0 +1,21 @@
+*{
+  color-scheme: dark;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+header ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.orders li{
+  display: flex;
+  gap: 2rem;
+  margin: 5px 0;
+  cursor: pointer;
+}

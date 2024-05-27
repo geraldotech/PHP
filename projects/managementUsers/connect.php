@@ -1,7 +1,7 @@
 <?php 
  // Database connection parameters
 $host = 'localhost';
-$dbname = 'user_management';
+$dbname = 'example4';
 $username = 'root';
 $password = '';
 

@@ -6,7 +6,7 @@ session_start();
 if (isset($_POST["user"]) && !isset($_SESSION["user"])) {
   // (B1) USERS & PASSWORDS - SET YOUR OWN !
    $users = [
-    "joe" => "123456",
+    "admin" => "admin",
     "jon" => "654321",
     "gera" => "123"
   ];

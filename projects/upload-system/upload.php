@@ -29,13 +29,25 @@ $dir = "files/";
 $file = $_FILES["file"]; 
 // Move o arquivo da pasta temporaria de upload para a pasta de destino 
 if (move_uploaded_file($_FILES["file"]["tmp_name"], $dir . $filename)){ 
-    echo "<a href='dashboard.php'>dashboard</a>";
+    echo "<a href='dashboard.php'>Dashboard</a>";
     echo "<br>";
     echo "Arquivo enviado com sucesso!"; 
     echo "<br>";
     echo "<a href='". $dir .  $filename . "'target='_blank'>LINK</a>";
     echo "<br>";
+   
+   // echo "<img src='". $dir . $filename . "'/>";
+   // Check if the filename contains 'jpg' (case insensitive)
+// Get the file extension
+$file_extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+
+// Array of allowed image file extensions
+$allowed_extensions = array("jpg", "jpeg", "png", "webp");
+
+// Check if the file extension is in the list of allowed extensions
+if (in_array($file_extension, $allowed_extensions)) {
     echo "<img src='". $dir . $filename . "'/>";
+}
 
 } 
 else { 

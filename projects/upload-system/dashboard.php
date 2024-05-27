@@ -35,7 +35,8 @@ $files = array_diff($files, array('.', '..'));
 echo "Files in $dir:<br>";
 foreach ($files as $file) {
     echo "<br>";
-    echo "<a href=". $dir . $file . "> .$file. </a> - ";
+    // echo "<a href=". $dir . $file . " > .$file. </a> - ";
+    echo '<a href="' . $dir . $file . '" target="_blank">' . $file . '</a> - ';
     echo  "<a href=delete.php?file=" . $file . "> ❌</a>";
     echo "<br>";
 }

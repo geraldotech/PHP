@@ -1,4 +1,3 @@
-
 <?php
  // Check if the 'id' parameter is set in the URL
 /* if (isset($_GET['id'])) {
@@ -26,6 +25,8 @@ if (isset($_GET['file'])) {
     if (file_exists($filePath)) {
         // Attempt to delete the file
         if (unlink($filePath)) {
+            echo "<a href='dashboard.php'>Dashboard</a>";
+            echo "<br>";
             echo "File '$filename' deleted successfully.";
         } else {
             echo "Error deleting file '$filename'.";
