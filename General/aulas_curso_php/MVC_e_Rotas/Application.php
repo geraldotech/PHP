@@ -1,7 +1,7 @@
 <?php
 
-define('INCLUDE_PATH', 'http://localhost/local/aulas_curso_php/MVC_e_Rotas/');
-define('INCLUDE_PATH_FULL','http://localhost/local/aulas_curso_php/MVC_e_Rotas/Views/pages/');
+define('INCLUDE_PATH', 'http://php.localhost/General/aulas_curso_php/MVC_e_Rotas/');
+define('INCLUDE_PATH_FULL','http://php.localhost/General/aulas_curso_php/MVC_e_Rotas/Views/pages/');
 
 class Application
 {
@@ -19,7 +19,17 @@ class Application
       $controler = new $className;
       $controler->executar();
     } else {
-      die('nao existe esse controller');
+      //die('<h1>nao existe esse controller</h1>');
+      //echo 'estou carregado a classe: ' .$url;
+      $className = 'Controllers\\page404Controller'; // Adjust to match the class name in 404Controller.php
+      $controllerPath = "Controllers/404Controller.php"; // Adjust the path to NotFoundController.php
+  
+      if (file_exists($controllerPath)) {
+          require_once $controllerPath;
+          $controller = new $className;
+          $controller->index();
+      }
+     
     }
   }
 }
