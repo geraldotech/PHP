@@ -209,6 +209,12 @@ $nome =  ['Geraldo','Filho','Costa'];
 $success ['0'] = '<h3 style="background-color:green;color:white;text-align:center;">success logado</h3>';
 echo $success[0];
 
+$data[] = 'A';
+$data[] = 'B';
+
+print_r($data);
+echo $data[1];
+
 
 // Array ()
 $saldo = array();
