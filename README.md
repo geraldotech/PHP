@@ -199,51 +199,53 @@ function printNumero($n){
 ?>
 ```
 
-- Arrays
+### -  Arrays
 
 ```php
 <?php
 
+// Array []
 $nome =  ['Geraldo','Filho','Costa'];
-$sucess ['0'] = '<h3 style="background-color:green;color:white;text-align:center;">sucess logado</h3>';
-
-echo $sucess[0];
-
-?>
+$success ['0'] = '<h3 style="background-color:green;color:white;text-align:center;">success logado</h3>';
+echo $success[0];
 
 
-<?php
+// Array ()
+$saldo = array();
+$saldo['banco'] = 1000;
+echo $saldo['banco'];
+
+
 // Arrays com chave predefinida
 $nome = array ('chave1'=>'<h2>Geraldo</h2>','Petronilo','Mario');
 echo $nome[0]; // Petronilo, enquanto o custom `chave1` returns <h2>Geraldo</h2>
 print_r($nome); // print_r retorna os valores and keys
 
-?>
 
-<?php
-
-// Array com index no nome
+// Array com index no nome (chave predefinida)
 $opcoes[0] = ['chave1'=>'geraldo','isabella'];
 echo $opcoes[0][0]; // isabella
 echo '<hr>';
+
 print_r( $opcoes[0]['chave1']); //  geraldo
 print_r( $opcoes[0]); // get all valus and keys
 
-// nobody has index
+// no value has index
 $opcoes[100] = array('chave2'=>'master','chave3'=>'freitas');
 
 echo $opcoes[100]['chave3']; // precisa chamar a custom key
 
-//modo 3
+// start specific index
 $opcoes[5]['cha1'] = ['<h1>domingo</h1>', 'key1' => 'Windows 11', 'key2' =>'Windows 10'];
 
 echo $opcoes[5]['cha1'][0];
 echo $opcoes[5]['cha1']['key1'];
 
 
+#percorrer array
+
 $papelaria = array('livros',' canetas',' lapis',' papel oficio');
 
-#percorrer array
 foreach ($papelaria as $key => $value) {
   echo "<ul><li>$value</li></ul>";
 }
@@ -254,7 +256,6 @@ foreach($papelario as $key => $value){
     echo $value;
   }
 }
-
 
 
 $lista = [1,2,3,4,5];
@@ -282,10 +283,6 @@ print_r($meuArr);
 
 
 
-
-
-
-?>
 ```
 
 - switch
