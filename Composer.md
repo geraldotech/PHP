@@ -5,7 +5,8 @@
 - create a new projet: `composer init`
 - Create the Hello World Script: your project/`mkdir src`
 - HelloWorld.php
-  ```php
+
+```php
 <?php
 
 namespace HelloWorld;
