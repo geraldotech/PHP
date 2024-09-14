@@ -1,7 +1,6 @@
 <?php 
  //Returns the portion of string specified by the offset and length parameters.
 
-
 /**
  * @return geraldo 
  */
@@ -29,7 +28,6 @@ echo $combined; // Output: apple - banana - orange
 
 echo '<hr>';
 
-
 $string = "O'Reilly";
 $escaped_string = addslashes($string);
 
@@ -48,3 +46,6 @@ echo $string;
   
 </body>
 </html>
+
+<hr>
+
