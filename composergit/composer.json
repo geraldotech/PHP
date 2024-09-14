@@ -1,0 +1,10 @@
+{
+    "name": "geraldo/costa",
+    "description": "projeto test",
+    "autoload": {
+        "psr-4": {
+            "HelloWorld\\": "src/"
+        }
+    },
+    "require": {}
+}

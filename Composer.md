@@ -11,8 +11,7 @@
 
 namespace HelloWorld;
 
-class HelloWorld
-{
+class HelloWorld{
     public function sayHello()
     {
         return "Hello, World!";

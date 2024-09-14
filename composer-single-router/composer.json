@@ -1,0 +1,12 @@
+{
+    "name": "geraldo/costa",
+    "description": "projeto test",
+    "autoload": {
+        "psr-4": {
+            "HelloWorld\\": "src/"
+        }
+    },
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}

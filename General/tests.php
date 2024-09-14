@@ -1,6 +1,10 @@
-<?php
-//Returns the portion of string specified by the offset and length parameters.
+<?php 
+ //Returns the portion of string specified by the offset and length parameters.
 
+
+/**
+ * @return geraldo 
+ */
 
 
 $string = "apple,banana,orange";
@@ -23,5 +27,24 @@ $combined = implode(" - ", $fruits);
 echo $combined; // Output: apple - banana - orange
 
 
+echo '<hr>';
 
-?>
+
+$string = "O'Reilly";
+$escaped_string = addslashes($string);
+
+echo $escaped_string; // Saída: O\'Reilly
+echo '<br>';
+echo $string;
+
+?> 
+<!DOCTYPE html>
+<html lang="en" style="color-scheme:dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  
+</body>
+</html>

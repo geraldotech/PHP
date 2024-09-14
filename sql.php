@@ -1,6 +1,5 @@
 <?php 
  
-
  function dynamicQuery($empresa, $idgestor){
   $empresax =  !empty($empresa) ? "WHERE fva.idEmpresa = '$empresa'" : "";
   $idgestor = !empty($idgestor) ? "AND fva.idGestor = '$idgestor'": "";
@@ -19,10 +18,10 @@
       z_sga_param_login AS pl2 ON fva.idGestorAlternativo = pl2.idLogin
   INNER JOIN 
         z_sga_param_v2_login_empresa AS pl3 ON pl3.idLogin = pl2.idLogin            
-   $empresax $idgestor;";
+  $empresax $idgestor;";
 
   return  $sql;
- }
+}
 
  //  
 
