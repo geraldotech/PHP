@@ -23,17 +23,17 @@ $test = ['12', '121'];
 echo $test[0];
 
 $combined = implode(" - ", $fruits);
-echo $combined; // Output: apple - banana - orange
+    echo $combined; // Output: apple - banana - orange
 
 
-echo '<hr>';
+    echo '<hr>';
 
 $string = "O'Reilly";
 $escaped_string = addslashes($string);
 
-echo $escaped_string; // Saída: O\'Reilly
-echo '<br>';
-echo $string;
+    echo $escaped_string; // Saída: O\'Reilly
+    echo '<br>';
+    echo $string;
 
 ?> 
 <!DOCTYPE html>
@@ -43,9 +43,15 @@ echo $string;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+<section class="leaf"></section>
+<section class="leaf"></section>
+<section class="leaf"></section>
+<section class="leaf"></section>
+<section class="leaf"></section>
+<section class="leaf"></section>
   
 </body>
 </html>
 
 <hr>
-

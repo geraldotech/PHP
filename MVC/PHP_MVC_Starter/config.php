@@ -2,7 +2,7 @@
 //Path precisa ser configurado para poder achar os arquivo de email e sincronizador//
 define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'A2CRUDPHP');
 define('LOG_PATH', BASE_PATH.'/logs');
-define("URL", 'http://127.0.0.1/app/PHP_MVC_Starter');
+define("URL", 'http://php.localhost/MVC/PHP_MVC_Starter');
 
 
 global $config;
