@@ -5,8 +5,7 @@ const app = Vue.createApp({
     }
   },
   components: {
-     App: Vue.defineAsyncComponent(() => loadModule('http://php.localhost/PHP_MVC_StarterVueJS/components/App.vue', options)),
-    // mycomponent: Vue.defineAsyncComponent(() => loadModule('http://php.localhost/PHP_MVC_StarterVueJS/components/phpcontent.vue', options)),
+    App: Vue.defineAsyncComponent(() => loadModule('http://php.localhost/MVC/PHP_MVC_StarterVueJS/components/App.vue', options)),
   },
   //template: `<App/>`,
 })

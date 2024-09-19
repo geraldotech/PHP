@@ -5,7 +5,7 @@ Vue.createApp({
     }
   },
   components: {
-    About: Vue.defineAsyncComponent(() => loadModule('http://php.localhost/PHP_MVC_StarterVueJS/components/about.vue', options)),
+    About: Vue.defineAsyncComponent(() => loadModule(`${url}/components/about.vue`, options)),
   },
   template: `<About/>`,
 }).mount('#about')

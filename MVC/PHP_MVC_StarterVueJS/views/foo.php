@@ -1,1 +1,1 @@
-<p>hello foo</p>
+<p>hello foo.php</p>

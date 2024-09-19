@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'MyComponent',
+  name: 'Foo',
   props: {
     message: {
       type: String,
@@ -8,18 +8,24 @@ export default {
     },
   },
   setup(props) {
-    const reverseMessage = () => {
+   /*  const reverseMessage = () => {
       return props.message.split('').reverse().join('');
-    };
+    }; */
 
-    return { reverseMessage };
+   // return { reverseMessage };
   }
 };
 </script>
 
 <template>
-  <div>
-    <p>Original Message: {{ message }}</p>
-    <p>Reversed Message: {{ reverseMessage() }}</p>
-  </div>
+  <footer>
+    <p>Footer props: {{ message }}</p>
+  <!--   <p>Reversed Message: {{ reverseMessage() }}</p> -->
+  </footer>
 </template>
+<style scoped>
+  footer{
+    background: #333;
+    padding: .5rem;
+  }
+</style>

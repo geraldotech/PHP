@@ -1,18 +1,22 @@
 <template>
   <div>
-    <p>About component {{ message }}</p>
-    <button @click="hello()">Hello</button>
+    <h1>About component {{ message }}</h1>
+    <Vbutton message="Rock in"></Vbutton>
+    <Vbutton message="Rio"></Vbutton>
   </div>
 </template>
 
 <script>
 export default {
+    components: {
+    Vbutton: Vue.defineAsyncComponent(() => loadModule(`${url}/components/button.vue`, options)),
+  },
   data() {
     return {}
   },
   methods:{
     hello(){
-      console.log(`ok`)
+      console.log(url)
     }
   }
 }

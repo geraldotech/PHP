@@ -39,7 +39,8 @@
 
   
   <script>
- // const myurl = '<?php echo URL ?>'
+  // consts
+  const url = '<?php echo URL ?>'
   </script>
 
  <script type="module" src="<?= URL . '/assets/js/main.js'?>"></script>
