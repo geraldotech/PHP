@@ -3,7 +3,7 @@ class DevtestController extends Controller {
 
     public function __construct() {
         parent::__construct();
-       //$this->loadUtilityFunctions();
+        $this->helper = new helper();
      
     } 
   
@@ -15,11 +15,10 @@ class DevtestController extends Controller {
 
     // Check if the instance is valid
     if ($conf instanceof Devtest) {
-  //    echo "Instance validada com sucesso ";
+    // echo "Instance validada com sucesso ";
     } else {
       echo "Failed to create instance.";
     }
-
 
     // static string
     $data['name'] = 'Geraldo';
@@ -58,7 +57,6 @@ class DevtestController extends Controller {
     //print_r($data['consultaLogin']);    
     //exit; 
 
-
     /** 
     * @throws consultaLogin2
     * @return  ifRowCount
@@ -68,7 +66,6 @@ class DevtestController extends Controller {
     // print_r($data['consultaLogin2']);
     // exit;
 
-
     /** 
      * @throws consultaSimples
      * @return  ifRowCount
@@ -77,7 +74,6 @@ class DevtestController extends Controller {
    	// $data['consultaLogin3'] = $conf->consultaLogin3();
     // print_r($data['consultaLogin3']);
     // exit; 
-
 
     // Define a mensagem de resposta
     $res['message'] = 'ok';
@@ -97,21 +93,27 @@ class DevtestController extends Controller {
     * @return  tryCatch
     * */ 
 
-   // $isa = $conf->isabellaTryCatch();
-    // get all arr data
-    //print_r($isa);
+   $isa = $conf->isabellaTryCatch();
+
+    //get all arr data
+    print_r($isa);
+    print_r("<p>{$isa['message']}</p>");
 
     // dois modos de verificar se nao tiver data
-    // if(!$isa['data']){
-    //   echo "<p> {$isa['message']} </p>";
-    // }    
-    // if(empty($isa['data'])){
-    //   echo $isa['message'];
-    // }
+    if(!$isa['data']){
+     // echo "<p> {$isa['message']} </p>";
+    }    
+    if(empty($isa['data'])){
+      //echo $isa['message'];
+    }
 
 
     $justStr = 'Leona'; 
     echo "<p> $justStr </p>"; // interpolação de strings
+
+    $arr = ['Alpha', 'Bravo', 'Charlie'];
+     print_r("<b>{$arr[0]}</b>"); 
+     echo "<b>$arr[0]</b>"; 
 
         
      /** 
@@ -119,47 +121,47 @@ class DevtestController extends Controller {
      * @return  customByGmapdev
      * */ 
 
-      $bellaCustom = $conf->isabellaCustom();
- 
-      // if($bellaCustom['return']){
-      //   print_r($bellaCustom['data']);
-      // } else {
-      //   print_r($bellaCustom['message']);
-      //   print_r($bellaCustom['data']);
-      // }
+    $bellaCustom = $conf->isabellaCustom();
+
+    // if($bellaCustom['return']){
+    //   print_r($bellaCustom['data']);
+    // } else {
+    //   print_r($bellaCustom['message']);
+    //   print_r($bellaCustom['data']);
+    // }
                  
-     /** 
-     * @throws 
-     * @return  tryCatch__against_SQL_injections
-     * */ 
+    /** 
+   * @throws 
+   * @return  tryCatch__against_SQL_injections
+   * */ 
 
-      // $statement = $conf-> against_SQL_injections('2400', '99999999999');
+    // $statement = $conf-> against_SQL_injections('2400', '99999999999');
 
-      // print_r($statement);
-      // exit;
+    // print_r($statement);
+    // exit;
+    
+    // if($statement['return']){
+    //   print_r($statement['data']);
+    // } else {
+    //   print_r($statement['message']);
       
-      // if($statement['return']){
-      //   print_r($statement['data']);
-      // } else {
-      //   print_r($statement['message']);
-        
-      //   // Se houver um erro capturado
-      //   print_r($statement['error'] ?? '');
-      // }
+    //   // Se houver um erro capturado
+    //   print_r($statement['error'] ?? '');
+    // }
 
-          /** 
-     * @throws PraticandoQueryes
-     * @return  tryCatch__against_SQL_injections
-     * @since 14/09/2024
-     * @author Geraldo Developer dev@geraldox.com
-    * @version 1.0
-    * @var "SELECT * FROM z_sga_param_login WHERE idLogin = '2020032'"
-     * */ 
+        /** 
+   * @throws PraticandoQueries
+   * @return  tryCatch__against_SQL_injections
+   * @since 14/09/2024
+   * @author Geraldo Developer dev@geraldox.com
+  * @version 1.0
+  * @var "SELECT * FROM z_sga_param_login WHERE idLogin = '2020032'"
+    * */ 
 
   $tryCatchFunction = $conf->tryCatchFunction2('2400');
 
     if($tryCatchFunction['return']){
-      print_r("<h2 style='text-align:center;color: green'>{$tryCatchFunction['message']}</h2>");
+    // print_r("<h2 style='text-align:center;color: green'>{$tryCatchFunction['message']}</h2>");
     //print_r($tryCatchFunction['data']);
   }
 
@@ -169,18 +171,14 @@ class DevtestController extends Controller {
 
   $data['tryCatchFunction'] = $tryCatchFunction['data'];
 
-  //return;
-      
-
     // carrega a view
-    $this->loadTemplate('/A2Dev/AdevTest', $data);   
+    $this->loadTemplate('Devtest', $data);   
   }
   
   /* === Routes Aninhadas === */
-  public function about() {   
-
+  public function about() {  
     // carrega a view
-    $this->loadTemplate('/A2Dev/AdevTestAbout');   
+    $this->loadTemplate('about');   
   }  
 
   /* ===  Requisições AJAX === */
@@ -190,10 +188,10 @@ class DevtestController extends Controller {
     // Obtém o ID do usuário enviado pelo front-end
     $idUsuario = $_POST['idUsuario'];
 
-    // instancia a model
+    // instância a model
     $conf = new CAD006();
 
-    // chamar funcao com o parâmetro recebido
+    // chamar função com o parâmetro recebido
     $result = $conf->funcaoDaModal($idUsuario);
 
     // Retorna o resultado em formato JSON para o cliente

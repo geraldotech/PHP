@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* variables */
+:root {
+  --vargridopt: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.top_menu ul{
+    display: flex;
+    justify-content: space-around;
+    max-width: 350px;
+    width: 100%;
+    list-style: none;
+    li{
+      background-color: #333;
+      padding: .5rem 1rem;
+      border-radius: 10px;
+      a{
+        text-decoration: none;
+      }
+    }
+}

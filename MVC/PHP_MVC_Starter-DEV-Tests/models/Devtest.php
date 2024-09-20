@@ -110,11 +110,11 @@ class Devtest extends Model {
           ];
         }
 
-        // caso nao tiver rows          
+          // caso nao tiver rows          
           return[ 
           'return' => false,
           'data' => [],
-          'message' => 'nenum dados encontrado'
+          'message' => 'nenhum dados encontrado'
         ];
 
       } catch(Exception $e){
