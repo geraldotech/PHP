@@ -11,6 +11,4 @@ class AboutController extends Controller {
         exit;
     }
 
- 
-
 }

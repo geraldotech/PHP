@@ -1,13 +1,15 @@
 <?php 
- //Returns the portion of string specified by the offset and length parameters.
 
 /**
  * @return geraldo 
  */
 
+//Returns the portion of string specified by the offset and length parameters.
 
 $string = "apple,banana,orange";
 $fruits = explode(",", $string);
+
+ print_r($fruits); 
 
 // Access each element without foreach
 $firstFruit = $fruits[0]; // "apple"
@@ -34,6 +36,13 @@ $escaped_string = addslashes($string);
     echo $escaped_string; // Saída: O\'Reilly
     echo '<br>';
     echo $string;
+
+
+  $mapa = [
+    "nome" => 'Geraldo',
+    "nome" => 'Felipe',
+    "nome" => 'Bella',
+  ]
 
 ?> 
 <!DOCTYPE html>

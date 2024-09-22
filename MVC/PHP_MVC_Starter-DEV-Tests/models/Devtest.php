@@ -59,9 +59,7 @@ class Devtest extends Model {
           'message' => 'Ocorreu um erro ao realizar a consulta.'];
       }
     }
-
-
-
+    
     /** 
      * @throws consultaLogin2
      * @return  ifRowCount
