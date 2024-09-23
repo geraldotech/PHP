@@ -51,16 +51,7 @@ $escaped_string = addslashes($string);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-
-<section class="leaf"></section>
-<section class="leaf"></section>
-<section class="leaf"></section>
-<section class="leaf"></section>
-<section class="leaf"></section>
-<section class="leaf"></section>
-  
-</body>
 </html>
 
-<hr>
+
+

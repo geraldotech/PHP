@@ -199,7 +199,7 @@ function printNumero($n){
 ?>
 ```
 
-### -  Arrays
+### -  Arrays + foreach
 
 ```php
 <?php
@@ -248,7 +248,14 @@ echo $opcoes[5]['cha1'][0];
 echo $opcoes[5]['cha1']['key1'];
 
 
-#percorrer array
+```
+
+
+
+
+## foreach + Array
+
+```php
 
 $papelaria = array('livros',' canetas',' lapis',' papel oficio');
 
@@ -280,13 +287,74 @@ foreach($arr as $item){
 foreach($arr as $i) : echo "<h2>".$i."<h2>";
 endforeach;
 
-
 $meuArr = ['Geraldo'];
 $meuArr[1] = ['Isabella'];
 $meuArr['key02'] = ['Devs'];
 $meuArr['key03'] = [1,2,3,4]; // novo arr with key
 print_r($meuArr);
 
+
+// foreach + endforeach
+
+<?php 
+$papelaria = array('livros',' canetas',' lapis',' papel oficio');
+
+?>
+
+<?php foreach($papelaria as $i => $row):?>  
+<p>
+    <?= $row . ' - ' . $i?>
+</p>  
+
+<p>
+  <?= "{$row} - {$i}" ?>
+</p>
+
+<?php endforeach;  ?>
+
+
+
+// ## render html list
+
+<?php
+$nomes = ['Geraldo', 'Felipe', 'Costa'];
+?>
+
+<h1>write html 1</h1>
+
+<ul>
+  <?php
+  foreach($nomes as $values) {
+    echo "<li>$values</li>";
+  }
+  ?>
+  </ul>
+
+
+  <h1>write html 2</h1>
+<ul>
+<?php
+  foreach($nomes as $values) {
+?>
+  <li><?= $values ?></li>
+<?php }?>
+</ul>
+
+<h1>
+  write html 3
+</h1>
+<?php
+foreach($nomes as $nome) :
+echo $nome;
+endforeach;
+?>
+
+<h1>write html 4</h1>
+<ul>
+<?php foreach($nomes as $nome) : ?>
+  <li><?= $nome ?></li>
+<?php endforeach; ?>
+</ul>
 
 
 ```
@@ -395,79 +463,6 @@ echo '<h1>' .$username. '</h1>';
 ?>
 ```
 
-## render html list
-
-```php
-<?php
-$nomes = ['Geraldo', 'Felipe', 'Costa'];
-?>
-
-<h1>write html 1</h1>
-
-<ul>
-  <?php
-  foreach($nomes as $values) {
-    echo "<li>$values</li>";
-  }
-  ?>
-  </ul>
-
-
-  <h1>write html 2</h1>
-<ul>
-<?php
-  foreach($nomes as $values) {
-?>
-  <li><?= $values ?></li>
-<?php }?>
-</ul>
-
-<h1>
-  write html 3
-</h1>
-<?php
-foreach($nomes as $nome) :
-echo $nome;
-endforeach;
-?>
-
-<h1>write html 4</h1>
-<ul>
-<?php foreach($nomes as $nome) : ?>
-  <li><?= $nome ?></li>
-<?php endforeach; ?>
-</ul>
-
-```
-
-### functions and return by gmapdev
-
-```php
-function checkNum($media){
-  if ((float)$media >= 6 ){
-    echo 'Aprovado';
-    return;
-  }
-    echo 'Reprovado';
-}
-checkNum(5);
-checkNum(6.4);
-
-
-function isAppoved($n1, $n2){
-  $sum = (float)$n1 + (float)$n2;
-  $media = $sum /2;
-  $aprovado = 6;
-  if($media < $aprovado){
-    echo 'Reprovado'. $media;
-    return;
-  }
-  echo 'Aprovado'. $media;
-}
-
-isAppoved(5.8, 5.7);
-```
-
 ## How run php Visual Studio Code:
 
 - inside output terminal:
@@ -481,6 +476,25 @@ CTRL + P `settings.json`:
         "php": "C:\\php\\php.exe",
         "python": "python"
     }
+```
+
+## Conditional
+
+
+```php
+
+>// if + endif array
+
+if(10 > 5) :?>
+<p>Hello</p>
+<?php endif;
+
+$list = [1,2,3,4];
+
+if(in_array(2, $list)) :?>
+  <p>sim existe o 2 no array</p>  
+<?php endif; 
+
 ```
 
 # PHP Server + Visual Studio Code
