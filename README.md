@@ -199,9 +199,11 @@ function printNumero($n){
 ?>
 ```
 
-### -  Arrays + foreach
+### Arrays
 
 ```php
+
+
 <?php
 
 // Array []
@@ -253,7 +255,7 @@ echo $opcoes[5]['cha1']['key1'];
 
 
 
-## foreach + Array
+## Array + foreach
 
 ```php
 
@@ -355,6 +357,26 @@ endforeach;
   <li><?= $nome ?></li>
 <?php endforeach; ?>
 </ul>
+
+
+// #
+<?php 
+
+$list = [
+  ['name'=> 'Geraldo'],
+  ['name'=> 'Felipe'],
+  ['name'=> 'Bella'],
+];
+?>
+  <article class="ok">
+    <ul>
+      <?php foreach ($list as $key => $val) : ?>
+      <li><?php  echo $val['name'] . ' index =>' . $key  ?></li>
+      <?php endforeach ?>
+    </ul>
+  </article>
+
+
 
 
 ```
