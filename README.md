@@ -16,6 +16,19 @@ O que significa PHP?
 
 - Antigamente Personal Home Page hoje em dia Hypertext Preprocessor
 
+# PHP + Windows
+
+- [x] Baixar o PHP
+- [x] Escolha um local fixo (exemplo C:/App/PHP)
+- [x] Adicionar às variáveis de ambiente do sistema
+- [x] Run o Built-in web server dentro na raiz do seu projeto: `php -S localhost:8000`
+      
+
+<div align=center>
+	<img src="https://github.com/user-attachments/assets/96bd077a-64f0-4d01-bf2e-94e74a040c8b" width='50%' />
+</div>
+
+
 Verificar informações do php instalado no server:
 
 `$ echo '<?php phpinfo() ?>' >> info.php`
