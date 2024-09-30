@@ -22,6 +22,7 @@ O que significa PHP?
 - [x] Escolha um local fixo (exemplo C:/App/PHP)
 - [x] Adicionar às variáveis de ambiente do sistema
 - [x] Run o Built-in web server dentro na raiz do seu projeto: `php -S localhost:8000`
+- [x] Run php files: `$ php runit.php`
       
 
 <div align=center>
