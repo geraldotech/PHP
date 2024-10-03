@@ -366,6 +366,7 @@ foreach($papelario as $key => $value){
 }
 
 
+
 $lista = [1,2,3,4,5];
 foreach($lista as  $value){
   echo $value;
@@ -474,25 +475,6 @@ $list = [
 
 ```
 
-- switch
-
-```php
-<?php
-$pws = '1';
-	switch ($pws){
-		case '1':
-			echo 'um';
-			break;
-
-			case '2';
-			echo 'dois';
-			break;
-		default:
-		echo 'nao foram encontradas combinacoes';
-	}
-?>
-```
-
 ### Server and execution environment information
 
 ```php
@@ -506,7 +488,7 @@ $pws = '1';
  print_r($_SERVER); ✅// mostra todas as var dentro da var - large output
 ```
 
-## PHP GET URL Params
+### PHP GET URL Params
 
 ```php
 // specific params
@@ -596,6 +578,15 @@ CTRL + P `settings.json`:
 ## Conditional
 
 ```php
+$dia = '31';
+$mes = 'Agosto';
+
+if ($dia == '31' && $mes == 'Agosto') {
+	echo "Parabens";
+} else
+{
+	echo "nao e dia";
+}
 
 >// if + endif array
 
@@ -608,6 +599,52 @@ $list = [1,2,3,4];
 if(in_array(2, $list)) :?>
   <p>sim existe o 2 no array</p>
 <?php endif;
+
+```
+### switch
+
+```php
+<?php
+$pws = '1';
+	switch ($pws){
+		case '1':
+			echo 'um';
+			break;
+
+			case '2';
+			echo 'dois';
+			break;
+		default:
+		echo 'nao foram encontradas combinacoes';
+	}
+?>
+```
+
+### if-syntaxe-alternativa.php
+
+```php
+ $nome = 'Geraldo';
+ if($nome == 'Geraldo'):
+  echo "Verdade";
+ endif;
+
+ $contador = 0;
+ while($contador < 10):
+
+  echo $contador;
+    $contador++;
+endwhile;
+
+$arr =[1,2,3,4,5];
+
+
+foreach($arr as $key => $value):
+  echo $key;
+endforeach;
+
+for($i = 0 ; $i < 10; $i++):
+  echo
+
 
 ```
 
