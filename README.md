@@ -1,4 +1,4 @@
-### PHP Docs
+# PHP Docs
 
 Manual:
 
@@ -32,7 +32,7 @@ Verificar informações do php instalado no server:
 
 `$ echo '<?php phpinfo() ?>' >> info.php`
 
-## echo
+# echo
 
 Crie um novo documento e salve como `index.php`
 
@@ -54,7 +54,7 @@ echo $nome;
 
 ```
 
-## Concatenação:
+# Concatenação:
 
 - Aspas simples:
 
@@ -122,7 +122,7 @@ if(NOME == NOME2){
 ?>
 ```
 
-- Comparando variáveis iguais x diferentes
+### Comparando variáveis iguais x diferentes
 
 ```php
 <?php
@@ -137,7 +137,7 @@ echo 'iguais';
 ?>
 ```
 
-- Um sinal de igual `=` quer dizer que estamos atribuindo um valor, sempre retorna verdadeiro.
+### Um sinal de igual `=` quer dizer que estamos atribuindo um valor, sempre retorna verdadeiro.
 
 ```php
 <?php
@@ -154,7 +154,7 @@ if ($v1 === $v2){
 ?>
 ```
 
-- Comparamos para ver se são diferentes (tipo e valor)
+### Comparamos para ver se são diferentes (tipo e valor)
 
 ```php
 <?php
@@ -172,7 +172,7 @@ else {
 ?>
 ```
 
-- Somando valores:
+### Somando valores:
 
 ```php
 <?php
@@ -195,7 +195,7 @@ echo 'Testando soma';
 ?>
 ```
 
-- Function basic usage:
+### Function basic usage:
 
 ```php
 printnumero (30);
@@ -366,7 +366,6 @@ foreach($papelario as $key => $value){
 }
 
 
-
 $lista = [1,2,3,4,5];
 foreach($lista as  $value){
   echo $value;
@@ -392,10 +391,8 @@ print_r($meuArr);
 
 // foreach + endforeach
 
-<?php
 $papelaria = array('livros',' canetas',' lapis',' papel oficio');
 
-?>
 
 <?php foreach($papelaria as $i => $row):?>
 <p>
@@ -411,10 +408,7 @@ $papelaria = array('livros',' canetas',' lapis',' papel oficio');
 
 
 // ## render html list
-
-<?php
 $nomes = ['Geraldo', 'Felipe', 'Costa'];
-?>
 
 <h1>write html 1</h1>
 
@@ -424,7 +418,7 @@ $nomes = ['Geraldo', 'Felipe', 'Costa'];
     echo "<li>$values</li>";
   }
   ?>
-  </ul>
+</ul>
 
 
   <h1>write html 2</h1>
@@ -453,15 +447,11 @@ endforeach;
 </ul>
 
 
-// #
-<?php
-
 $list = [
   ['name'=> 'Geraldo'],
   ['name'=> 'Felipe'],
   ['name'=> 'Bella'],
 ];
-?>
   <article class="ok">
     <ul>
       <?php foreach ($list as $key => $val) : ?>
@@ -469,9 +459,6 @@ $list = [
       <?php endforeach ?>
     </ul>
   </article>
-
-
-
 
 ```
 
@@ -575,7 +562,7 @@ CTRL + P `settings.json`:
     }
 ```
 
-## Conditional
+# Conditional
 
 ```php
 $dia = '31';
@@ -583,12 +570,11 @@ $mes = 'Agosto';
 
 if ($dia == '31' && $mes == 'Agosto') {
 	echo "Parabens";
-} else
-{
+} else {
 	echo "nao e dia";
 }
 
->// if + endif array
+// if + endif array
 
 if(10 > 5) :?>
 <p>Hello</p>
@@ -600,8 +586,28 @@ if(in_array(2, $list)) :?>
   <p>sim existe o 2 no array</p>
 <?php endif;
 
+
+// array
+$arr = [1,2,4,5];
+
+if(in_array(2, $arr)){
+    echo "yws doiw";
+}
+
+// if + endif
+if(in_array(4,$arr)):
+echo "gooo";
+endif;
+
+
+// if return
+if(10 > 45)
+echo "sim";
+return;
+echo "nao";
 ```
-### switch
+
+# switch
 
 ```php
 <?php
