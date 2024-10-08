@@ -3,7 +3,7 @@ class DevtestController extends Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->helper = new helper();
+        $this->helper = new Helper();
      
     } 
   

@@ -8,7 +8,7 @@
 <body>
   <h1> implode</h1>
 
-  <form method="POST" action="<?php echo URL . '/implodeAndExplode/filtrausuarios' ?>">
+  <form method="POST" action="<?php echo URL . '/ImplodeAndExplode/filtrausuarios' ?>">
     <input type="checkbox" name="userid[]" value="2400" id="2400">
     <label for="2400">Super</label>
     <input type="checkbox" name="userid[]" value="6969" id="6969">
@@ -19,7 +19,7 @@
   
   <h1> foreach</h1>
 
-  <form method="POST" action="<?php echo URL . '/implodeAndExplode/setusuarios' ?>">
+  <form method="POST" action="<?php echo URL . '/ImplodeAndExplode/setusuarios' ?>">
     <input type="checkbox" name="uid[]" value="2400" id="a">
     <label for="a">Super</label>
     <input type="checkbox" name="uid[]" value="6969" id="b">
@@ -30,7 +30,7 @@
   
   <h1>foreach + explode</h1>
 
-  <form method="POST" action="<?php echo URL . '/implodeAndExplode/exampledata' ?>">
+  <form method="POST" action="<?php echo URL . '/ImplodeAndExplode/examplethree' ?>">
     <input type="checkbox" name="updateGetUpdate[]" value="10-20" id="bravo">
     <label for="bravo">Bravo</label>
     <input type="checkbox" name="updateGetUpdate[]" value="30-40" id="cos">

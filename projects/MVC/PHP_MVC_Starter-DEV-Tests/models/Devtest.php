@@ -5,6 +5,15 @@ class Devtest extends Model {
         parent::__construct();
     }
 
+    /** 
+     * @throws consultaSimples
+     * @return  ifRowCount
+    */ 
+    public function consultaSimples(){
+      $sql = $this->db->query("SELECT * FROM lgn_logins LIMIT 5");      
+      return $sql->fetchAll();
+    }
+
     function helloPessoas(){
       $listaPessoas = ['Geraldo', 'Felipe', 'Lala', 'Bella', 'Lasi', 'Leticia'];
       //return 'Geraldo Costa';  
@@ -27,7 +36,7 @@ class Devtest extends Model {
 
       try {
         // Executa a query
-        $sql = "SELECT * FROM z_sga_param_login LIMIT $limit";
+        $sql = "SELECT * FROM lgn_logins LIMIT $limit";
         $sql = $this->db->query($sql);     
 
         // Retorno com mensagem detalhada
@@ -66,7 +75,7 @@ class Devtest extends Model {
      * */ 
 
     public function consultaLogin2(){
-      $sql = "SELECT * FROM z_sga_param_login LIMIT 5";
+      $sql = "SELECT * FROM lgn_logins LIMIT 5";
       
       $sql = $this->db->query($sql);
 
@@ -78,15 +87,6 @@ class Devtest extends Model {
     }
 
       /** 
-     * @throws consultaSimples
-     * @return  ifRowCount
-     * */ 
-    public function consultaSimples(){
-      $sql = $this->db->query("SELECT * FROM z_sga_param_login LIMIT 5");      
-      return $sql->fetchAll();
-    }
-
-      /** 
      * @throws isabellaTryCatch
      * @return  tryCatch
      * */ 
@@ -94,7 +94,7 @@ class Devtest extends Model {
     public function isabellaTryCatch(){
       
       try{
-        $query = "SELECT * FROM z_sga_param_login WHERE idLogin = '2020032'";
+        $query = "SELECT * FROM lgn_logins WHERE idLogin = '2020032'";
         $query = $this->db->query($query);
        
         $data = $query->fetchAll();
@@ -131,7 +131,7 @@ class Devtest extends Model {
      * */ 
 
     public function isabellaCustom(){
-      $sql = "SELECT * FROM z_sga_param_login WHERE idLogin = 23400";
+      $sql = "SELECT * FROM lgn_logins WHERE idLogin = 23400";
 
       $sql = $this->db->query($sql);
 
@@ -158,7 +158,7 @@ class Devtest extends Model {
     public function against_SQL_injections($id, $cpf) {
       try {
           // Preparando a consulta com placeholders para evitar injeção de SQL
-          $sql = "SELECT * FROM z_sga_param_login 
+          $sql = "SELECT * FROM lgn_logins 
                   WHERE idLogin = :id 
                   AND CPF = :cpf";
           $stmt = $this->db->prepare($sql);
@@ -202,11 +202,11 @@ class Devtest extends Model {
      * @since 14/09/2024
      * @author Geraldo Developer dev@geraldox.com
     * @version 1.0
-    * @var "SELECT * FROM z_sga_param_login WHERE idLogin = '2020032'"
+    * @var "SELECT * FROM lgn_logins WHERE idLogin = '2020032'"
      * */ 
 
      public function tipoA($idLogin){
-      $sql = "SELECT * FROM z_sga_param_login 
+      $sql = "SELECT * FROM lgn_logins 
       WHERE idLogin = '$idLogin'";
 
       $sql = $this->db->query($sql);
@@ -219,7 +219,7 @@ class Devtest extends Model {
 
      public function tipoB($idLogin){
       
-      $sql = "SELECT * FROM z_sga_param_login 
+      $sql = "SELECT * FROM lgn_logins 
       WHERE idLogin = '$idLogin'";
 
       $sql = $this->db->query($sql);
@@ -245,7 +245,7 @@ class Devtest extends Model {
       
       
       try{
-      $sql = "SELECT * FROM z_sga_param_login 
+      $sql = "SELECT * FROM lgn_logins 
       WHERE idLogin = '$idLogin'";
       $sql = $this->db->query($sql);
 
@@ -281,7 +281,7 @@ class Devtest extends Model {
       
       
       try{
-      $sql = "SELECT * FROM z_sga_param_login 
+      $sql = "SELECT * FROM lgn_logins 
       WHERE idLogin = :idLogin";
       $stmt = $this->db->prepare($sql);
 
@@ -322,8 +322,8 @@ class Devtest extends Model {
 
       try{
 
-       // $sql = "SELECT * FROM z_sga_param_login  WHERE idLogin = :id";
-        $sql = "SELECT * FROM z_sga_param_login LIMIT 10";
+       // $sql = "SELECT * FROM lgn_logins  WHERE idLogin = :id";
+        $sql = "SELECT * FROM lgn_logins LIMIT 10";
 
 
       // prepere

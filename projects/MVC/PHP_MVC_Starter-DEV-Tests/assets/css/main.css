@@ -2,6 +2,7 @@
 
 /* variables */
 :root {
+  color-scheme: dark;
   --vargridopt: repeat(auto-fit, minmax(250px, 1fr));
 }
 
@@ -9,10 +10,14 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Inter', sans-serif;
+}
+
 .top_menu ul{
     display: flex;
     justify-content: space-around;
-    max-width: 350px;
+    max-width: 850px;
     width: 100%;
     list-style: none;
     li{

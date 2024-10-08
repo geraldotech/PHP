@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="color-scheme:dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +21,16 @@
         <a href="<?= URL . '/'?>">Home</a>
       </li>
       <li>
-        <a href="<?= URL . '/about' ?>">About</a>
+        <a href="<?= URL . '/About' ?>">About</a>
       </li>
       <li>
-        <a href="<?= URL . '/devtest' ?>">Devtest</a>
+        <a href="<?= URL . '/Devtest' ?>">Devtest</a>
+      </li>
+      <li>
+        <a href="<?= URL . '/ImplodeAndExplode' ?>">Implode And Explode</a>
+      </li>
+      <li>
+        <a href="<?= URL . '/Checkbox' ?>">Checkbox</a>
       </li>
     </ul>
   </nav> 
