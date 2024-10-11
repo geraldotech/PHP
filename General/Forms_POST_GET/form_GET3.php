@@ -13,7 +13,7 @@ if (isset($_POST['acao'])){
 ?>
 <form method="post">
 	<select name="nome">
-		<option value="Geraldo Petronilo Costa Filho">Geraldo</option>
+		<option value="Geraldo Filho">Geraldo</option>
 		<option value="1">um </option>
 		<option value="2">two </option>
 		<option value="3">tres </option>

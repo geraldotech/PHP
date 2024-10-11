@@ -55,7 +55,7 @@ echo $nome;
 
 ```
 
-# Concatenação:
+## Concatenação:
 
 - Aspas simples:
 
@@ -100,16 +100,12 @@ print_r($myvar) // Hello from Networks
 
 ```
 
-- Constants:
+## Constants:
 
 ```php
-<?php
 define ('NOME','GERALDO');
 echo NOME;
-?>
 
-
-<?php
 
 define ('NOME','GERALDO');
 define('NOME2', 'GE2RALDO');
@@ -119,6 +115,12 @@ if(NOME == NOME2){
 } else {
 	echo 'diferentes';
 }
+
+define ('ESTADO','RIO DE JANEIRO');
+
+echo 'Eu estou no estado do '.ESTADO.' atualmente';
+echo '<br>';
+echo "Eu estou no estado do '".ESTADO."' atualmente";
 
 ?>
 ```
