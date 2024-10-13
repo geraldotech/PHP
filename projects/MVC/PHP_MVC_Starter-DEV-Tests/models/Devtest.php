@@ -94,7 +94,8 @@ class Devtest extends Model {
     public function isabellaTryCatch(){
       
       try{
-        $query = "SELECT * FROM lgn_logins WHERE idLogin = '2020032'";
+        $query = "SELECT * FROM lgn_logins 
+        WHERE idLogin = '2020032'";
         $query = $this->db->query($query);
        
         $data = $query->fetchAll();

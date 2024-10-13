@@ -75,7 +75,8 @@ class DevtestController extends Controller {
      * @return  ifRowCount
      * */ 
       
-   	// $data['consultaLogin3'] = $conf->consultaLogin3();
+    $data['consultaSimples'] = $conf->consultaSimples();
+   // $data['consultaLogin3'] = $conf->consultaLogin3();
     // print_r($data['consultaLogin3']);
     // exit; 
 

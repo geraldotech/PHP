@@ -51,12 +51,22 @@
   <p>From model: <?= print_r($lista) ?> </p>
 
 
-  <h1>consultaLogin()</h1>
-   
+  <h1>consultaSimples()</h1>
+  
   <?php
+  print_r($consultaSimples[0]['idLogin']);
 
 
-?>
+  echo '<ul>';
+  foreach($consultaSimples as $val){
+    echo "<li>" . $val['nomeUsuario'] . "</li>";
+  }
+  echo '</ul>';
+  
+  ?>  
+
+  <h1>consultaLogin()</h1>
+
 
   <?php
   if($consultaLogin['ok']) :?>

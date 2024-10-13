@@ -9,16 +9,16 @@
     <input type="text" name="textdata"><br>
     <input type="submit" name="submit">    
   </form>
-  https://www.codespeedy.com/save-html-form-data-in-a-txt-text-file-in-php/
+  https://www.codespeedy.com/save-html-form-data-in-a-txt-text-file-in-php
 </body>
 </html>
-<?php
-              
-if(isset($_POST['textdata']))
-{
-$data=$_POST['textdata'];
-$fp = fopen('data2.txt', 'a');
-fwrite($fp, $data);
-fclose($fp);
-}
+<?php              
+  if(isset($_POST['textdata'])) {
+
+  $data=$_POST['textdata'];
+  $fp = fopen('store-data-in_txt.txt', 'a');
+
+  fwrite($fp, "$data \n");
+  fclose($fp);
+  }
 ?>

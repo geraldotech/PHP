@@ -295,8 +295,27 @@ print_r(consulta('inativo'));
  echo '<hr>';
 print_r(consulta());
 
+```
+
+
+ Desde o PHP 7, você pode (e é recomendado) especificar tipos de parâmetros e tipos de retorno para melhorar a segurança e a legibilidade do código. Isso se chama type hinting. Abaixo estão alguns exemplos e uma explicação detalhada. 
+
+- string $eventName: O parâmetro $eventName deve ser uma string. Se for passado um valor de outro tipo, o PHP lançará um erro.
+- int $limit = 10: O parâmetro $limit deve ser um inteiro, com o valor padrão de 10 se não for passado nenhum argumento.
+- int: Especifica que o método deve retornar um inteiro.
+
+
+
+```php
+
+public function eventCurrentInterval(string $eventName, int $limit = 10): int {
+    // Lógica do método
+}
 
 ```
+
+
+
 
 ### Arrays
 
