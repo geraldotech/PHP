@@ -25,14 +25,18 @@ class DevtestController extends Controller {
     
     /**  @see array from model */
     $lista = $conf->helloPessoas();
-    $data['lista'] = $lista;
+    
+  
+      $data['lista'] = $lista['ok'] ? $lista['data'] : $list['message'];
+  
 
 
     /** 
      * @throws consultaLogin
      * @return  tryCatch
      * */ 
-    $data['consultaLogin'] = $conf->consultaLogin();
+    $res = $conf->consultaLogin();
+    $data['consultaLogin'] =  $res;
 
     
     /** @return verbose e capturando retornos  */
@@ -113,6 +117,7 @@ class DevtestController extends Controller {
 
     $arr = ['Alpha', 'Bravo', 'Charlie'];
      print_r("<b>{$arr[0]}</b>"); 
+     echo '<hr>';
      echo "<b>$arr[0]</b>"; 
 
         
@@ -160,16 +165,7 @@ class DevtestController extends Controller {
 
   $tryCatchFunction = $conf->tryCatchFunction2('2400');
 
-    if($tryCatchFunction['return']){
-    // print_r("<h2 style='text-align:center;color: green'>{$tryCatchFunction['message']}</h2>");
-    //print_r($tryCatchFunction['data']);
-  }
-
-  if(!$tryCatchFunction['return']){
-    print_r("<h2 style='text-align:center;color: red'>{$tryCatchFunction['message']}</h2>");
-  }
-
-  $data['tryCatchFunction'] = $tryCatchFunction['data'];
+   $data['tryCatchFunction'] = $tryCatchFunction;
 
     // carrega a view
     $this->loadTemplate('Devtest', $data);   
@@ -183,7 +179,9 @@ class DevtestController extends Controller {
 
   /* ===  Requisições AJAX === */
 
-  // Exemplo de Ajax, 
+  /**
+   * @return JSON 
+   */ 
   public function ajaxNomeDaFuncao(){
     // Obtém o ID do usuário enviado pelo front-end
     $idUsuario = $_POST['idUsuario'];
@@ -193,6 +191,16 @@ class DevtestController extends Controller {
 
     // chamar função com o parâmetro recebido
     $result = $conf->funcaoDaModal($idUsuario);
+
+    // Retorna o resultado em formato JSON para o cliente
+    echo json_encode($result);
+}
+
+
+// Acessar direto no browser => /Devtest/JSONDATA pode ajudar a debugar a resposta antes de implementar no fron-end
+  public function JSONDATA(){
+ 
+    $result = [1,2,3,4,4];
 
     // Retorna o resultado em formato JSON para o cliente
     echo json_encode($result);

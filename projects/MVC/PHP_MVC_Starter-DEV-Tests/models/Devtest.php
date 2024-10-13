@@ -19,11 +19,11 @@ class Devtest extends Model {
       //return 'Geraldo Costa';  
 
       try {
-        return array('return' =>  true, 'message' => 'Array retornado/inserido com sucesso!');
+        return array('ok' =>  true, 'data' => $listaPessoas, 'message' => 'Array retornado com sucesso!');
 
       }
       catch (Exception $e) {
-        return array('return' => true, 'error' => $e->getMessage(), 'message' => 'Perfil atualizado com sucesso!');
+        return array('ok' => false, 'error' => $e->getMessage(), 'message' => 'Ocorrei algum erro!');
       }
 
     }
@@ -46,7 +46,7 @@ class Devtest extends Model {
         $data = $sql->fetchAll();
        
             return [
-              'return' => true, 
+              'ok' => true, 
               'data' => $data, 
               'message' => 'Consulta realizada com sucesso!'
             ]; 
@@ -54,7 +54,7 @@ class Devtest extends Model {
     
         // Caso nenhum dado seja encontrado
         return [
-            'return' => false, 
+            'ok' => false, 
             'data' => [], 
             'message' => 'Nenhum dado encontrado!'
       ];      
@@ -63,7 +63,7 @@ class Devtest extends Model {
 
        // Tratamento de erro com mensagem apropriada
         return [
-          'return' => false, 
+          'ok' => false, 
           'error' => $e->getMessage(), 
           'message' => 'Ocorreu um erro ao realizar a consulta.'];
       }
@@ -102,7 +102,7 @@ class Devtest extends Model {
         if($query->rowCount() > 0){
 
           return[
-            'return' => true,
+            'ok' => true,
             'data' => $data,
             'message' => 'dados encontrados'
           ];
@@ -110,14 +110,14 @@ class Devtest extends Model {
 
           // caso nao tiver rows          
           return[ 
-          'return' => false,
+          'ok' => false,
           'data' => [],
           'message' => 'nenhum dados encontrado'
         ];
 
       } catch(Exception $e){
           return [
-          'return' => false,
+          'ok' => false,
           'error' => $e->getMessage(),
           'message' => 'Ocorreu um erro ao realizar a consulta.'
           ];        
@@ -338,14 +338,14 @@ class Devtest extends Model {
        if($stmt->rowCount() > 0){
 
         return [
-          'return' => true,
+          'ok' => true,
           'data' => $stmt->fetchAll(PDO::FETCH_ASSOC),
           'message' => 'Dados retornados com sucesso =)'
         ];        
        }
 
        return [
-        'return' => false,
+        'ok' => false,
         'data' => [],
         'message' => 'Não encontrei dados =/'
       ];        
@@ -354,7 +354,7 @@ class Devtest extends Model {
       } catch(Exception $e){
 
         return [
-          'return' => false,
+          'ok' => false,
           'data' => [],
           'message' => "Ocorreu um erro {$e->getMessage()}",
         ];        

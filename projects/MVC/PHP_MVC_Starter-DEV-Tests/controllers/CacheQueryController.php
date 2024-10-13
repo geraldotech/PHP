@@ -30,7 +30,7 @@ class CacheQueryController extends Controller {
       //$cache_file = 'cache/' . $cache_key . '.cache';
       //$cache_file = __DIR__ . '/cache/' . $cache_key . '.cache';
 
-      // verifica se a pasta cache existi, senão deve criar neste diretório atual
+      // verifica se a pasta cache existe, senão deve criar neste diretório atual
       if (!file_exists( __DIR__ . '/cache')) {
           mkdir( __DIR__ . '/cache', 0777, true);
       }

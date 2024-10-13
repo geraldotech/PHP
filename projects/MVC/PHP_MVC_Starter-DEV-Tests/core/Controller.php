@@ -1,7 +1,6 @@
 <?php
 class Controller {
 
-	protected $db;
 	protected $helper;
 
 	public function __construct() {                

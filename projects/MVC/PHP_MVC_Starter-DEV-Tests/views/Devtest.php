@@ -50,17 +50,49 @@
   
   <p>From model: <?= print_r($lista) ?> </p>
 
-<!--   
+
+  <h1>consultaLogin()</h1>
+   
+  <?php
+
+
+?>
+
+  <?php
+  if($consultaLogin['ok']) :?>
+  
   <p>From consultaLogin <?= print_r($consultaLogin) ?> </p>
-  <p>From consultaLogin <?= print_r($consultaLogin['returna']) ?> </p> -->
+  <p>From consultaLogin <?= print_r($consultaLogin['message']) ?> </p>  
+  <p>From consultaLogin <?= print_r($consultaLogin['ok']) ?> </p> 
+  <?php endif;
+?>
+
+
+
   <!-- <p>From consultaLogin2 <?= print_r($all['returna']) ?> </p> -->  
   
   <!-- <p>From model: <?= print_r($consultaLogin['data']) ?>
   <p>From model: <?= print_r($consultaLogin['message']) ?> </p>  --> 
 
+
+  <h1>tryCatchFunction()</h1>
   <?php 
    print_r($tryCatchFunction[0]);
   ?>
+
+<?php
+
+
+if($tryCatchFunction['ok']){
+  print_r("<h2 style='text-align:center;color: green'>{$tryCatchFunction['message']}</h2>");
+}
+
+if(!$tryCatchFunction['ok']){
+  print_r("<h2 style='text-align:center;color: red'>{$tryCatchFunction['message']}</h2>");
+} 
+
+?>
+
 <!--   <table
   class="table hover  dt-responsive nowrap dataTable no-footer dtr-inline"
   cellspacing="0"
