@@ -2,7 +2,11 @@
 //Path precisa ser configurado para poder achar os arquivo de email e sincronizador//
 define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'A2CRUDPHP');
 define('LOG_PATH', BASE_PATH.'/logs');
-define("URL", 'http://php.localhost/projects/MVC/PHP_MVC_Starter-DEV-Tests/');
+
+define("PATH", '/PHP/projects/MVC/PHP_MVC_StarterVueJS');
+define('PORT', ':8080');
+define("SERVER_NAME", '127.0.0.1');
+define("URL", 'http://'.SERVER_NAME.PORT . PATH);
 
 
 global $config;

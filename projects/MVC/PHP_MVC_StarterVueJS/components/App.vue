@@ -6,7 +6,10 @@
   </div>
 </template>
 
-<script>
+<script setup lang="jsx">
+import Foo from '../src/components/footer.vue'
+import MyHeader from '../src/components/Header.vue'
+
 module.exports = {
    props: ['phpcontent'],
   data: function () {

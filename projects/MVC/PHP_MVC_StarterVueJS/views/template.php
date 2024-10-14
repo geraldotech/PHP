@@ -12,6 +12,11 @@
   <!-- VueJS 3 SFC Loader  -->
   <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
   <script src="<?= URL . '/assets/js/sfc-loader.js' ?>"></script> 
+  
+  <script>
+  // consts
+  const url = '<?php echo URL ?>'
+  </script>
 
 </head>
 <body>
@@ -22,13 +27,13 @@
         <a href="<?= URL . '/'?>">Home</a>
       </li>
       <li>
-        <a href="<?= URL . '/foo' ?>">Foo</a>
+        <a href="<?= URL . '/Foo' ?>">Foo</a>
       </li>
       <li>
-        <a href="<?= URL . '/about' ?>">About</a>
+        <a href="<?= URL . '/About' ?>">About</a>
       </li>
       <li>
-        <a href="<?= URL . '/games' ?>">Games</a>
+        <a href="<?= URL . '/Games' ?>">Games</a>
       </li>
     </ul>
   </nav> 
@@ -37,11 +42,6 @@
 <?php $this->loadViewInTemplate($viewName, $viewData); ?>
 
 
-  
-  <script>
-  // consts
-  const url = '<?php echo URL ?>'
-  </script>
 
  <script type="module" src="<?= URL . '/assets/js/main.js'?>"></script>
  <script type="module" src="<?= URL . '/assets/js/about.js'?>"></script>
