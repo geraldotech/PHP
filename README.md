@@ -312,6 +312,74 @@ public function eventCurrentInterval(string $eventName, int $limit = 10): int {
     // Lógica do método
 }
 
+// Forçar um erro mais rigoroso com o modo estrito. 
+// Adicione a seguinte linha no topo do seu código:
+declare(strict_types=1); // Ativa o modo estrito
+
+
+
+/* Se o modo estrito não estiver ativado, PHP tentará converter a string '6' implicitamente para um número, e o código funcionará sem erros: */
+
+
+// ➡️ void: Indica que a função não retorna nenhum valor
+
+function semRetorno(): void {
+    echo "Função sem retorno.";
+}
+
+// ✨ Type Hinting + return de function
+
+// ➡️ string: Indica que a função não retorna nenhum valor
+function yourname(string $name): void{
+  echo $name;
+}
+
+// ➡️ float
+function multiplicar(float $x): float{
+  return $x * 2;
+}
+echo(multiplicar(5.10));
+
+// ➡️ int
+function sum(int $age): void{
+  echo $age;
+}
+sum(007);
+
+function isCheck(int $val):bool {
+      // return $val + 5; //  Return value must be of type bool, int returned ❌
+       return $val %2 == 0; //  👍
+}
+
+echo '<p>';
+echo isCheck(5) ? 'y' : 'not';
+echo '</p>';
+
+// ➡️ Union Types (PHP 8+)  int
+// Permite que um parâmetro ou retorno aceite múltiplos tipos.
+
+function formatarNumero(int|float $numero): string {
+  return number_format($numero, 2);
+}
+
+echo formatarNumero(123.45); // Exibe 123.45
+echo formatarNumero(100); // Exibe 100.00
+
+
+// Null e ? para Parâmetros Opcionais
+
+function exibirIdade(?int $idade = null) {
+  if ($idade === null) { 
+      echo "Idade não informada.";
+  } else {
+      echo "Idade: $idade";
+  }
+}
+
+exibirIdade(); // Exibe "Idade não informada."
+exibirIdade(25); // Exibe "Idade: 25"
+
+
 ```
 
 
