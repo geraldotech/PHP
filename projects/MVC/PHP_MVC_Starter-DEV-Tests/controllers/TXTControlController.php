@@ -11,7 +11,7 @@ class TXTControlController extends Controller {
 
   
     // exemplo com TXT
-      $file = __DIR__ . '/conf.txt';
+      $file = __DIR__ . '/conf.ini';
       // Lê o arquivo de configuração e retorna um array associativo
       $settings = parse_ini_file($file);
 
