@@ -5,8 +5,7 @@ class CacheQueryController extends Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->getcachetest = new Cachequery();
-      
+        $this->getcachetest = new Cachequery();      
     }
 
     public function index() {   
@@ -83,8 +82,7 @@ class CacheQueryController extends Controller {
         // Retorna o resultado
         return $data;
     }
-}
-    
+}   
 
 
 }

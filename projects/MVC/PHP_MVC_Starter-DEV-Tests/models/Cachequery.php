@@ -9,7 +9,7 @@ class Cachequery extends Model {
      
       try{
 
-        $sql = "SELECT * FROM lgn_logins";
+        $sql = "SELECT * FROM lgn_logins LIMIT 4";
         $sql = $this->db->query($sql);
 
         if($sql->rowCount() > 0){

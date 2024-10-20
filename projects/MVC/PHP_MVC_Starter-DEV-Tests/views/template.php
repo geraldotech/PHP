@@ -15,25 +15,9 @@
   </script>
 </head>
 <body>
-  <nav class="top_menu">
-    <ul>
-      <li>
-        <a href="<?= URL . '/'?>">Home</a>
-      </li>
-      <li>
-        <a href="<?= URL . '/About' ?>">About</a>
-      </li>
-      <li>
-        <a href="<?= URL . '/Devtest' ?>">Devtest</a>
-      </li>
-      <li>
-        <a href="<?= URL . '/ImplodeAndExplode' ?>">Implode And Explode</a>
-      </li>
-      <li>
-        <a href="<?= URL . '/Checkbox' ?>">Checkbox</a>
-      </li>
-    </ul>
-  </nav> 
+
+  <?php include('header.php') ?>
+
   <!-- page content -->
   <?php
     $this->loadViewInTemplate($viewName, $viewData);
