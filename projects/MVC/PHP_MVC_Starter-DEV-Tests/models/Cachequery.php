@@ -7,7 +7,7 @@ class Cachequery extends Model {
 
     public function listUsuarios(){
      
-      try{
+      try {
 
         $sql = "SELECT * FROM lgn_logins LIMIT 4";
         $sql = $this->db->query($sql);

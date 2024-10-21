@@ -7,7 +7,6 @@ class ImplodeAndExplode extends Model {
 
     function filtraUsuarios($ids){
       $sql = "SELECT * FROM lgn_logins WHERE idLogin in ($ids)";
-
       $sql = $this->db->query($sql);
 
       if($sql->rowCount() > 0){
@@ -21,7 +20,8 @@ class ImplodeAndExplode extends Model {
     public function setusuarios($id){
       $sql = "UPDATE lgn_logins SET idTotovs = '123' WHERE idLogin = $id";
       $sql = $this->db->query($sql);
-      if($sql->rowCount() > 0){
+
+      if($sql){
         return [
           'return' => true,
           'message' => 'Dados alterados com sucesso',

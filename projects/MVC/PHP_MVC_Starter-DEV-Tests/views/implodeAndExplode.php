@@ -17,7 +17,7 @@
     <button>Enviar</button>
   </form>
   
-  <h1> foreach</h1>
+  <h1>foreach</h1>
 
   <form method="POST" action="<?php echo URL . '/ImplodeAndExplode/setusuarios' ?>">
     <input type="checkbox" name="uid[]" value="2400" id="a">

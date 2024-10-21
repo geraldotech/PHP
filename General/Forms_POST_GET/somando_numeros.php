@@ -25,7 +25,7 @@
 </head>
 <body>
 <h1>Calculadora de soma</h1>
-<form method="post">
+<form method="POST">
 	<input type="text" name="numero1" />	+
 	<input type="text" name="numero2" />
 	<input type="submit" name="acao" value="Calcular" />

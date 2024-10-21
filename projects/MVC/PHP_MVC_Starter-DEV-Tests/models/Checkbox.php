@@ -9,7 +9,7 @@ class Checkbox extends Model {
     public function listLogins(){
       try{
 
-        $sql = "SELECT nomeUsuario, is_active, idLogin FROM lgn_logins";
+        $sql = "SELECT nomeUsuario, is_active, idLogin FROM lgn_logins LIMIT 5";
         $sql = $this->db->query($sql);
 
         if($sql->rowCount() > 0){

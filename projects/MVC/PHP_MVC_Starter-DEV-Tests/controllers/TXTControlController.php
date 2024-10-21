@@ -1,15 +1,11 @@
 <?php
 class TXTControlController extends Controller {
 
-  private $getcachetest;
-
     public function __construct() {
         parent::__construct();
-        $this->getcachetest = new Cachequery();      
     }
     public function index() { 
 
-  
     // exemplo com TXT
       $file = __DIR__ . '/conf.ini';
       // Lê o arquivo de configuração e retorna um array associativo
@@ -25,9 +21,7 @@ class TXTControlController extends Controller {
           $fontSize = $settings['fontSize'];
           $dynamic_class = $settings['ENABLE_STICKY'] ? 'sticky' : 'normal';
 
-
           // Using Heredoc
-
           $html = <<<HTML
           <style>
             .normal{
@@ -37,42 +31,37 @@ class TXTControlController extends Controller {
               color: blue;
             }
           </style>
-          <p style="background-color: {$isActive};font-size: {$fontSize}">Background ativo.<br></p>
+          <p style="background-color: {$isActive};font-size: {$fontSize}">Background ativo</p>
           <h1 class="{$dynamic_class}">agora sim  podemos digitar a vontade {$isActive}</h1>
           HTML;          
           echo $html;   
-
-
           echo "Tamanho da fonte: " . $settings['fontSize'] . "<br>";
 
           if ($settings['hasLog'] == 1) {
               echo "O log está ativado.<br>";
           }
-      } else {
-          echo "Erro ao ler o arquivo de configuração.";
-      }
-      echo '<hr>';
-
-
-      // exemplo com INI
-      $fileini = __DIR__ . '/settings.ini';
-      $settingsFile = parse_ini_file($fileini);
-      print_r($settingsFile);
-
-      $config['settings']['background'] = 0; // Exemplo: mudar o background para 0
-
-      // Passo 3: Escrever de volta no arquivo .ini
-      $content = '';
-      foreach ($config as $section => $values) {
-          $content .= "[$section]\n";
-          foreach ($values as $key => $value) {
-              $content .= "$key=$value\n";
+          } else {
+              echo "Erro ao ler o arquivo de configuração.";
           }
-      }
+          echo '<hr>';
+
+        // exemplo com INI
+        $fileini = __DIR__ . '/settings.ini';
+        $settingsFile = parse_ini_file($fileini);
+        print_r($settingsFile);
+
+        $config['settings']['background'] = 0; // Exemplo: mudar o background para 0
+
+        // Passo 3: Escrever de volta no arquivo .ini
+        $content = '';
+        foreach ($config as $section => $values) {
+            $content .= "[$section]\n";
+            foreach ($values as $key => $value) {
+                $content .= "$key=$value\n";
+            }
+        }
     // Escrever o novo conteúdo no arquivo
       file_put_contents($fileini, $content);
- 
   }
-
 
 }

@@ -17,7 +17,7 @@ body{
 .top_menu ul{
     display: flex;
     justify-content: space-around;
-    max-width: 850px;
+    max-width: 1250px;
     width: 100%;
     list-style: none;
     li{

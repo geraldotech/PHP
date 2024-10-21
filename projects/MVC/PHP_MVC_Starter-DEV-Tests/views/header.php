@@ -18,5 +18,8 @@
       <li>
         <a href="<?= URL . '/CacheQuery' ?>">CacheQuery</a>
       </li>
+      <li>
+        <a href="<?= URL . '/TXTControl' ?>">TXTControl</a>
+      </li>
     </ul>
-  </nav> 
+</nav> 

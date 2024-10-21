@@ -27,7 +27,8 @@ class CheckboxController extends Controller {
      $res =  $this->check->handleUpdateUsers($selectedImplo);
      if($res['return']){
 
-      echo $res['message'];
+     // echo $res['message'];
+      $this->helper->setAlert('success','Favor selecionar ao menos um Grupo','Checkbox/');
 
      // header("Location" . $_SERVER['REQUEST_URI']);
      // exit();

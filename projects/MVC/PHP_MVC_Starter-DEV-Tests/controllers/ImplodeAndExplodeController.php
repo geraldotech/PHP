@@ -17,7 +17,6 @@ class ImplodeAndExplodeController extends Controller {
 
     public function index() {   
 
-
         echo '<hr>';
         echo '<h2>exemplo explode string</h2>';
         $dataHoje = "2024-10-07";
@@ -51,9 +50,9 @@ class ImplodeAndExplodeController extends Controller {
             echo '<h3>';
             print_r($res);
             echo '</h3>';
-             echo '<hr>';       
-             print_r($imploUser);
-            return; // return aqui acaba função
+            echo '<hr>';       
+            print_r($imploUser);
+            return; // aqui acaba função
         } 
         echo "<h1>Selecionar um user</h1>";            
     }
@@ -66,16 +65,19 @@ class ImplodeAndExplodeController extends Controller {
 
         // tratando o empty no inicio e return.
         if(empty($uids)){
-            echo 'Seleciona uma opcao';
+            echo 'Selecione uma opcao';
             return;
         }
 
+        print_r($uids);
         $res = [];
         foreach($uids as $id){
             $res = $this->implodeAnd->setusuarios($id);
-          //  echo "Usuário com ID $id atualizado.\n";            
+           // echo "Usuário com ID $id atualizado.\n";            
         }
+        echo '<h2>';
         print_r($res);  
+        echo '</h2>';
         exit;
     }
 
