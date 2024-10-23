@@ -7,7 +7,7 @@ Vue.createApp({
   components: {
     About: Vue.defineAsyncComponent(() => loadModule(`${url}/components/about.vue`, options)),
   },
-  template: `<About/>`,
+  //template: `<About/>`,
 }).mount('#about')
 
 //import Heading from './components/about.vue'

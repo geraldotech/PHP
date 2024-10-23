@@ -1,6 +1,6 @@
 <?php
 //Path precisa ser configurado para poder achar os arquivo de email e sincronizador//
-define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'A2CRUDPHP');
+define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].':8080/' .'PHP_MVC_StarterVueJS');
 define('LOG_PATH', BASE_PATH.'/logs');
 
 define("PATH", '/PHP/projects/MVC/PHP_MVC_StarterVueJS');

@@ -14,9 +14,9 @@
     }
   },
   components: {
-    Mheader: Vue.defineAsyncComponent(() => loadModule(`<?= URL?>/components/myHeader.vue`, options)),
+    Mheader: Vue.defineAsyncComponent(() => loadModule(`${url}/components/vheader.vue`, options)),
     About: Vue.defineAsyncComponent(() => loadModule(`<?= URL?>/components/about.vue`, options)),
-    Vfooter: Vue.defineAsyncComponent(() => loadModule(`<?= URL?>/components/footer.vue`, options)),
+    Vfooter: Vue.defineAsyncComponent(() => loadModule(`${url}/components/footer.vue`, options)),
   },
   /* template: `
   <h1>{{str}}</h1>

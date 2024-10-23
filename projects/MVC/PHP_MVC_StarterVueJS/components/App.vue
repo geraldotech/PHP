@@ -7,8 +7,6 @@
 </template>
 
 <script setup lang="jsx">
-import Foo from '../src/components/footer.vue'
-import MyHeader from '../src/components/Header.vue'
 
 module.exports = {
    props: ['phpcontent'],
@@ -17,7 +15,7 @@ module.exports = {
   },
   components: {
     MyHeader: Vue.defineAsyncComponent(() =>
-      loadModule("./components/myHeader.vue", options)
+      loadModule(`${url}/components/myHeader.vue`, options)
     ),
     MyCustomBtn: Vue.defineAsyncComponent(() =>
       loadModule("./components/button.vue", options)

@@ -38,6 +38,7 @@
     </ul>
   </nav> 
 
+  <!-- aqui é montado a instancia do App.vue -->
 <div id="template"></div>
 <?php $this->loadViewInTemplate($viewName, $viewData); ?>
 
