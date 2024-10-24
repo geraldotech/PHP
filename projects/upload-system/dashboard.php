@@ -2,8 +2,8 @@
 session_start();
 if (!isset($_SESSION['user_id'])) {
     // User not logged in, redirect to login page
-    header("Location: login.html");
-    exit();
+    //header("Location: login.html");
+   // exit();
 }
 // User is logged in, display dashboard content
 echo "Welcome to the dashboard!";

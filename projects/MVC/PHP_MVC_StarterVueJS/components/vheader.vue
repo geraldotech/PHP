@@ -1,7 +1,9 @@
 <template>
-  <header>
-    <h1>{{ message }}</h1>
-  </header>
+  <div>
+    <header>
+      <h1>{{ message }}</h1>
+    </header>
+  </div>
 </template>
 <script>
 export default {

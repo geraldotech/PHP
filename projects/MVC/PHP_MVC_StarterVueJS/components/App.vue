@@ -1,6 +1,5 @@
 <template>
   <div>
-     <MyHeader/>  
     <p>app.vue</p>
     <MyCustomBtn/> 
   </div>
@@ -14,11 +13,11 @@ module.exports = {
     return {};
   },
   components: {
-    MyHeader: Vue.defineAsyncComponent(() =>
-      loadModule(`${url}/components/myHeader.vue`, options)
+    Myheader: Vue.defineAsyncComponent(() =>
+      loadModule(`${url}/components/vheader.vue`, options)
     ),
     MyCustomBtn: Vue.defineAsyncComponent(() =>
-      loadModule("./components/button.vue", options)
+      loadModule("./components/vbutton.vue", options)
     ),
   },
   methods: {

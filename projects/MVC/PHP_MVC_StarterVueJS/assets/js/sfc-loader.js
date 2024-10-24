@@ -18,4 +18,23 @@ const options = {
   },
 }
 
+/* By Geraldo Costa
+ *  menos verboso e mais fácil de importar components
+ */
+
+/* imports */
+const imports = (path) => {
+  return Vue.defineAsyncComponent(() => loadModule(path, options))
+}
+
+/* auto import com path setado e extensão .vue */
+const autoimports = (componame) => {
+  return Vue.defineAsyncComponent(() => loadModule(`${url}/components/${componame}.vue`, options))
+}
+
+/* autoload + direct inject on app.vue */
+const autoload = (namecompoennt) => {
+  app.component(namecompoennt, autoimports(namecompoennt))
+}
+
 const { loadModule } = window['vue3-sfc-loader']

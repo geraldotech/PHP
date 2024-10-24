@@ -29,9 +29,13 @@ O que significa PHP?
 	<img src="https://github.com/user-attachments/assets/96bd077a-64f0-4d01-bf2e-94e74a040c8b" width='50%' />
 </div>
 
-Verificar informações do php instalado no server:
+Verificar informações do php instalado no server => `echo '<?php phpinfo() ?>' >> info.php`
 
-`$ echo '<?php phpinfo() ?>' >> info.php`
+```php
+echo '<pre>';
+echo 'LOADED EXTENSIONS:<br/>';
+print_r(get_loaded_extensions());
+echo '</pre>';
 
 # echo
 

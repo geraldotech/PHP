@@ -1,8 +1,8 @@
 <div id="games">
   <div>
-  <h1>{{str}}</h1>
-    <About></About>    
+    <h1>{{str}}</h1>
     <Mheader></Mheader>
+    <About></About>    
     <Vfooter message="My Footer"></Vfooter>
   </div>
 </div>
@@ -16,7 +16,8 @@
   components: {
     Mheader: Vue.defineAsyncComponent(() => loadModule(`${url}/components/vheader.vue`, options)),
     About: Vue.defineAsyncComponent(() => loadModule(`<?= URL?>/components/about.vue`, options)),
-    Vfooter: Vue.defineAsyncComponent(() => loadModule(`${url}/components/footer.vue`, options)),
+    // menos verboso e mais fácil de importar components
+    Vfooter: autoimports('footer'), 
   },
   /* template: `
   <h1>{{str}}</h1>

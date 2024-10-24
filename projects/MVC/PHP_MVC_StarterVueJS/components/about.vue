@@ -9,7 +9,7 @@
 <script>
 export default {
     components: {
-    Vbutton: Vue.defineAsyncComponent(() => loadModule(`${url}/components/button.vue`, options)),
+    Vbutton: Vue.defineAsyncComponent(() => loadModule(`${url}/components/vbutton.vue`, options)),
   },
   data() {
     return {}
