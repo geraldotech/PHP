@@ -10,6 +10,4 @@ class gamesController extends Controller {
         exit;
     }
 
- 
-
 }

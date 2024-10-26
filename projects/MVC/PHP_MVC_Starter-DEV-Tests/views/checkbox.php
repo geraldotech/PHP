@@ -1,10 +1,8 @@
 <h2>Checkbox</h2>
 
-
 <form method="POST" action="<?= URL. '/Checkbox/recebidos'  ?>">
 <?php
 foreach($list as $opt): ?>
-
 <ul>
   <li>
   <label for="<?= $opt['idLogin']?>"><?= $opt['nomeUsuario']?></label>
@@ -12,5 +10,5 @@ foreach($list as $opt): ?>
   </li>
  </ul>
 <? endforeach ?>
-<button type="submit">Submit</button>
+  <button type="submit">Submit</button>
 </form>

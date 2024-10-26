@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New document</title>
   <link rel="stylesheet" href="<?= URL . '/assets/css/main.css'?>">
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   
   <!-- VueJS 3 -->
   <script src="https://unpkg.com/vue@3"></script>

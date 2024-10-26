@@ -13,7 +13,6 @@ class CheckboxController extends Controller {
       $data = [];
 
       $res = $this->check->listLogins();
-      //print_r($res);
       if($res['return']){
         $data['list'] = $res['data'];
       }
@@ -27,11 +26,8 @@ class CheckboxController extends Controller {
      $res =  $this->check->handleUpdateUsers($selectedImplo);
      if($res['return']){
 
-     // echo $res['message'];
-      $this->helper->setAlert('success','Favor selecionar ao menos um Grupo','Checkbox/');
+      $this->helper->setAlert('success', $res['message'],'Checkbox/');
 
-     // header("Location" . $_SERVER['REQUEST_URI']);
-     // exit();
      }
     }
 }

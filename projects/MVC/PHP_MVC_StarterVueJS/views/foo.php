@@ -66,9 +66,15 @@ const { createApp, ref, computed, watch, reactive, onMounted } = Vue
         console.log(data)
       })
 
-      fetch(`${url}/Foo/yourEndPoint`).then((req) => req.json()).then(
-        res => getRes.value = res
-        )
+      fetch(`${url}/Foo/minhaAPI_Testes`).then((req) => req.json()).then(
+        res => getRes.value = res)
+
+      // axios
+      axios.get(`${url}/Foo/minhaAPI_Testes`).then(function(response){
+          if(response.status == 200){
+            console.log(response.data)
+          }
+      })
     })
 
     return {

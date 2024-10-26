@@ -19,7 +19,10 @@ class Devtest extends Model {
       //return 'Geraldo Costa';  
 
       try {
-        return array('ok' =>  true, 'data' => $listaPessoas, 'message' => 'Array retornado com sucesso!');
+        return array(
+        'ok' =>  true, 
+        'data' => $listaPessoas, 
+        'message' => 'Array retornado com sucesso!');
 
       }
       catch (Exception $e) {
@@ -150,7 +153,6 @@ class Devtest extends Model {
       }
     }
 
-
     /** 
      * @throws 
      * @return  tryCatch__against_SQL_injections
@@ -214,8 +216,6 @@ class Devtest extends Model {
       if($sql->rowCount() > 0 ){
         return $sql->fetch(); // return um array
       }
-      
-
      }
 
      public function tipoB($idLogin){
@@ -238,12 +238,9 @@ class Devtest extends Model {
            'message' => 'Não encontrei os dados ou ocorreu algum erro'
         ];
       }
-
     }
 
-
-  /*    public function tryCatchFunction($idLogin){
-      
+  /*    public function tryCatchFunction($idLogin){      
       
       try{
       $sql = "SELECT * FROM lgn_logins 
@@ -285,8 +282,6 @@ class Devtest extends Model {
       $sql = "SELECT * FROM lgn_logins 
       WHERE idLogin = :idLogin";
       $stmt = $this->db->prepare($sql);
-
-
       $stmt->bindParam(':idLogin', $idLogin);
       $stmt->execute();
 
@@ -323,9 +318,8 @@ class Devtest extends Model {
 
       try{
 
-       // $sql = "SELECT * FROM lgn_logins  WHERE idLogin = :id";
-        $sql = "SELECT * FROM lgn_logins LIMIT 10";
-
+      // $sql = "SELECT * FROM lgn_logins  WHERE idLogin = :id";
+      $sql = "SELECT * FROM lgn_logins LIMIT 10";
 
       // prepere
        $stmt = $this->db->prepare($sql);
@@ -351,7 +345,6 @@ class Devtest extends Model {
         'message' => 'Não encontrei dados =/'
       ];        
 
-
       } catch(Exception $e){
 
         return [
@@ -359,12 +352,6 @@ class Devtest extends Model {
           'data' => [],
           'message' => "Ocorreu um erro {$e->getMessage()}",
         ];        
-
       }
-
-     }
-
-   
-  
-    
+    }
   }

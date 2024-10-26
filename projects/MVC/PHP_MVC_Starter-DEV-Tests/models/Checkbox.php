@@ -5,10 +5,9 @@ class Checkbox extends Model {
         parent::__construct();
     }
 
-
     public function listLogins(){
-      try{
 
+      try{
         $sql = "SELECT nomeUsuario, is_active, idLogin FROM lgn_logins LIMIT 5";
         $sql = $this->db->query($sql);
 
@@ -42,7 +41,6 @@ class Checkbox extends Model {
       $sql = "UPDATE lgn_logins SET is_active = 0";
       $this->db->query($sql);
 
-
       // atualiza todos
       $updated = "UPDATE lgn_logins SET is_active = 1 WHERE idLogin IN ($users)";
       $updated =  $this->db->query($updated);
@@ -53,10 +51,7 @@ class Checkbox extends Model {
             'message' => 'Dados atualizados com sucesso'
           ];
        }
-
-
     }
-
-  }
+}
 
 

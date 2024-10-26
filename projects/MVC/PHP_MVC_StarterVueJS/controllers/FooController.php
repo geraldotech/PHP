@@ -84,7 +84,7 @@ class FooController extends Controller {
         exit;
     }
 
-    public function yourEndPoint() {   
+    public function minhaAPI_Testes() {   
         $data = [
             [
                 "idLogin" => 2400,

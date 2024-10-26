@@ -4,9 +4,6 @@
         <a href="<?= URL . '/'?>">Home</a>
       </li>
       <li>
-        <a href="<?= URL . '/About' ?>">About</a>
-      </li>
-      <li>
         <a href="<?= URL . '/Devtest' ?>">Devtest</a>
       </li>
       <li>

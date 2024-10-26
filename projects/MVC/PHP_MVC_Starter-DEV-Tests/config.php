@@ -31,15 +31,6 @@ define("DB_PORT",       "3306");
 
 
 /**
- *@deprecated 10/07/2024
-*/
-$config['dbname'] = 'logins';
-$config['host'] = 'db';
-$config['dbuser'] = 'root';
-$config['dbpass'] = 'root';
-$config['PORT'] = 3306;
-
-/**
  * PDO - CONEXAO COM BANCO DE DADOS
  */
 
