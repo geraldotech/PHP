@@ -7,7 +7,7 @@ const app = Vue.createApp({
   components: {
     App: Vue.defineAsyncComponent(() => loadModule(`${url}/components/App.vue`, options)),
   },
-  template: `<App/>`,
+//  template: `<App/>`,
 })
 
-app.mount('#template')
+//app.mount('#template')

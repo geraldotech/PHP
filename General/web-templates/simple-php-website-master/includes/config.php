@@ -9,7 +9,7 @@ function config($key = '')
 {
     $config = [
         'name' => 'Simple PHP Website',
-        'site_url' => 'http://127.0.0.1',
+        'site_url' => 'http://127.0.0.1:8080/PHP/General/web-templates/simple-php-website-master',
         'pretty_uri' => false,
         'nav_menu' => [
             '' => 'Home',

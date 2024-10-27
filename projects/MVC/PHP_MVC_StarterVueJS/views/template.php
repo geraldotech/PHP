@@ -14,7 +14,23 @@
   <!-- VueJS 3 SFC Loader  -->
   <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
   <script src="<?= URL . '/assets/js/sfc-loader.js' ?>"></script> 
-  
+
+  <!-- PrimeVue -->
+  <script src="https://unpkg.com/primevue/umd/primevue.min.js"></script>
+
+  <script src="https://unpkg.com/@primevue/themes/umd/aura.min.js"></script>
+  <script src="https://unpkg.com/@primevue/themes/umd/lara.min.js"></script>
+  <script src="https://unpkg.com/@primevue/themes/umd/nora.min.js"></script>
+
+  <!-- PrimeIcons -->
+ <link
+      href="https://cdn.jsdelivr.net/npm/primeicons/primeicons.css"
+      rel="stylesheet" />
+
+
+      <!-- UnoCSS used by primevue -->
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
+
   <script>
   // consts
   const url = '<?php echo URL ?>'
@@ -47,6 +63,5 @@
 
 
  <script type="module" src="<?= URL . '/assets/js/main.js'?>"></script>
- <script type="module" src="<?= URL . '/assets/js/about.js'?>"></script>
   </body>
 </html>
