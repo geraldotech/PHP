@@ -1,5 +1,5 @@
 <?php
-class ImplodeAndExplode extends Model {
+class Implode extends Model {
 
     public function __construct(){
         parent::__construct();
@@ -23,12 +23,12 @@ class ImplodeAndExplode extends Model {
 
       if($sql){
         return [
-          'return' => true,
+          'ok' => true,
           'message' => 'Dados alterados com sucesso',
         ];
       }
       return [
-        'return' => false,
+        'ok' => false,
         'message' => 'No row was alterado',
       ];
     }

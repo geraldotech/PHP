@@ -7,10 +7,13 @@
         <a href="<?= URL . '/Devtest' ?>">Devtest</a>
       </li>
       <li>
-        <a href="<?= URL . '/ImplodeAndExplode' ?>">Implode And Explode</a>
+        <a href="<?= URL . '/Implode' ?>">Implode</a>
       </li>
       <li>
-        <a href="<?= URL . '/Checkbox' ?>">Checkbox</a>
+        <a href="<?= URL . '/Checkbox' ?>">Checkbox (implode)</a>
+      </li>
+      <li>
+        <a href="<?= URL . '/Explode' ?>">Explode</a>
       </li>
       <li>
         <a href="<?= URL . '/CacheQuery' ?>">CacheQuery</a>

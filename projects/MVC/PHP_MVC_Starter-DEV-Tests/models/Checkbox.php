@@ -37,21 +37,43 @@ class Checkbox extends Model {
     }
 
     public function handleUpdateUsers($users){
-      // desativa todos
+     
+      try{
+         // desativa todos
       $sql = "UPDATE lgn_logins SET is_active = 0";
       $this->db->query($sql);
 
+      // no caso de desativar todos os checkboxs
+      if(empty($users)){
+        return [
+          'ok' => true,
+          'data' => [],
+          'message' => 'Todos os checkbox foram desativados'
+        ];
+      }
       // atualiza todos
       $updated = "UPDATE lgn_logins SET is_active = 1 WHERE idLogin IN ($users)";
       $updated =  $this->db->query($updated);
 
        if($updated->rowCount() > 0){
           return [
-            'return' => true,
+            'ok' => true,
             'message' => 'Dados atualizados com sucesso'
           ];
        }
-    }
+
+       return [
+        'ok' => false,
+        'error' => 'Erro ao atualizar'
+      ];
+
+        }catch(Exception $e){
+          return [
+            'ok' => false,
+            'error' => $e->getMessage()
+        ];
+      } 
+  }
 }
 
 

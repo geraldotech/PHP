@@ -6,7 +6,6 @@ class AxiosController extends Controller {
     }
 
     public function index(){
-
       $this->loadTemplate('axios');
       exit;
     }
@@ -32,7 +31,6 @@ class AxiosController extends Controller {
     public function buscaWithAxios(){
 
       $conf = new Axios();
-
       /* 
       Axios enviar o corpo diretamente como um objeto JavaScript, ele será tratado como JSON, e o PHP não conseguirá interpretá-lo usando $_POST.
 
@@ -55,8 +53,7 @@ class AxiosController extends Controller {
       echo json_encode(['error' => 'ID não foi enviado ou é inválido.']);
       return;
     }
-
-      $res = $conf->fetchUserByAxiosPostTest($id);
-      echo json_encode($res);
+    $res = $conf->fetchUserByAxiosPostTest($id);
+    echo json_encode($res);
     }
 }

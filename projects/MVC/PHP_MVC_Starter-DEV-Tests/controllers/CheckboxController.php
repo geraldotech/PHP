@@ -17,6 +17,7 @@ class CheckboxController extends Controller {
         $data['list'] = $res['data'];
       }
       $this->loadTemplate('checkbox', $data);
+      exit;
     }
 
     public function recebidos(){
@@ -24,10 +25,15 @@ class CheckboxController extends Controller {
       $selectedImplo = implode(',', $selected);
 
      $res =  $this->check->handleUpdateUsers($selectedImplo);
-     if($res['return']){
-
+     if($res['ok']){
+      echo $res['message'];
+      exit;
       $this->helper->setAlert('success', $res['message'],'Checkbox/');
-
      }
+
+     if(!$res['ok']){
+      echo $res['error'];
+     }
+
     }
 }

@@ -1,5 +1,5 @@
 <?php
-class ImplodeAndExplodeController extends Controller {
+class ImplodeController extends Controller {
 
     /* 
     propriedades dinâmicas em PHP 8.2 e versões superiores é considerada deprecated (obsoleta)
@@ -12,32 +12,16 @@ class ImplodeAndExplodeController extends Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->implodeAnd = new ImplodeAndExplode();      
+        $this->implodeAnd = new Implode();      
     }
 
-    public function index() {   
-
-        echo '<hr>';
-        echo '<h2>exemplo explode string</h2>';
-        $dataHoje = "2024-10-07";
-        $explodeData = explode('-', $dataHoje);
-        
-        print_r($explodeData);
-
-
-        echo '<h2>exemplo explode array</h2>';
-        $myArray = ['2024-10-07', '2023-12-25', '2022-08-15'];
-
-        foreach ($myArray as $str) {
-            $exData = explode('-', $str);
-            print_r($exData);
-        }
-        echo '<hr>';
-
-        $this->loadTemplate('implodeAndExplode');   
+    /* === explode === */
+    public function index() {         
+        $this->loadTemplate('implode');   
         exit;
     }
 
+    /* === implode === */
     /* A função implode() no PHP é usada para juntar os elementos de um array em uma única string, usando um delimitador que você especifica. 
     exemplo com in onde deve receber strings.
     */
@@ -68,37 +52,18 @@ class ImplodeAndExplodeController extends Controller {
             echo 'Selecione uma opcao';
             return;
         }
-
         print_r($uids);
         $res = [];
         foreach($uids as $id){
             $res = $this->implodeAnd->setusuarios($id);
+            if($res['ok']){
+                echo $res['message'];
+            }
            // echo "Usuário com ID $id atualizado.\n";            
         }
         echo '<h2>';
-        print_r($res);  
+        print_r($res['ok'] ? $res['message'] : '');  
         echo '</h2>';
         exit;
     }
-
-
-    /**
-     * @return explode + foreach 
-     * @var  A função explode() espera que o segundo argumento seja uma string, e passar um array causará uma falha.
-     * */ 
-    public function examplethree(){
-        $data = $_POST['updateGetUpdate'];
-        //print_r($data);        
-
-        foreach($data as $val){
-            $parts = explode('-', $val);         
-            $a = $val[0];
-            $b = $val[1];
-
-            print_r($a . ' == parts == ' . $b); 
-            echo '<hr>'; 
-            print_r($parts); 
-        }
-    }
-
 }
