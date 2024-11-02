@@ -1,7 +1,7 @@
 <?php
 class CacheQueryController extends Controller {
 
-  private $getcachetest;
+    private $getcachetest;
 
     public function __construct() {
         parent::__construct();

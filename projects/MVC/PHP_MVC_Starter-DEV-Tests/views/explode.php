@@ -57,6 +57,7 @@
   }
 
   // loop list 
+  $list = [1,2,3,4,4];
   foreach($list as $ind => $row){
       print_r("<p>{$row} - {$ind}</p>");  
   }  

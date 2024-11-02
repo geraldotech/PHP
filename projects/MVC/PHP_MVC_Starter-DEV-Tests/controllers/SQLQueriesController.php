@@ -1,21 +1,19 @@
 <?php
-class DevtestController extends Controller {
+class SQLQueriesController extends Controller {
 
     public function __construct() {
         parent::__construct();
         $this->helper = new Helper();
-     
     } 
   
-  /* === Routes === */  
   public function index() {   
 
-    $conf = new Devtest();
+    $conf = new SQLQueries();
     $data = [];
 
     // Check if the instance is valid
-    if ($conf instanceof Devtest) {
-    // echo "Instance validada com sucesso ";
+    if ($conf instanceof SQLQueries) {
+      echo "Instance validada com sucesso ";
     } else {
       echo "Failed to create instance.";
     }
@@ -23,43 +21,6 @@ class DevtestController extends Controller {
     // static string
     $data['name'] = 'Geraldo';
     
-    /**  @see array from model */
-    $lista = $conf->helloPessoas();
-    
-  
-      $data['lista'] = $lista['ok'] ? $lista['data'] : $list['message'];
-  
-
-
-    /** 
-     * @throws consultaLogin
-     * @return  tryCatch
-     * */ 
-    $res = $conf->consultaLogin();
-    $data['consultaLogin'] =  $res;
-
-    
-    /** @return verbose e capturando retornos  */
-    //print_r($data['consultaLogin']['all']);
-    //print_r($data['consultaLogin']['message']);
-
-    // if(!$data['consultaLogin']['return']){
-    //   echo($data['consultaLogin']['message']);
-    //   echo($data['consultaLogin']['error']);
-    // }
-    
-    // if($data['consultaLogin']['return']){
-    //   echo($data['consultaLogin']['message']);
-    //   echo '<hr>';
-    //   print_r($data['consultaLogin']['data']);
-    //   echo '<hr>';
-    //   echo '<h2 style="color: red;">all returns</h2>';
-    //   print_r($data['consultaLogin']);
-    // } 
- 
-    /** @see single return */
-    //print_r($data['consultaLogin']);    
-    //exit; 
 
     /** 
     * @throws consultaLogin2
@@ -93,25 +54,7 @@ class DevtestController extends Controller {
         );
     }
    
-    /** 
-    * @throws isabellaTryCatch
-    * @return  tryCatch
-    * */ 
-
-   $isa = $conf->isabellaTryCatch();
-
-    //get all arr data
-    print_r($isa);
-    print_r("<p>{$isa['message']}</p>");
-
-    // dois modos de verificar se nao tiver data
-    if(!$isa['data']){
-     // echo "<p> {$isa['message']} </p>";
-    }    
-    if(empty($isa['data'])){
-      //echo $isa['message'];
-    }
-
+    
 
     $justStr = 'Leona'; 
     echo "<p> $justStr </p>"; // interpolação de strings
@@ -155,21 +98,8 @@ class DevtestController extends Controller {
     //   print_r($statement['error'] ?? '');
     // }
 
-        /** 
-   * @throws PraticandoQueries
-   * @return  tryCatch__against_SQL_injections
-   * @since 14/09/2024
-   * @author Geraldo Developer dev@geraldox.com
-  * @version 1.0
-  * @var "SELECT * FROM z_sga_param_login WHERE idLogin = '2020032'"
-    * */ 
-
-  $tryCatchFunction = $conf->tryCatchFunction2('2400');
-
-   $data['tryCatchFunction'] = $tryCatchFunction;
-
     // carrega a view
-    $this->loadTemplate('Devtest', $data);   
+    $this->loadTemplate('sqlqueries', $data);   
   }
   
   /* === Routes Aninhadas === */

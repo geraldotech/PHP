@@ -1,17 +1,8 @@
 <?php
-class Devtest extends Model {
+class TryCatchSQL extends Model {
 
     public function __construct(){
         parent::__construct();
-    }
-
-    /** 
-     * @throws consultaSimples
-     * @return  ifRowCount
-    */ 
-    public function consultaSimples(){
-      $sql = $this->db->query("SELECT * FROM lgn_logins LIMIT 5");      
-      return $sql->fetchAll();
     }
 
     function helloPessoas(){
@@ -71,28 +62,7 @@ class Devtest extends Model {
           'message' => 'Ocorreu um erro ao realizar a consulta.'];
       }
     }
-    
-    /** 
-     * @throws consultaLogin2
-     * @return  ifRowCount
-     * */ 
 
-    public function consultaLogin2(){
-      $sql = "SELECT * FROM lgn_logins LIMIT 5";
-      
-      $sql = $this->db->query($sql);
-
-      $array = [];
-      if($sql->rowCount()>0){
-            $array = $sql->fetchAll();
-      }
-      return $array;       
-    }
-
-      /** 
-     * @throws isabellaTryCatch
-     * @return  tryCatch
-     * */ 
 
     public function isabellaTryCatch(){
       
@@ -129,33 +99,13 @@ class Devtest extends Model {
         
     }
     
-     /** 
-     * @throws isabellaCustom
-     * @return  customByGmapdev
-     * */ 
-
-    public function isabellaCustom(){
-      $sql = "SELECT * FROM lgn_logins WHERE idLogin = 23400";
-
-      $sql = $this->db->query($sql);
-
-      if($sql->rowCount() > 0){
-        return [
-          'return' => true,
-          'data' => $sql->fetchAll(),
-        ];
-      } else {
-        return [
-          'return' => false,
-          'data' => [],
-          'message' => 'Sem dados para mostrar'
-        ];
-      }
-    }
-
-    /** 
-     * @throws 
+  /** 
+     * @throws PraticandoQueryes
      * @return  tryCatch__against_SQL_injections
+     * @since 14/09/2024
+     * @author Geraldo Developer dev@geraldox.com
+    * @version 1.0
+    * @var "SELECT * FROM lgn_logins WHERE idLogin = '2020032'"
      * */ 
 
     public function against_SQL_injections($id, $cpf) {
@@ -198,49 +148,7 @@ class Devtest extends Model {
       }
   }
 
-
-    /** 
-     * @throws PraticandoQueryes
-     * @return  tryCatch__against_SQL_injections
-     * @since 14/09/2024
-     * @author Geraldo Developer dev@geraldox.com
-    * @version 1.0
-    * @var "SELECT * FROM lgn_logins WHERE idLogin = '2020032'"
-     * */ 
-
-     public function tipoA($idLogin){
-      $sql = "SELECT * FROM lgn_logins 
-      WHERE idLogin = '$idLogin'";
-
-      $sql = $this->db->query($sql);
-      if($sql->rowCount() > 0 ){
-        return $sql->fetch(); // return um array
-      }
-     }
-
-     public function tipoB($idLogin){
-      
-      $sql = "SELECT * FROM lgn_logins 
-      WHERE idLogin = '$idLogin'";
-
-      $sql = $this->db->query($sql);
-
-      if($sql->rowCount() > 0){
-        return [
-          'return' => true,
-           'data' => $sql->fetchAll()
-        ];
-      } else {
-        // generic error
-        return [
-          'return' => false,
-           'data' => [],
-           'message' => 'Não encontrei os dados ou ocorreu algum erro'
-        ];
-      }
-    }
-
-  /*    public function tryCatchFunction($idLogin){      
+      public function tryCatchFunction($idLogin){      
       
       try{
       $sql = "SELECT * FROM lgn_logins 
@@ -274,9 +182,9 @@ class Devtest extends Model {
         ];
 
       }
-     }  */
-/*      public function tryCatchFunction($idLogin){
-      
+     }  
+     
+     public function tryCatchFunction2($idLogin){      
       
       try{
       $sql = "SELECT * FROM lgn_logins 
@@ -288,14 +196,14 @@ class Devtest extends Model {
       // encontrei os dados 😁
       if($stmt->rowCount() > 0){
         return [
-          'return' => true,
+          'ok' => true,
           'data' => $stmt->fetchAll(PDO::FETCH_ASSOC),
           'message' => 'Encontrei os dados 😁'
         ];
       };
     // Não encontrei os dados 😒
       return [
-        'return' => false,
+        'ok' => false,
         'data' => [],
         'message' => 'Não encontrei os dados 😒',
   
@@ -312,9 +220,9 @@ class Devtest extends Model {
         ];
 
       }
-     }  */
+     }  
 
-     public function tryCatchFunction2($id){
+     public function tryCatchFunction3($id){
 
       try{
 

@@ -29,7 +29,6 @@ define("DB_PASSWORD",   "root");
 define("DB_PORT",       "3306");
 
 
-
 /**
  * PDO - CONEXAO COM BANCO DE DADOS
  */
