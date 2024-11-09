@@ -32,14 +32,16 @@ class AxiosController extends Controller {
 
       $conf = new Axios();
       /* 
-      Axios enviar o corpo diretamente como um objeto JavaScript, ele será tratado como JSON, e o PHP não conseguirá interpretá-lo usando $_POST.
+      🔖Axios envia o corpo diretamente como um objeto JavaScript, ele será 
+      tratado como JSON, e o PHP não conseguirá interpretá-lo usando $_POST.
 
       se front enviar usando o objeto usando:
+
       new URLSearchParams({
         id: '2400', // Enviado como string
       })
 
-      agora sim o PHP interpreta os $_POST[']
+      ai sim o PHP interpreta os $_POST[']
 
       ====================
       preferir enviar JSON no corpo da requisição, configure o PHP para decodificá-lo com file_get_contents
@@ -48,11 +50,11 @@ class AxiosController extends Controller {
       $data = json_decode(file_get_contents('php://input'), true);
       $id = $data['id'] ?? null;
 
-       // Verifica se o 'id' foi enviado e não está vazio
-    if (empty($id)) {
-      echo json_encode(['error' => 'ID não foi enviado ou é inválido.']);
-      return;
-    }
+      // Verifica se o 'id' foi enviado e não está vazio
+      if (empty($id)) {
+        echo json_encode(['error' => 'ID não foi enviado ou é inválido.']);
+        return;
+      }
     $res = $conf->fetchUserByAxiosPostTest($id);
     echo json_encode($res);
     }

@@ -16,8 +16,17 @@ class ImplodeController extends Controller {
     }
 
     /* === explode === */
-    public function index() {         
-        $this->loadTemplate('implode');   
+    public function index() {       
+        $data = []; 
+
+        // fazendo consulta aqui para exemplo apenas, a boa pratica seria fazer apenas na model
+        $sql = "SELECT * FROM lgn_logins";
+        $sql = $this->db->query($sql);
+        if($sql->rowCount() > 0){
+            $data['logins'] = $sql->fetchAll();
+        }      
+       
+        $this->loadTemplate('implode', $data);   
         exit;
     }
 
@@ -25,7 +34,7 @@ class ImplodeController extends Controller {
     /* A função implode() no PHP é usada para juntar os elementos de um array em uma única string, usando um delimitador que você especifica. 
     exemplo com in onde deve receber strings.
     */
-    public function filtrausuarios(){
+    public function filtrausuarios(): void {
         $userid = isset($_POST['userid']) ? $_POST['userid'] : [];
 
         if(!empty($userid)){
@@ -42,28 +51,46 @@ class ImplodeController extends Controller {
     }
 
     /**
-     * @return A função implode() + foreach chama a FN para cada value
+     * @return void
+     * @throws A função implode() + foreach chama a FN para cada value
     */
-    public function setusuarios(){
+    public function setusuarios(): void {
         $uids = isset($_POST['uid']) ? $_POST['uid'] : [];
+        $newTotvs = isset($_POST['newTotvs']) ? $_POST['newTotvs'] : [];
 
-        // tratando o empty no inicio e return.
-        if(empty($uids)){
-            echo 'Selecione uma opcao';
-            return;
+        
+        $uncheckall = isset($_POST['uncheckall']) ? 1 : null;
+        //confirmar que $uncheckall sempre será tratado como um valor booleano, outra opção seria:
+       // $uncheckall = !empty($_POST['uncheckall']);
+
+    
+        // Verifica se nenhuma opção foi selecionada e não há o uncheckall
+        if (empty($uids) && !$uncheckall) {
+            echo 'Selecione uma opcao';   return;    
         }
-        print_r($uids);
+
         $res = [];
-        foreach($uids as $id){
-            $res = $this->implodeAnd->setusuarios($id);
-            if($res['ok']){
-                echo $res['message'];
+    
+        // Se o uncheckall estiver definido, executa a lógica sem precisar de $uids
+        if ($uncheckall) {
+            $res = $this->implodeAnd->setusuarios(null, $newTotvs, $uncheckall);
+            if ($res['ok']) {
+               // echo $res['message'];
             }
-           // echo "Usuário com ID $id atualizado.\n";            
+        } else {
+            // Executa o loop para cada ID em $uids
+            foreach ($uids as $id) {
+                $res = $this->implodeAnd->setusuarios($id, $newTotvs, $uncheckall);
+                if ($res['ok']) {
+                  //  echo $res['message'];
+                }
+            }
         }
+
         echo '<h2>';
-        print_r($res['ok'] ? $res['message'] : '');  
+        print_r($res);  
         echo '</h2>';
         exit;
     }
+    
 }

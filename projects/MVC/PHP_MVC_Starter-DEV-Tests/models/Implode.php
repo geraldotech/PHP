@@ -15,10 +15,24 @@ class Implode extends Model {
       return [];
     }
 
-    // setar todos null 
-    //UPDATE z_sga_param_login SET idTotovs = NULL WHERE idLogin in (2400, 6969)
-    public function setusuarios($id){
-      $sql = "UPDATE lgn_logins SET idTotovs = '123' WHERE idLogin = $id";
+      /** 
+     * UPDATE SEM WHERE!!!  
+     * para setar todos null => UPDATE lgn_logins SET idTotovs = NULL WHERE idLogin in (2400, 6969)
+     * @return Array
+     * */ 
+    public function setusuarios(string $id = null, string $newTotvs = null, bool $uncheckall = null): Array {
+
+      if($uncheckall){
+        $qty = "UPDATE lgn_logins SET idTotovs = NULL";
+        $qty = $this->db->query($qty);
+
+        return [
+          'ok' => true,
+          'message' => 'Todos os logins setados para NULL'
+        ];
+      }
+
+      $sql = "UPDATE lgn_logins SET idTotovs = '$newTotvs' WHERE idLogin = $id";
       $sql = $this->db->query($sql);
 
       if($sql){

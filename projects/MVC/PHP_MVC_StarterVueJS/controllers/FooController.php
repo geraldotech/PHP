@@ -157,7 +157,12 @@ class FooController extends Controller {
             ]
         ];
         
-        echo json_encode($data);
+       echo json_encode([
+        'ok' => true,
+        'data'=> $data
+       ]);
+
+    
     }
 
  

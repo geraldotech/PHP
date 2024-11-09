@@ -66,8 +66,17 @@ const { createApp, ref, computed, watch, reactive, onMounted } = Vue
         console.log(data)
       })
 
-      fetch(`${url}/Foo/minhaAPI_Testes`).then((req) => req.json()).then(
-        res => getRes.value = res)
+      fetch(`${url}/Foo/minhaAPI_Testes`)
+  .then((req) => req.json())  // Parse the response as JSON
+  .then((res) => {
+    if(res.ok){
+      console.log(res.data)
+    }
+  } )  // Log the parsed JSON data
+  .catch((error) => {
+    console.error("Error fetching data:", error);  // Handle any errors
+  });
+
 
       // axios
       axios.get(`${url}/Foo/minhaAPI_Testes`).then(function(response){
