@@ -8,11 +8,6 @@ class Test implements Interface1 {
   }
 }
 
-
 $test = new Test;
-
-
 $test->PrintonScreen('Hello World')
-
-
 ?>
