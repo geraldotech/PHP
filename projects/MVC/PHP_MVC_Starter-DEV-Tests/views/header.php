@@ -25,12 +25,13 @@
         <li>
           <a href="<?= URL . '/TXTControl' ?>">TXTControl</a>
         </li>
-      </ul>
-      
-      <ul>
         <li>
           <a href="<?= URL . '/Insertsave' ?>">INSERT and addslashes</a>
         </li>
-      </ul>
+        <li>
+          <a href="<?= URL . '/VueJS' ?>">VueJS</a>
+        </li>
+      </ul>      
+       
   </nav> 
 </header>

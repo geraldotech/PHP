@@ -9,11 +9,11 @@ class InsertsaveController extends Controller {
         $this->insertData = new Insert();
     }
 
-    public function index() {   
+    public function index(): void {   
     $data = [];    
     $data['list'] = $this->insertData->listaAnotacoes();
     $this->loadTemplate('insert', $data);   
-    exit;
+    return;
     }   
 
     /* 
