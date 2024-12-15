@@ -18,7 +18,7 @@
   <?php 
   
   // #1 explode string to array usando espaço como delimitador 
-  $str = "Geraldo Costa Filho"; print_r($str); 
+  $str = "Geraldo Costa Filho";// print_r($str); 
   $gpexplode = explode(" ", $str); print_r($gpexplode); 
 
   // loop em cada item para o h2
@@ -56,11 +56,15 @@
       print_r($exData);
   }
 
+  echo '<hr>';
+
   // loop list 
   $list = [1,2,3,4,4];
   foreach($list as $ind => $row){
       print_r("<p>{$row} - {$ind}</p>");  
   }  
+  
+  echo '<hr>';
 
   // #6 explode direct on string
   $url = 'site.com/geraldo';

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Cancelar event</button>
+    <div id="res"></div>
+
+
+    <script>
+      const cancel = document.querySelector('button')
+      const eventSource = new EventSource('hora.php')
+
+      // Define um manipulador para mensagens gerais
+      eventSource.onmessage = function (e) {
+        console.log(e)
+        const msn = JSON.parse(e.data)
+        console.log('Mensagem recebida:', msn)
+      }
+
+    //   eventSource.addEventListener('horario', (e) => {
+    //     console.log(e)
+    //     document.querySelector('#res').innerHTML += `<p>${e.data}</p>`
+    //   })
+
+    //   eventSource.addEventListener('complete', (event) => {
+    //     console.log(`Conexão encerrada: ${event.data}`)
+    //     eventSource.close() // Fecha explicitamente a conexão
+    //     document.querySelector('#res').innerHTML += `<p>${event.data}</p>`
+    //   })
+
+
+    //   /* o retorno deve usar JSON.parse devido conter informacoes adicionais no data */
+    //   eventSource.addEventListener('errocarga', (event) => {
+    //     const str = JSON.parse(event.data);
+    //     console.error(`Erro recebido: ${str.message}`);
+    //     console.error(`Erro adicional: ${str.adicional}`);
+    //     document.querySelector('#res').innerHTML += `<p>${str.message}</p>`
+    //     eventSource.close(); // Fecha a conexão SSE
+    // });
+
+
+      eventSource.onerror = function (e) {
+        console.error('Erro de conexão ou no servidor:', e)
+        eventSource.close() // Fecha a conexão em caso de erro
+      }
+
+      eventSource.onopen = function () {
+        console.log('Connection to server opened.')
+      }
+
+      cancel.onclick = function () {
+        console.log('Connection closed')
+        eventSource.close()
+      }
+    </script>
+  </body>
+</html>

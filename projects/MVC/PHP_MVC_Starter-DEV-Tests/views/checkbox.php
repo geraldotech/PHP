@@ -1,4 +1,10 @@
 <h2>Checkbox</h2>
+<div class="row">
+     <div class="col-md-12"><?php $this->helper->alertMessage(); ?></div>
+
+</div>
+
+<hr>
 
 <form method="POST" action="<?= URL. '/Checkbox/recebidos'  ?>">
 <?php

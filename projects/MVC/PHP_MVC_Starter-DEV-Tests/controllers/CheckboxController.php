@@ -26,8 +26,8 @@ class CheckboxController extends Controller {
 
      $res =  $this->check->handleUpdateUsers($selectedImplo);
      if($res['ok']){
-      echo $res['message'];
-      exit;
+    //  echo $res['message'];
+      //exit;
       $this->helper->setAlert('success', $res['message'],'Checkbox/');
      }
 

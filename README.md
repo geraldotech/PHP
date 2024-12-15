@@ -753,3 +753,13 @@ for($i = 0 ; $i < 10; $i++):
 [https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver)
 
 - Windows: variáveis de ambiente > choose: "C:\Program Files (x86)\Common Files\Oracle\Java\javapath" click edit > "novo" > add "C:\php" > restart VSCode
+
+
+# UPDATE XAMPP para última versão do PHP.
+
+
+1 - Usar a última versão do PHP do [ZeroXV Modules](https://sourceforge.net/projects/miniserver/files/Uniform%20Server%20ZeroXV/ZeroXV%20Modules/)
+
+2 - Baixar o PHP(Thread Safe que o XAMPP usa) mais atualizado em https://windows.php.net/downloads/releases/ (php-8.3.14-Win32-vs16-x64.zip) copiar o arquivos para dentro da pasta do php do xampp.
+
+- Refs https://github.com/ApacheFriends/xampp-build/issues/35 
