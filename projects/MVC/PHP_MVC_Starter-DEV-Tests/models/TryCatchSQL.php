@@ -17,7 +17,7 @@ class TryCatchSQL extends Model {
 
       }
       catch (Exception $e) {
-        return array('ok' => false, 'error' => $e->getMessage(), 'message' => 'Ocorrei algum erro!');
+        return array('ok' => false, 'error' => $e->getMessage(), 'message' => 'Ocorreu um erro!');
       }
 
     }

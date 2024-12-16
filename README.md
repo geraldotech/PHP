@@ -760,6 +760,6 @@ for($i = 0 ; $i < 10; $i++):
 
 1 - Usar a última versão do PHP do [ZeroXV Modules](https://sourceforge.net/projects/miniserver/files/Uniform%20Server%20ZeroXV/ZeroXV%20Modules/)
 
-2 - Baixar o PHP(Thread Safe que o XAMPP usa) mais atualizado em https://windows.php.net/downloads/releases/ (php-8.3.14-Win32-vs16-x64.zip) copiar o arquivos para dentro da pasta do php do xampp.
+2 - Baixar a versão mais recente do PHP (Thread Safe, compatível com o XAMPP) em https://windows.php.net/downloads/releases/ (exemplo: php-8.3.14-Win32-vs16-x64.zip) e copiar os arquivos para a pasta php do XAMPP.
 
 - Refs https://github.com/ApacheFriends/xampp-build/issues/35 
