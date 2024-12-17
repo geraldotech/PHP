@@ -24,10 +24,8 @@ class ImplodeController extends Controller {
         $sql = $this->db->query($sql);
         if($sql->rowCount() > 0){
             $data['logins'] = $sql->fetchAll();
-        }      
-       
-        $this->loadTemplate('implode', $data);   
-        exit;
+        }       
+        $this->loadTemplate('implode', $data); return;
     }
 
     /* === implode === */
@@ -45,6 +43,7 @@ class ImplodeController extends Controller {
             echo '</h3>';
             echo '<hr>';       
             print_r($imploUser);
+            
             return; // aqui acaba função
         } 
         echo "<h1>Selecionar um user</h1>";            

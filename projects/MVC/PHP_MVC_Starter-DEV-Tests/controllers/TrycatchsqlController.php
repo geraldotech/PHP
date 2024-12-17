@@ -10,11 +10,9 @@ class TrycatchsqlController extends Controller {
     
     $conf = new TryCatchSQL();
     /**  @see array from model */
-    $lista = $conf->helloPessoas();
-    
+    $lista = $conf->helloPessoas();    
   
     $data['lista'] = $lista['ok'] ? $lista['data'] : $list['message'];
-
 
     /** 
      * @throws consultaLogin

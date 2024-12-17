@@ -13,14 +13,13 @@ class SQLQueriesController extends Controller {
 
     // Check if the instance is valid
     if ($conf instanceof SQLQueries) {
-      echo "Instance validada com sucesso ";
+      $this->helper->setAlert('success', 'Instance validada com sucesso','');
     } else {
       echo "Failed to create instance.";
     }
 
     // static string
-    $data['name'] = 'Geraldo';
-    
+    $data['name'] = 'Geraldo';    
 
     /** 
     * @throws consultaLogin2
@@ -53,8 +52,7 @@ class SQLQueriesController extends Controller {
             '' // Texto adicional (vazio neste caso)
         );
     }
-   
-    
+     
 
     $justStr = 'Leona'; 
     echo "<p> $justStr </p>"; // interpolação de strings

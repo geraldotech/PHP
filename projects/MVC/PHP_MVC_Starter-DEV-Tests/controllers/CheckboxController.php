@@ -5,7 +5,7 @@ class CheckboxController extends Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->helper = new Helper();
+       // $this->helper = new Helper();
         $this->check = new Checkbox();
     }
     

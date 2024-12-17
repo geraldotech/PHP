@@ -1,6 +1,10 @@
 <?php
 class Controller {
 
+	/**
+	*  @var $helper - new Helper();
+	*/
+
 	protected $helper;
 	protected $db;
 	protected $config;
@@ -12,6 +16,7 @@ class Controller {
 
 
 		$this->db = $db;
+		$this->helper = new Helper();
 	}
 	
 	public function loadView($viewName, $viewData = array()) {
@@ -21,7 +26,6 @@ class Controller {
 	}
 
 	public function loadTemplate($viewName, $viewData = array()) {	
-
 		include 'views/template.php';
 	}
 

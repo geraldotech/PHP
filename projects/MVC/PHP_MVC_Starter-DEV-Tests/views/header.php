@@ -23,7 +23,7 @@
           <a href="<?= URL . '/CacheQuery' ?>">CacheQuery</a>
         </li>
         <li>
-          <a href="<?= URL . '/TXTControl' ?>">TXTControl</a>
+          <a href="<?= URL . '/Createini' ?>">Createini</a>
         </li>
         <li>
           <a href="<?= URL . '/Insertsave' ?>">INSERT and addslashes</a>

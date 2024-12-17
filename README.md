@@ -752,7 +752,7 @@ for($i = 0 ; $i < 10; $i++):
 
 [https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver)
 
-- Windows: variáveis de ambiente > choose: "C:\Program Files (x86)\Common Files\Oracle\Java\javapath" click edit > "novo" > add "C:\php" > restart VSCode
+- Windows: variáveis de ambiente > choose: `"C:\Program Files (x86)\Common Files\Oracle\Java\javapath"` click edit > "novo" > add "C:\php" > restart VSCode
 
 
 # UPDATE XAMPP para última versão do PHP.

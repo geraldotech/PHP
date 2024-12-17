@@ -53,3 +53,9 @@ body {
       }
     }
 } */
+
+.alert-success{
+  background-color: #02b680;
+  color: #fff;
+  border-radius: 10px;
+}

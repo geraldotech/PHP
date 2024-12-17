@@ -1,5 +1,5 @@
 <?php
-class TXTControlController extends Controller {
+class CreateiniController extends Controller {
 
     public function __construct() {
         parent::__construct();
