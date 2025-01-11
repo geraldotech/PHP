@@ -3,16 +3,7 @@
 
 //Set an filename
 
-$filename = 'os.txt';
 
-
-//Check the file exists or not
-
-if (!file_exists($filename)) {
-
-    echo 'File does not exist.';
-
-}
 
 //Check the file has the read permission or not
 
@@ -22,11 +13,7 @@ else if (!is_readable($filename)) {
 
 }
 
-//Print the entire content of the file
 
-else
-
-    echo file_get_contents($filename);
 
 ?>
 

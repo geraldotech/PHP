@@ -1,5 +1,7 @@
 <?php 
  
+
+ /* REMOVER DIRETORIOS */
  // create
  //mkdir('pasta');
 
@@ -10,7 +12,4 @@
 
  // delete
  rmdir('pasta');
-
-
-
 ?>
