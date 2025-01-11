@@ -10,11 +10,10 @@ class TryCatchSQL extends Model {
       //return 'Geraldo Costa';  
 
       try {
-        return array(
+        return [
         'ok' =>  true, 
         'data' => $listaPessoas, 
-        'message' => 'Array retornado com sucesso!');
-
+        'message' => 'Array retornado com sucesso!'];
       }
       catch (Exception $e) {
         return array('ok' => false, 'error' => $e->getMessage(), 'message' => 'Ocorreu um erro!');
@@ -55,7 +54,6 @@ class TryCatchSQL extends Model {
       
       } catch (Exception $e) {
 
-       // Tratamento de erro com mensagem apropriada
         return [
           'ok' => false, 
           'error' => $e->getMessage(), 
@@ -201,7 +199,7 @@ class TryCatchSQL extends Model {
           'message' => 'Encontrei os dados 😁'
         ];
       };
-    // Não encontrei os dados 😒
+      // Não encontrei os dados 😒
       return [
         'ok' => false,
         'data' => [],
