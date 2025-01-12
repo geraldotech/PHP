@@ -12,7 +12,6 @@ Awesome youtube channel about HTML/CSS/JS/PHP:
 
 PHP é uma linguagem de programação voltada para o desenvolvimento de aplicados para web, muito usado na stack back-end. Sites como o Wordpress.org, Facebook entre outros usam PHP. Para mim tem um significado nostalgico ao mexer com PHP, aqui vai uma lembraça de 2006 quando jogava MuGNN e no site de vez em quando aparecia alguns erros do tipo `error on line...` coisas que agente nunca esquece, naquela época nem pensava em ser developer.
 
-
 O que significa PHP?
 
 - Antigamente Personal Home Page hoje em dia Hypertext Preprocessor
@@ -31,7 +30,7 @@ O que significa PHP?
 
 Verificar informações do php instalado no server => `echo '<?php phpinfo() ?>' >> info.php`
 
-```php
+````php
 echo '<pre>';
 echo 'LOADED EXTENSIONS:<br/>';
 print_r(get_loaded_extensions());
@@ -45,7 +44,7 @@ Crie um novo documento e salve como `index.php`
 <?php
 echo "Hello";
 ?>
-```
+````
 
 - Variables:
 
@@ -54,6 +53,8 @@ echo "Hello";
 $nome = "Geraldo";
 
 echo $nome;
+
+var_dump($nome);
 
 ?>
 
@@ -303,12 +304,10 @@ print_r(consulta());
 
 ### Tipos de parâmetros e retorno
 
- Desde o PHP 7, você pode (e é recomendado) especificar tipos de parâmetros e tipos de retorno para melhorar a segurança e a legibilidade do código. Isso se chama type hinting. Abaixo estão alguns exemplos e uma explicação detalhada. 
+Desde o PHP 7, você pode (e é recomendado) especificar tipos de parâmetros e tipos de retorno para melhorar a segurança e a legibilidade do código. Isso se chama type hinting. Abaixo estão alguns exemplos e uma explicação detalhada.
 
 - `string $eventName:` O parâmetro $eventName deve ser uma string. Se for passado um valor de outro tipo, o PHP lançará um erro.
 - `int $limit` = 10: O parâmetro $limit deve ser um inteiro, com o valor padrão de 10 se não for passado nenhum argumento.
-
-
 
 ```php
 
@@ -316,7 +315,7 @@ public function eventCurrentInterval(string $eventName, int $limit = 10): int {
     // Lógica do método
 }
 
-// Forçar um erro mais rigoroso com o modo estrito. 
+// Forçar um erro mais rigoroso com o modo estrito.
 // Adicione a seguinte linha no topo do seu código:
 declare(strict_types=1); // Ativa o modo estrito
 
@@ -373,7 +372,7 @@ echo formatarNumero(100); // Exibe 100.00
 // Null e ? para Parâmetros Opcionais
 
 function exibirIdade(?int $idade = null) {
-  if ($idade === null) { 
+  if ($idade === null) {
       echo "Idade não informada.";
   } else {
       echo "Idade: $idade";
@@ -385,9 +384,6 @@ exibirIdade(25); // Exibe "Idade: 25"
 
 
 ```
-
-
-
 
 ### Arrays
 
@@ -556,19 +552,6 @@ $list = [
 
 ```
 
-### Server and execution environment information
-
-```php
- echo $_SERVER['SERVER_NAME']; // localhost
- echo '<br>';
- echo $_SERVER['PHP_SELF']; // local/aulas_curso_php/test.php
- echo '<br>';
- echo $_SERVER['DOCUMENT_ROOT']; // C:/xampp/htdocs
- echo '<br>';
- echo($_SERVER); // ❌Warning: Array to string conversion in
- print_r($_SERVER); ✅// mostra todas as var dentro da var - large output
-```
-
 ### PHP GET URL Params
 
 ```php
@@ -576,7 +559,7 @@ $list = [
   $params = $_GET['post_id'];
    echo $params;
 
-  // access http://localhost/test.php?post_id=343434
+// access http://localhost/test.php?post_id=343434
 
 
 // getl all params file.php?geraldo
@@ -754,12 +737,10 @@ for($i = 0 ; $i < 10; $i++):
 
 - Windows: variáveis de ambiente > choose: `"C:\Program Files (x86)\Common Files\Oracle\Java\javapath"` click edit > "novo" > add "C:\php" > restart VSCode
 
-
 # UPDATE XAMPP para última versão do PHP.
-
 
 1 - Usar a última versão do PHP do [ZeroXV Modules](https://sourceforge.net/projects/miniserver/files/Uniform%20Server%20ZeroXV/ZeroXV%20Modules/)
 
 2 - Baixar a versão mais recente do PHP (Thread Safe, compatível com o XAMPP) em https://windows.php.net/downloads/releases/ (exemplo: php-8.3.14-Win32-vs16-x64.zip) e copiar os arquivos para a pasta php do XAMPP.
 
-- Refs https://github.com/ApacheFriends/xampp-build/issues/35 
+- Refs https://github.com/ApacheFriends/xampp-build/issues/35

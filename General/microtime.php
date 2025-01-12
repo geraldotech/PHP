@@ -4,7 +4,7 @@ $start_time = microtime(true); // Marca o início do processo
 echo "<p>Iniciou em $start_time</p>";
 
 // Simulação de um processo (10 segundos)
-sleep(10);
+sleep(5);
 
 $end_time = microtime(true);
 
