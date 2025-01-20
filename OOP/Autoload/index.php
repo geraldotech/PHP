@@ -1,6 +1,5 @@
 <?php 
- // serve para para classes
- 
+ // serve para para classes 
  
  // mais organizado, function movida para config.php
  include('config.php');
@@ -13,7 +12,6 @@
 spl_autoload_register('myautoload'); */
 
 new Utilidades();
-
 
 ?> 
 <!DOCTYPE html>

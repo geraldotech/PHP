@@ -20,6 +20,7 @@
   // #1 explode string to array usando espaço como delimitador 
   $str = "Geraldo Costa Filho";// print_r($str); 
   $gpexplode = explode(" ", $str); print_r($gpexplode); 
+  echo '<br>';
 
   // loop em cada item para o h2
   foreach($gpexplode as $i => $val){

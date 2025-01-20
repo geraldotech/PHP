@@ -36,7 +36,7 @@ class TryCatchSQL extends Model {
           if($sql->rowCount()>0){
         
         // Busca todos os resultados
-        $data = $sql->fetchAll();
+        $data = $sql->fetchAll(PDO::FETCH_ASSOC);
        
             return [
               'ok' => true, 
@@ -69,7 +69,7 @@ class TryCatchSQL extends Model {
         WHERE idLogin = '2020032'";
         $query = $this->db->query($query);
        
-        $data = $query->fetchAll();
+        $data = $query->fetchAll(PDO::FETCH_ASSOC);
        
         if($query->rowCount() > 0){
 

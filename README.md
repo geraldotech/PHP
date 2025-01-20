@@ -19,7 +19,7 @@ O que significa PHP?
 # PHP + Windows
 
 - [x] Baixar o PHP
-- [x] Escolha um local fixo (exemplo C:/App/PHP)
+- [x] Escolha um local fixo (`exemplo C:/App/PHP`)
 - [x] Adicionar às variáveis de ambiente do sistema
 - [x] Run o Built-in web server dentro na raiz do seu projeto: `php -S localhost:8000`
 - [x] Run php files: `$ php runit.php`
