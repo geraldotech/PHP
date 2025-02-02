@@ -682,6 +682,26 @@ if(10 > 45)
 echo "sim";
 return;
 echo "nao";
+
+
+// if alternativo com foreach alternativo
+<?php  if($periodos['ok']): ?>
+     <div class="form-group">
+       <label for="">Selecione o período:</label>
+       <select          
+         id="periodo"
+         class="form-control">
+         <option>- Selecionar Período - </option>
+         <?php foreach ($periodos['data'] as $periodo): ?>
+         <option value="<?= $periodo['a_periodo']; ?>">
+           Perído:<?= $periodo['a_periodo']; ?> - inserido em: <?= $periodo['a_inserido_em']; ?>
+         </option>
+         <?php endforeach; ?>
+       </select>
+     </div>
+<?php else: ?>
+      <h2>Sem históricos!</h2>
+<?php endif ?>
 ```
 
 # switch
