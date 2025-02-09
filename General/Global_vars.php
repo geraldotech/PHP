@@ -23,7 +23,6 @@ if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     echo "<h2>Sistema Operacional: Linux/Unix</h2>";
 }
 
-
 /* Returns information about the operating system PHP is running on */
 echo "<h1>php_uname</h1>";
 echo php_uname();
@@ -32,6 +31,14 @@ $parts = explode(' ',  php_uname());
 print_r($parts);
 echo '<br>';
 print_r($parts[0]);
+
+echo php_uname('s'). '<br>'; // → Nome do sistema (Linux, Windows NT)
+echo php_uname('n'). 'host<br>'; // → Nome do host
+echo php_uname('r'). '<br>'; // → Versão do kernel
+echo php_uname('v'). '<br>'; // → Build do SO
+echo php_uname('m'). '<br>'; // → Arquitetura (x86_64, AMD64)
+
+echo "<hr>";
 
 echo "<h1>SESSION</h1>";
 echo '<br>';
