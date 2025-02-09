@@ -38,6 +38,10 @@ echo php_uname('r'). '<br>'; // → Versão do kernel
 echo php_uname('v'). '<br>'; // → Build do SO
 echo php_uname('m'). '<br>'; // → Arquitetura (x86_64, AMD64)
 
+// PHP 7.2+
+echo PHP_OS_FAMILY;
+
+
 echo "<hr>";
 
 echo "<h1>SESSION</h1>";
