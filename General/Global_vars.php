@@ -32,7 +32,7 @@ print_r($parts);
 echo '<br>';
 print_r($parts[0]);
 
-echo php_uname('s'). '<br>'; // → Nome do sistema (Linux, Windows NT)
+echo php_uname('s'). '<br>'; // → Nome do sistema (Linux, Windows NT) 
 echo php_uname('n'). 'host<br>'; // → Nome do host
 echo php_uname('r'). '<br>'; // → Versão do kernel
 echo php_uname('v'). '<br>'; // → Build do SO
