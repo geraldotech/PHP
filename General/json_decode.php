@@ -23,3 +23,4 @@ $_SESSION['sistema'] = $id_sistema == 1 ? 'D' : 'P';
 
 
 print_r($_SESSION);
+

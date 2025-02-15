@@ -30,7 +30,24 @@ $x = 0;
 do{
     echo 'hello';
     $x++;
-}while($x < 10)
+}while($x < 10);
 
 
-?>
+
+$fluxos = [
+    ['idFluxo' => 1, 'desc' => 'lorem 1'],
+    ['idFluxo' => 2, 'desc' => 'lorem 2'],
+    ['idFluxo' => 3, 'desc' => 'lorem 3'],
+    ['idFluxo' => 4, 'desc' => 'lorem 4'],
+    ['idFluxo' => 9, 'desc' => 'lorem 9'],
+];
+
+foreach ($fluxos as $fluxo) {
+    // apenas 9 é permitido
+    if ($fluxo['idFluxo'] != 9) continue;
+
+    echo "<h2>Fluxo permitido: ID " . $fluxo['idFluxo'] . "</h2>";
+}
+
+
+?> 
