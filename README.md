@@ -438,120 +438,6 @@ echo $opcoes[5]['cha1']['key1'];
 
 ```
 
-## Array + foreach
-
-```php
-
-$papelaria = array('livros',' canetas',' lapis',' papel oficio');
-
-foreach ($papelaria as $key => $value) {
-  echo "<ul><li>$value</li></ul>";
-}
-
-// filter strlen
-foreach($papelario as $key => $value){
-  if(strlen($value) >= 5){
-    echo $value;
-  }
-}
-
-
-$lista = [1,2,3,4,5];
-foreach($lista as  $value){
-  echo $value;
-}
- // Indexed arrays without key https://www.php.net/manual/en/language.types.array.php
-$arr = array("foo", "menu", "bar");
-
-foreach($arr as $item){
-  echo "<h2>".$item."</h2>";
-}
-
-// or
-
-foreach($arr as $i) : echo "<h2>".$i."<h2>";
-endforeach;
-
-$meuArr = ['Geraldo'];
-$meuArr[1] = ['Isabella'];
-$meuArr['key02'] = ['Devs'];
-$meuArr['key03'] = [1,2,3,4]; // novo arr with key
-print_r($meuArr);
-
-
-// foreach + endforeach
-
-$papelaria = array('livros',' canetas',' lapis',' papel oficio');
-
-
-<?php foreach($papelaria as $i => $row):?>
-<p>
-    <?= $row . ' - ' . $i?>
-</p>
-
-<p>
-  <?= "{$row} - {$i}" ?>
-</p>
-
-<?php endforeach;  ?>
-
-
-
-// ## render html list
-$nomes = ['Geraldo', 'Felipe', 'Costa'];
-
-<h1>write html 1</h1>
-
-<ul>
-  <?php
-  foreach($nomes as $values) {
-    echo "<li>$values</li>";
-  }
-  ?>
-</ul>
-
-
-  <h1>write html 2</h1>
-<ul>
-<?php
-  foreach($nomes as $values) {
-?>
-  <li><?= $values ?></li>
-<?php }?>
-</ul>
-
-<h1>
-  write html 3
-</h1>
-<?php
-foreach($nomes as $nome) :
-echo $nome;
-endforeach;
-?>
-
-<h1>write html 4</h1>
-<ul>
-<?php foreach($nomes as $nome) : ?>
-  <li><?= $nome ?></li>
-<?php endforeach; ?>
-</ul>
-
-
-$list = [
-  ['name'=> 'Geraldo'],
-  ['name'=> 'Felipe'],
-  ['name'=> 'Bella'],
-];
-  <article class="ok">
-    <ul>
-      <?php foreach ($list as $key => $val) : ?>
-      <li><?php  echo $val['name'] . ' index =>' . $key  ?></li>
-      <?php endforeach ?>
-    </ul>
-  </article>
-
-```
-
 ### PHP GET URL Params
 
 ```php
@@ -567,7 +453,7 @@ $list = [
  echo "<br/>";
  echo   trim($_SERVER['REQUEST_URI'],'/\\');
  echo "<br/>";
-echo $_SERVER['QUERY_STRING'];
+ echo $_SERVER['QUERY_STRING'];
 
 
 // or create a file.php with:

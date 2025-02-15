@@ -13,5 +13,14 @@ $contador = 0;
 
 	}
 
+	// declarar antes
+$cont = 0;
+// confere antes
+while($cont < 10){
+    echo $cont;
+    $cont+=1;
+}
+
+
 
 ?>

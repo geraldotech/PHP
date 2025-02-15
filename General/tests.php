@@ -1,16 +1,11 @@
 <?php 
 
+$arr = ["foo", "menu", "bar"];
 
-$message = ['geraldo'];
 
 
- echo "<p>$message[0]</p>"; 
 
-function somar(){
-   $var = 'test';
 
-   
-   echo "{$var}"; 
- }
-
- somar();
+foreach($arr as $i) :?>
+<p><?= $i ?> </p>
+<?php endforeach; ?>

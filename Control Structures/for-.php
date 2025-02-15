@@ -34,6 +34,25 @@ for ($cont=1;$cont<=10;$cont++) {
 	echo $x * $cont;
 }
 	
+$arr = ['Alpha', 'Bravo', 'Charlie'];
+
+for($i = 0 ;$i < count($arr); $i++){
+    echo $arr[$i];
+}
+
+
+// var exclusiva
+for($i =0; $i < 10; $i++){
+    echo $i;
+}
+
+$name = 'geraldo';
+
+	for($contador=0;$contador<=10;$contador++){
+		echo '<hr>';
+		echo "Geraldo $contador";
+		/*echo 'Geraldo' .$contador;*/
+	}
 
 
 

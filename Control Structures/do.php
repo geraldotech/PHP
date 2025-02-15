@@ -10,5 +10,15 @@ do{
 	$contador++;
 	}while($contador < 10);
 
+	// declarar antes 
+
+$x = 0;
+// executa antes de conferir
+do{
+    echo 'hello';
+    $x++;
+}while($x < 10);
+
+
 
 ?>
