@@ -1,12 +1,12 @@
 <?php
-class GerarController extends Controller {
+class AjaxController extends Controller {
 
     public function __construct() {
         parent::__construct();
     }
 
     public function index() {   
-       $this->loadTemplate('gerar'); 
+       $this->loadTemplate('ajax'); return; 
     }
 
     public function gerarNovoRelatorio(){

@@ -24,8 +24,8 @@ class TryCatchSQL extends Model {
     /** 
      * @throws consultaLogin
      * @return  tryCatch
-     * */ 
-    function consultaLogin($limit = 3){  
+     */ 
+    function consultaLogin($limit = 3): array{  
 
       try {
         // Executa a query
@@ -33,27 +33,25 @@ class TryCatchSQL extends Model {
         $sql = $this->db->query($sql);     
 
         // Retorno com mensagem detalhada
-          if($sql->rowCount()>0){
-        
-        // Busca todos os resultados
-        $data = $sql->fetchAll(PDO::FETCH_ASSOC);
+          if($sql->rowCount()>0){        
+            // Busca todos os resultados
+            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
        
             return [
               'ok' => true, 
               'data' => $data, 
               'message' => 'Consulta realizada com sucesso!'
             ]; 
-      } 
+          } 
     
-        // Caso nenhum dado seja encontrado
-        return [
-            'ok' => false, 
-            'data' => [], 
-            'message' => 'Nenhum dado encontrado!'
-      ];      
+          // Caso nenhum dado seja encontrado
+          return [
+              'ok' => false, 
+              'data' => [], 
+              'message' => 'Nenhum dado encontrado!'
+          ];      
       
       } catch (Exception $e) {
-
         return [
           'ok' => false, 
           'error' => $e->getMessage(), 
@@ -65,15 +63,14 @@ class TryCatchSQL extends Model {
     public function isabellaTryCatch(){
       
       try{
-        $query = "SELECT * FROM lgn_logins 
-        WHERE idLogin = '2020032'";
+        $query = "SELECT * FROM lgn_logins WHERE idLogin = '2020032'";
         $query = $this->db->query($query);
        
         $data = $query->fetchAll(PDO::FETCH_ASSOC);
        
         if($query->rowCount() > 0){
 
-          return[
+          return [
             'ok' => true,
             'data' => $data,
             'message' => 'dados encontrados'
@@ -81,31 +78,30 @@ class TryCatchSQL extends Model {
         }
 
           // caso nao tiver rows          
-          return[ 
+          return [ 
           'ok' => false,
           'data' => [],
           'message' => 'nenhum dados encontrado'
         ];
 
       } catch(Exception $e){
-          return [
-          'ok' => false,
-          'error' => $e->getMessage(),
-          'message' => 'Ocorreu um erro ao realizar a consulta.'
+            return [
+            'ok' => false,
+            'error' => $e->getMessage(),
+            'message' => 'Ocorreu um erro ao realizar a consulta.'
           ];        
       }
         
     }
     
-  /** 
+    /** 
      * @throws PraticandoQueryes
      * @return  tryCatch__against_SQL_injections
      * @since 14/09/2024
      * @author Geraldo Developer dev@geraldox.com
     * @version 1.0
     * @var "SELECT * FROM lgn_logins WHERE idLogin = '2020032'"
-     * */ 
-
+    */ 
     public function against_SQL_injections($id, $cpf) {
       try {
           // Preparando a consulta com placeholders para evitar injeção de SQL
@@ -135,7 +131,7 @@ class TryCatchSQL extends Model {
               ];
           }
   
-      } catch (Exception $e) {
+        } catch (Exception $e) {
           // Captura de exceções e retorno da mensagem de erro
           return [
               'return' => false,
@@ -148,26 +144,27 @@ class TryCatchSQL extends Model {
 
       public function tryCatchFunction($idLogin){      
       
-      try{
-      $sql = "SELECT * FROM lgn_logins 
-      WHERE idLogin = '$idLogin'";
-      $sql = $this->db->query($sql);
+      try {
+          $sql = "SELECT * FROM lgn_logins 
+          WHERE idLogin = '$idLogin'";
+          $sql = $this->db->query($sql);
 
-      // encontrei os dados 😁
-      if($sql->rowCount() > 0){
+        // encontrei os dados 😁
+        if($sql->rowCount() > 0){
+          return [
+            'return' => true,
+            'data' => $sql->fetchAll(),
+            'message' => 'Encontrei os dados 😁'
+          ];
+        };
+
+      // Não encontrei os dados 😒
         return [
-          'return' => true,
-          'data' => $sql->fetchAll(),
-          'message' => 'Encontrei os dados 😁'
+          'return' => false,
+          'data' => [],
+          'message' => 'Não encontrei os dados 😒',
+    
         ];
-      };
-    // Não encontrei os dados 😒
-      return [
-        'return' => false,
-        'data' => [],
-        'message' => 'Não encontrei os dados 😒',
-  
-      ];
 
       // Encontrei um erro muito sério 😓
       } catch(Exception $e){
@@ -184,80 +181,74 @@ class TryCatchSQL extends Model {
      
      public function tryCatchFunction2($idLogin){      
       
-      try{
-      $sql = "SELECT * FROM lgn_logins 
-      WHERE idLogin = :idLogin";
-      $stmt = $this->db->prepare($sql);
-      $stmt->bindParam(':idLogin', $idLogin);
-      $stmt->execute();
+      try {
+          $sql = "SELECT * FROM lgn_logins 
+          WHERE idLogin = :idLogin";
+          $stmt = $this->db->prepare($sql);
+          $stmt->bindParam(':idLogin', $idLogin);
+          $stmt->execute();
 
-      // encontrei os dados 😁
-      if($stmt->rowCount() > 0){
-        return [
-          'ok' => true,
-          'data' => $stmt->fetchAll(PDO::FETCH_ASSOC),
-          'message' => 'Encontrei os dados 😁'
-        ];
-      };
-      // Não encontrei os dados 😒
-      return [
-        'ok' => false,
-        'data' => [],
-        'message' => 'Não encontrei os dados 😒',
-  
-      ];
+        // encontrei os dados 😁
+        if($stmt->rowCount() > 0){
+          return [
+            'ok' => true,
+            'data' => $stmt->fetchAll(PDO::FETCH_ASSOC),
+            'message' => 'Encontrei os dados 😁'
+          ];
+        };
+          // Não encontrei os dados 😒
+          return [
+            'ok' => false,
+            'data' => [],
+            'message' => 'Não encontrei os dados 😒',    
+          ];
 
-      // Encontrei um erro muito sério 😓
+        // Encontrei um erro muito sério 😓
       } catch(Exception $e){
 
         return [
           'return' => false,
           'data' => [],
-        'message' => 
-        "Encontrei um erro muito sério 😓 {$e->getMessage()}",
+          'message' => 
+          "Encontrei um erro muito sério 😓 {$e->getMessage()}",
         ];
-
       }
      }  
 
      public function tryCatchFunction3($id){
 
-      try{
+      try {
+          // $sql = "SELECT * FROM lgn_logins  WHERE idLogin = :id";
+          $sql = "SELECT * FROM lgn_logins LIMIT 10";
 
-      // $sql = "SELECT * FROM lgn_logins  WHERE idLogin = :id";
-      $sql = "SELECT * FROM lgn_logins LIMIT 10";
+          // prepere
+          $stmt = $this->db->prepare($sql);
 
-      // prepere
-       $stmt = $this->db->prepare($sql);
+          // bindParam
+          // $stmt->bindParam(':id', $id);
+          // execute
+          $stmt->execute();
 
-      // bindParam
-     // $stmt->bindParam(':id', $id);
+          if($stmt->rowCount() > 0){
 
-      // execute
-      $stmt->execute();
+            return [
+              'ok' => true,
+              'data' => $stmt->fetchAll(PDO::FETCH_ASSOC),
+              'message' => 'Dados retornados com sucesso =)'
+            ];        
+          }
+            return [
+              'ok' => false,
+              'data' => [],
+              'message' => 'Não encontrei dados =/'
+            ];        
 
-       if($stmt->rowCount() > 0){
-
-        return [
-          'ok' => true,
-          'data' => $stmt->fetchAll(PDO::FETCH_ASSOC),
-          'message' => 'Dados retornados com sucesso =)'
-        ];        
-       }
-
-       return [
-        'ok' => false,
-        'data' => [],
-        'message' => 'Não encontrei dados =/'
-      ];        
-
-      } catch(Exception $e){
-
-        return [
-          'ok' => false,
-          'data' => [],
-          'message' => "Ocorreu um erro {$e->getMessage()}",
-        ];        
-      }
+        } catch(Exception $e){
+          return [
+            'ok' => false,
+            'data' => [],
+            'message' => "Ocorreu um erro {$e->getMessage()}",
+          ];        
+        }
     }
   }

@@ -55,7 +55,7 @@ class AxiosController extends Controller {
         echo json_encode(['error' => 'ID não foi enviado ou é inválido.']);
         return;
       }
-    $res = $conf->fetchUserByAxiosPostTest($id);
-    echo json_encode($res);
-    }
+      $res = $conf->fetchUserByAxiosPostTest($id);
+      echo json_encode($res);
+  }
 }

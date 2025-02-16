@@ -31,6 +31,12 @@
         <li>
           <a href="<?= URL . '/VueJS' ?>">VueJS</a>
         </li>
+        <li>
+          <a href="<?= URL . '/Ajax' ?>">Ajax</a>
+        </li>
+        <li>
+          <a href="<?= URL . '/Serialize' ?>">fetch vanilla JS Serialize</a>
+        </li>
       </ul>      
        
   </nav> 

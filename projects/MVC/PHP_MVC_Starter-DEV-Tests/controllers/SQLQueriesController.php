@@ -1,10 +1,10 @@
 <?php
 class SQLQueriesController extends Controller {
 
-    public function __construct() {
-        parent::__construct();
-        $this->helper = new Helper();
-    } 
+  public function __construct() {
+      parent::__construct();
+      $this->helper = new Helper();
+  } 
   
   public function index() {   
 
@@ -51,8 +51,7 @@ class SQLQueriesController extends Controller {
             $res['message'], // Mensagem definida anteriormente
             '' // Texto adicional (vazio neste caso)
         );
-    }
-     
+    }     
 
     $justStr = 'Leona'; 
     echo "<p> $justStr </p>"; // interpolação de strings
@@ -126,7 +125,7 @@ class SQLQueriesController extends Controller {
 }
 
 
-// Acessar direto no browser => /Devtest/JSONDATA pode ajudar a debugar a resposta antes de implementar no fron-end
+  // Acessar direto no browser => /Devtest/JSONDATA pode ajudar a debugar a resposta antes de implementar no fron-end
   public function JSONDATA(){
  
     $result = [1,2,3,4,4];

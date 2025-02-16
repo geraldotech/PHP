@@ -18,7 +18,7 @@
 function gerarNovoRelatorio(){
   $.ajax({
   type: 'POST',
-  url: url + '/Gerar/gerarNovoRelatorio',
+  url: url + '/Ajax/gerarNovoRelatorio',
   //data: 'tipo=' + $('#ativoInativo').val(),
   beforeSend: function () {},
   //dataType: 'json',

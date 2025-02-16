@@ -8,10 +8,7 @@ class Axios extends Model {
     public function fetchUserByAxiosPostTest($id){
       try {
         $sql = "SELECT * FROM lgn_logins WHERE idLogin = $id";
-
         $sql = $this->db->query($sql);
-
-
 
         if($sql->rowCount()>0){
           return [
@@ -27,11 +24,11 @@ class Axios extends Model {
         ];
 
       } catch(Exception $e){
-      return [
-        'ok' => false,
-        'data'=> [],
-        'message' => "Ocorreu um erro $e",
-      ];
+        return [
+          'ok' => false,
+          'data'=> [],
+          'message' => "Ocorreu um erro $e",
+        ];
     }
   }
 

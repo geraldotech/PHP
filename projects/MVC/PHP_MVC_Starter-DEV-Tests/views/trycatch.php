@@ -1,5 +1,5 @@
 <style>
-  .containerdev{
+  .containerdev {
     background: #181818;
     color: #fff; 
     padding: 1rem;
@@ -7,8 +7,7 @@
   }
   table {
     color: #fff;
-  }
- 
+  } 
 </style>
 
 <main class="containerdev">

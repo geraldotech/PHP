@@ -32,13 +32,11 @@ class DirectConnectController extends Controller {
 
 
 public function index(){
-
-
   // db aqui daria erro, pq so esta disponivel dentro das model
   $qry = "SELECT login FROM lgn_logins LIMIT 5";
 
   $sql = $this->rootUser->query($qry);      
-   return print_r($sql->fetchAll());
+  return print_r($sql->fetchAll());
 
 }
 
