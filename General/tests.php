@@ -1,11 +1,15 @@
 <?php 
 
-$arr = ["foo", "menu", "bar"];
 
 
+if($_SERVER['REQUEST_METHOD'] !== 'POST'){
+  header('Content-Type:application/json');
+  echo json_encode('the endpoint only accepts post requests. received a get request'); return;
+}
 
 
-
-foreach($arr as $i) :?>
-<p><?= $i ?> </p>
-<?php endforeach; ?>
+// se $_POST é vazio, nao é possivel 
+if(empty($_POST)):
+  echo 'necessario enviar $_POST';
+ return; // retorna
+endif;
