@@ -5,7 +5,7 @@
 
 /* BANCO DE DADOS */
 define("DB_DATABASE2",   "logins");
-define("DB_HOST2",       "db2");
+define("DB_HOST2",       "db2"); //  const ja foi definida no config.php
 define("DB_USER2",       "root");
 define("DB_PASSWORD2",   "root");
 define("DB_PORT2",       "3306");
