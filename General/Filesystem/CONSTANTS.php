@@ -25,6 +25,7 @@ echo file_exists($local_2);
 echo $local_2;
 
 
+/* The full path where is the file */
 echo '<p>__DIR__</p>';
 print_r(__DIR__);
 
@@ -33,3 +34,7 @@ print_r(__DIR__);
 echo '<p>__FILE__</p>';
 print_r(__FILE__);
 
+
+/* get root */
+$root = dirname(__DIR__); // Sobe um nível
+echo $root;

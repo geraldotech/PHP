@@ -1,37 +1,16 @@
 <?php 
 
-  /* if($_SERVER['REQUEST_METHOD'] !== 'POST'){
-    header('Content-Type:application/json');
-    echo json_encode('the endpoint only accepts post requests. received a get request'); return;
-  }
+require_once('./fpdf186/fpdf.php'); // Para instalação manual
+// require_once 'vendor/autoload.php'; // Para instalação via Composer
+
+$pdf = new fpdf();
+$pdf->AddPage();
+$pdf->SetFont('helvetica', 'B', 16);
 
 
-  // se $_POST é vazio, nao é possivel 
-  if(empty($_POST)):
-    echo 'necessario enviar $_POST';
-  return; // retorna
-  endif;
+ $logs = file_get_contents(dirname(__DIR__). '/error_log');
 
- */
-
-?>
-
-
-  <?php if(10 < 4):?>
-  <p>sim</p>
-  <?php else: ?>
-    <p>Não</p>
-  <?php endif; ?>
-
-
-  <?php if(10 < 4):?>
-  <p>sim</p>
-  <?php else: ?>
-    <p>Não</p>
-  <?php endif; ?>
-
-<?php
-
-if(10 < 5) // false
-echo '<h1>Maior que 5</h1>'; // a condição vai mudar apenas 1 linha a abaixo
-echo '<h1>nao associado ao if sem chaves</h1>'; // continua normal independente do if
+// $pdf->Cell(0, 10, 'Testando TCPDF!', 1, 1, 'C');
+ $pdf->Cell(0, 10, $logs, 1, 1, 'C');
+$pdf->Output('teste.pdf', 'I');
+ 

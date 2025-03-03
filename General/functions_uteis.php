@@ -72,6 +72,9 @@
   echo strlen(removeEspacos(' ab cd ')); // "abcd"
 
 
+
+
+  /* Exemplo arquivo csv e insere no banco de dados */
   /* BANCO DE DADOS */
   define("DB_DATABASE",   "movies");
   define("DB_HOST",       "db"); // docker host
@@ -92,7 +95,7 @@
       $mydb->setAttribute(PDO::ATTR_PERSISTENT , true); 
 
     echo 'connection is okay';
-  }catch(EXCEPTION $e){
+  } catch(EXCEPTION $e){
     die($e->getMessage());
   } 
 
@@ -174,7 +177,7 @@
             'error' => $erros
         ];
       }
-      
+
       // Caso todas as operações sejam bem-sucedidas, confirma a transação
       $mydb->commit();
 
@@ -197,3 +200,20 @@
       
     }
 
+
+/* USANDO ERROR_LOG */
+    error_log(date('d-M-Y H:i:s') . " Seja bem-vindo ao log error_log" . PHP_EOL , 3, $_SERVER['DOCUMENT_ROOT']. '/PHP/error_log' );
+
+
+// json_encode
+    $logData = [
+      'timestamp'       => date('d-M-Y H:i:s'),
+      'mensagem'        => 'Erro na aprovação do gestor de grupo',
+      'usuario_logado'  => 'me',
+      'id_alternativo'  => 10,
+    ];  
+
+
+  define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/PHP');    
+      
+  error_log(json_encode($logData, JSON_UNESCAPED_UNICODE) . PHP_EOL, 3, BASE_PATH . '/error_log');
