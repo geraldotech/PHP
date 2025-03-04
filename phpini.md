@@ -9,3 +9,6 @@ phpinfo();
 ```
 
 - verifique em `Loaded Configuration File`
+
+### Aumentar tamanho do upload:
+- upload_max_filesize = 20M
