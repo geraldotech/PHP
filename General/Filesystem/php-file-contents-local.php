@@ -7,7 +7,7 @@
 
 //Check the file has the read permission or not
 
-else if (!is_readable($filename)) {
+if (!is_readable($filename)) {
 
     echo 'File has no read permission.';
 
