@@ -15,17 +15,17 @@ class SerializeController extends Controller {
        $this->loadTemplate('serialize'); 
     }
 
-    public function endpoint(){
-        $data = json_decode(file_get_contents('php://input'), true);
-        if(!empty($data)){
-            echo json_encode($data); return;
-        }
+    public function endpoint1(){
+        echo json_encode($_POST);
+    }
 
-        if(!empty($_POST)){
-            echo json_encode($_POST); return;
-        }
+    public function endpoint2(){
+        $data = json_decode(file_get_contents('php://input'), true); // Decodifica JSON recebido
 
-        http_response_code(404);
-        echo json_encode(['error' => 'nenhum parametro foi enviado ou headers tão estão em comformidade']);
+        echo json_encode($data);
+    }
+
+    public function endpoint3(){
+        echo json_encode($_POST);
     }
 }
