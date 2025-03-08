@@ -84,16 +84,79 @@ function request3() {
     })
 }
 
+function request4() {
+  const operadora = document.getElementById('operadora').value
+  const concordachecked = document.querySelector("#noform input[name='concorda']:checked")?.value
+
+  if (!concordachecked || !operadora) {
+    console.log(`missing values`)
+    return
+  }
+
+  // fazer append na instancia do formData ou usar a funcao makeAppend
+  const formData = new FormData()
+  formData.append('concordachecked', concordachecked)
+  formData.append('operadora', operadora)
+
+  fetch(`${url}/Serialize/endpoint4`, {
+    method: 'POST',
+    //  body: formData,
+    body: makeAppend({ concordachecked, operadora }),
+  })
+    .then((req) => {
+      if (!req.ok) {
+        console.error('erro com o servidor', req.statusText) // Corrigido aqui
+        return
+      }
+      return req.json()
+    })
+    .then((json) => {
+      console.log('server response =>', json)
+    })
+    .catch((error) => {
+      console.error('Erro na requisição:', error)
+    })
+}
+
+/* ============ FUNCOES ============= 
+#########################################################################################################
+*/
+
+/*
+ * FN - BY GMAPDEV - CASO NÃO TENHA FORM ID
+ * Criar um FormData a partir de um objeto de variáveis.
+ * Cada chave do objeto será usada como nome do campo no FormData.
+ *
+ * Exemplo de uso:
+ * const formData = makeAppend({ usuario_cod: 123, status: "ativo" });
+ *
+ * Resultado esperado no servidor ($_POST em PHP):
+ * {
+ *   "usuario_cod": "123",
+ *   "status": "ativo"
+ * }
+ *
+ * @param {Object} variables - Objeto contendo as variáveis a serem adicionadas ao FormData.
+ * @returns {FormData} formData2 - Instância de FormData preenchida com os valores fornecidos.
+ */
+function makeAppend(variables) {
+  const formData2 = new FormData()
+
+  Object.keys(variables).forEach((key) => {
+    formData2.append(key, variables[key]) // Envia cada valor separadamente
+  })
+
+  return formData2
+}
+
 // front: usar os headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 // back: capturar com $_POST
-
 function serializeForm(form) {
   return new URLSearchParams(new FormData(form)).toString()
 }
 
 // front: headers: { Accept: 'application/json', 'Content-Type': 'application/json',},
 // back: json_decode(file_get_contents('php://input'), true);
-
 function serializeFormToJSON(form) {
   const formData = new FormData(form)
   const obj = {}
@@ -113,7 +176,6 @@ function serializeFormToJSON(form) {
 // front: headers: { Accept: 'application/json', 'Content-Type': 'application/json',},
 // back: json_decode(file_get_contents('php://input'), true);
 // passar o id do formulario diretamente
-
 function serializeFormToJSONGeraldo(form) {
   return JSON.stringify(Object.fromEntries(new FormData(form)))
 }

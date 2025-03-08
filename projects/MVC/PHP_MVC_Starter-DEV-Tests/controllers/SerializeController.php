@@ -28,4 +28,7 @@ class SerializeController extends Controller {
     public function endpoint3(){
         echo json_encode($_POST);
     }
+    public function endpoint4(){
+        echo json_encode($_POST);
+    }
 }

@@ -64,4 +64,29 @@ class CreateiniController extends Controller {
       file_put_contents($fileini, $content);
   }
 
+  public function example02(){
+      $sga_version = '3.00.005';
+      $php_version = PHP_VERSION;
+      $mysql_version = '10';
+      $fileini = __DIR__ . '/version.ini';
+
+// contents
+$content = "[application]
+sga_version = \"$sga_version\"
+
+[server]
+php_version = \"$php_version\"
+mysql_version = \"$mysql_version\"
+";
+
+
+      if (file_put_contents($fileini, $content)) {
+          echo "Arquivo settings.ini criado com sucesso!";
+      } else {
+        // echo "Erro ao criar o arquivo settings.ini.";
+      }
+
+  }
+
+
 }

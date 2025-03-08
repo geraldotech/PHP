@@ -12,3 +12,7 @@ phpinfo();
 
 ### Aumentar tamanho do upload:
 - upload_max_filesize = 20M
+
+
+### habilitar o .zip 
+- descomentar: `extension=zip`
