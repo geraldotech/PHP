@@ -8,5 +8,8 @@ file_put_contents('arquivo.txt', $content);
 
 /* LOG TXT SE NECESSÁRIO */
 $logFile =  'nao_inseridos.txt';
-file_put_contents($logFile, $cod_usuario . PHP_EOL, FILE_APPEND);
+$ret = file_put_contents($logFile, $cod_usuario . PHP_EOL, FILE_APPEND);
+if($ret){
+  echo 'sucesso';
+}
 ?>
