@@ -550,7 +550,7 @@ if(in_array(2, $list)) :?>
 <?php endif;
 
 
-// array
+// in_array
 $arr = [1,2,4,5];
 
 if(in_array(2, $arr)){
@@ -578,11 +578,13 @@ echo "nao";
          id="periodo"
          class="form-control">
          <option>- Selecionar Período - </option>
+
          <?php foreach ($periodos['data'] as $periodo): ?>
-         <option value="<?= $periodo['a_periodo']; ?>">
-           Perído:<?= $periodo['a_periodo']; ?> - inserido em: <?= $periodo['a_inserido_em']; ?>
-         </option>
+            <option value="<?= $periodo['a_periodo']; ?>">
+              Perído:<?= $periodo['a_periodo']; ?> - inserido em: <?= $periodo['a_inserido_em']; ?>
+            </option>
          <?php endforeach; ?>
+
        </select>
      </div>
 <?php else: ?>
@@ -593,7 +595,7 @@ echo "nao";
 # switch
 
 ```php
-<?php
+
 $pws = '1';
 	switch ($pws){
 		case '1':
@@ -609,7 +611,7 @@ $pws = '1';
 ?>
 ```
 
-### if-syntaxe-alternativa.php
+### if syntaxe alternativa
 
 ```php
  $nome = 'Geraldo';
@@ -622,7 +624,7 @@ $pws = '1';
 
   echo $contador;
     $contador++;
-endwhile;
+ endwhile;
 
 $arr =[1,2,3,4,5];
 
@@ -634,8 +636,9 @@ endforeach;
 for($i = 0 ; $i < 10; $i++):
   echo
 
-
 ```
+
+- Looing for: error_log, date, header_json ? Go to `General/functions_uteis.php`
 
 # PHP Server + Visual Studio Code
 

@@ -217,3 +217,15 @@
   define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/PHP');    
       
   error_log(json_encode($logData, JSON_UNESCAPED_UNICODE) . PHP_EOL, 3, BASE_PATH . '/error_log');
+
+
+// date + timezone
+date_default_timezone_set('America/Sao_Paulo');
+
+date('d-M-Y H:i:s');
+
+// Formato: '20240927_153000' para timestamp
+$timestamp = date('Ymd_His'); 
+
+// header json
+header('Content-Type:application/json');

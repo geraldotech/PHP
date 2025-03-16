@@ -1,3 +1,0 @@
-'\\wsl.localhost\Ubuntu\home\gmapdev\docker\php-server\src\PHP\composer\composer-single-router'
-CMD.EXE foi iniciado tendo o caminho acima como pasta atual.
-Não há suporte para caminhos UNC. Padronizando para pasta do Windows.
