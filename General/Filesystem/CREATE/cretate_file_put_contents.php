@@ -7,9 +7,13 @@ file_put_contents('arquivo.txt', $content);
  
 
 /* LOG TXT SE NECESSÁRIO */
-$logFile =  'cretate_file_put_contents_log.txt';
+$logFile =  'create_file_put_contents_log.txt';
 $ret = file_put_contents($logFile, $cod_usuario . PHP_EOL, FILE_APPEND);
+
 if($ret){
-  echo 'sucesso';
+  echo json_encode([
+    'ok' => true,
+    'sucess'
+  ]);
 }
 ?>
