@@ -13,7 +13,7 @@ $ret = file_put_contents($logFile, $cod_usuario . PHP_EOL, FILE_APPEND);
 if($ret){
   echo json_encode([
     'ok' => true,
-    'sucess'
+    'message' => 'success'
   ]);
 }
 ?>
