@@ -5,7 +5,7 @@
 
 ```php
  <?php
-phpinfo();
+  phpinfo();
 ```
 
 - verifique em `Loaded Configuration File`
