@@ -3,17 +3,11 @@
 
 //Set an filename
 
-
-
 //Check the file has the read permission or not
 
 if (!is_readable($filename)) {
-
     echo 'File has no read permission.';
-
 }
-
-
 
 ?>
 
