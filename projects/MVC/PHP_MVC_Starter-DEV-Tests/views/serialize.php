@@ -4,7 +4,7 @@
   }
 </style>
 <div>
-  <h1>Serialize</h1>
+  <h2>Serialize forms and JSON: POST</h2>
 
   <form action="" id="form001">  
     <input type="text" name="f_name" placeholder="name" value="Geraldo Filho">
@@ -20,7 +20,7 @@
 
 
 <div id="noform">
-  <h1>Exemplo sem form id</h1>
+  <h2>request4: Exemplo sem form id</h2>
   <select name="" id="operadora">
     <option value="t">TIM</option>
     <option value="c">Claro</option>

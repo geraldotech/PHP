@@ -1,6 +1,6 @@
 <?php
 
-/* Serialize + fetch POST vanilla JS */
+/* Endpoint exemplos recebendo serialize forms ou JSON */
 class SerializeController extends Controller {
 
     public function __construct() {
@@ -22,7 +22,7 @@ class SerializeController extends Controller {
     public function endpoint2(){
         $data = json_decode(file_get_contents('php://input'), true); // Decodifica JSON recebido
 
-        echo json_encode($data);
+        echo json_encode(['ok' => true, 'data' => $data]);
     }
 
     public function endpoint3(){

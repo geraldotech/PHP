@@ -1,12 +1,12 @@
 <?php
-class AjaxController extends Controller {
+class AjaxjqueryController extends Controller {
 
     public function __construct() {
         parent::__construct();
     }
 
     public function index() {   
-       $this->loadTemplate('ajax'); return; 
+       $this->loadTemplate('ajaxjquery'); return; 
     }
 
     public function gerarNovoRelatorio(){

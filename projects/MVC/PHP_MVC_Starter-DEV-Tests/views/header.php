@@ -32,10 +32,10 @@
           <a href="<?= URL . '/VueJS' ?>">VueJS</a>
         </li>
         <li>
-          <a href="<?= URL . '/Ajax' ?>">Ajax</a>
+          <a href="<?= URL . '/Ajaxjquery' ?>">Ajax jquery</a>
         </li>
         <li>
-          <a href="<?= URL . '/Serialize' ?>">fetch vanilla JS Serialize</a>
+          <a href="<?= URL . '/Serialize' ?>">Fetch JSON and Serialize</a>
         </li>
       </ul>      
        

@@ -1,3 +1,5 @@
+/* forms vs json */
+
 const form001 = document.getElementById('form001')
 
 /* ============Serialização via serializeForm (URL Encoded)========= */
@@ -27,16 +29,18 @@ function request() {
 
 /* ===================================== */
 
-/* === Com Serialização via serializeFormToJSON ou serializeFormToJSONGeraldo (JSON) === */
-// $data = json_decode(file_get_contents('php://input'), true); // Decodifica JSON recebido
-// APIs modernas: é o melhor caminho! 🚀🔥
+/* === Com Serialização via serializeFormToJSON, serializeFormToJSONGeraldo (JSON) ou diretamente com JSON.stringify === */
 
+// PHP: Decodifica JSON recebido com:
+// $data = json_decode(file_get_contents('php://input'), true);
+
+// APIs modernas: é o melhor caminho! 🚀🔥
 function request2() {
   fetch(`${url}/Serialize/endpoint2`, {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: serializeFormToJSONGeraldo(form001), // ou serializeFormToJSON(form001)
-    //body: JSON.stringify({ title: 'gmap.dev', body: 'g@map.dev' }),
+    // body: serializeFormToJSONGeraldo(form001), // ou serializeFormToJSON(form001)
+    body: JSON.stringify({ title: 'gmap.dev', body: 'g@map.dev' }), // ou envia os valores diretamente sem depender da serialização e <form>
   })
     .then((req) => {
       if (!req.ok) {
@@ -58,10 +62,11 @@ function request2() {
 // quando você usa FormData, o navegador automaticamente define o cabeçalho correto para envio de formulários. O navegador automaticamente adiciona o Content-Type: multipart/form-data com um boundary, necessário para processar arquivos e campos do formulário.
 
 function request3() {
+  // id do formulario
   const formData = new FormData(form001)
 
   if (Object.fromEntries(new FormData(form001)).f_age === '') {
-    console.log(`idade está vazia`)
+    console.error(`idade está vazia`)
     return
   }
 
@@ -71,8 +76,7 @@ function request3() {
   })
     .then((req) => {
       if (!req.ok) {
-        console.error('erro com o servidor', req.statusText) // Corrigido aqui
-        return
+        throw new Error('erro com o servidor', req.statusText)
       }
       return req.json()
     })
@@ -105,12 +109,12 @@ function request4() {
   })
     .then((req) => {
       if (!req.ok) {
-        console.error('erro com o servidor', req.statusText) // Corrigido aqui
-        return
+        throw new Error('erro com o servidor', req.statusText)
       }
       return req.json()
     })
     .then((json) => {
+      //handler data.ok if necessary
       console.log('server response =>', json)
     })
     .catch((error) => {
@@ -175,7 +179,7 @@ function serializeFormToJSON(form) {
 
 // front: headers: { Accept: 'application/json', 'Content-Type': 'application/json',},
 // back: json_decode(file_get_contents('php://input'), true);
-// passar o id do formulario diretamente
+// passar o id do formulario que encapsula os elementos
 function serializeFormToJSONGeraldo(form) {
   return JSON.stringify(Object.fromEntries(new FormData(form)))
 }
