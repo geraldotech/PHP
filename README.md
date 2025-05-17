@@ -385,6 +385,39 @@ exibirIdade(25); // Exibe "Idade: 25"
 
 ```
 
+### named arguments
+
+```php
+
+/* NAMED ARGUMENTS */
+function createUser(string $name = ' no name', int $age = 0): void {
+  echo '<br>';
+  if (empty($name)) {
+    echo 'nome nao informado';
+    return;
+  }
+  echo $name . " Petornilo" . " tem $age anos";
+  echo '<h2>' . strlen($name) . '</h2>';
+}
+
+createUser();
+
+createUser(name: 'Geraldo', age: 32);
+
+
+function sendEmail(string $destinatario, string $usuario, int $age): void {
+  echo "Para $destinatario\n";
+  echo "Para o usuario $usuario\n";
+  echo "Idade $age\n";
+}
+
+sendEmail(
+  destinatario: "Geraldo",
+  usuario: "Felipe",
+  age: 30
+);
+```
+
 ### Arrays
 
 ```php
@@ -574,7 +607,7 @@ echo "nao";
 <?php  if($periodos['ok']): ?>
      <div class="form-group">
        <label for="">Selecione o período:</label>
-       <select          
+       <select
          id="periodo"
          class="form-control">
          <option>- Selecionar Período - </option>
