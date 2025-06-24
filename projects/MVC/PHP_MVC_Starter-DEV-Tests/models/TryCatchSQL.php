@@ -50,6 +50,8 @@ class TryCatchSQL extends Model {
         'message' => 'Nenhum dado encontrado!'
       ];
     } catch (Exception $e) {
+
+      // echo "❌ Erro capturado: " . $e->getMessage(); exit;
       return [
         'ok' => false,
         'error' => $e->getMessage(),
