@@ -1,6 +1,8 @@
 <?php
 class SQLQueriesController extends Controller {
 
+  protected $helper;
+
   public function __construct() {
       parent::__construct();
       $this->helper = new Helper();

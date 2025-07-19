@@ -673,6 +673,45 @@ for($i = 0 ; $i < 10; $i++):
 
 - Looing for: error_log, date, header_json ? Go to `General/functions_uteis.php`
 
+# Boas práticas PHP foreach
+
+```php
+
+<thead>
+  <tr>
+     <th>Área</th>
+     <th>Cód. Risco</th>
+  </tr>
+</thead>
+
+<?php if ($res['ok'] && is_array($res['data'])) : ?>
+    <tbody>
+        <?php foreach ($res['data'] as $val) : ?>
+            <!-- Aqui você renderiza os dados de $val -->
+			      <tr>
+               <td><?php echo htmlspecialchars($val['Desc_area']) ?? ''; ?></td>
+               <td><?php echo htmlspecialchars($val['Cod_Risco']) ?? ''; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+<?php else : ?>
+    <?php echo "<h3 class='text-red'>" . ($res['message'] ?? $res['error']) . "</h3>"; ?>
+<?php endif; ?>
+
+### or
+<?php if (!empty($conflitosAtuais['ok']) && !empty($conflitosAtuais['data'])): ?>
+
+mais detalhado
+<?php if (($conflitosAtuais['ok'] ?? false) && count($conflitosAtuais['data'] ?? []) > 0): ?>
+
+or count
+<?php if (!empty($dados['ok']) && is_array($dados['data']) && count($dados['data']) > 0): ?>
+
+
+# cuidados na hora de contar um Array
+$dados['MatrizTotal'] = is_array($dados['MatrizRisco']['data']) ? count($dados['MatrizRisco']['data']) : 0;
+```
+
 # PHP Server + Visual Studio Code
 
 [https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver)
