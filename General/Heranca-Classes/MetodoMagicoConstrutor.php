@@ -1,5 +1,8 @@
 <?php 
- 
+  /**
+  * __construct is a magic method in PHP
+  * and are invoked automatically by the engine. __construct is called when a class is instantiated, which is why your echo runs * immediately when you create new Pessoa("Geraldo").
+  */
 class Pessoa {
 
   public $nome = " or Felipe";
