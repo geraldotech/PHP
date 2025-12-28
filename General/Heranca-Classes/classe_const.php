@@ -1,11 +1,12 @@
 <?php
-/* 
-USANDO CONST + SELF
-PHP aceita const dentro de classes e também no escopo globa
-*/
+/**
+ *USANDO CONST + SELF
+ * PHP aceita const dentro de classes e também no escopo globa
+ */
 class  Sincronizador {
   public $nome;
   public $idade = 32;
+  public const CITY = true;
   private const DEBUG_SYNC = true;
   public const AGE = 30;
 
@@ -22,6 +23,12 @@ $sync = new Sincronizador();
 echo $sync->meusDados();
 echo '<hr>';
 echo $sync::AGE;
+echo '<br>';
+echo Sincronizador::AGE;
+echo '<br>';
+echo Sincronizador::CITY ? 'true' : 'false';
+echo '<br>';
+
 
 // public
 class Teste {
