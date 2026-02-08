@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * PHP 8.1^
+ */
 enum Suit: int {
   case Hearts = 1;
   case Diamonds  = 2;
