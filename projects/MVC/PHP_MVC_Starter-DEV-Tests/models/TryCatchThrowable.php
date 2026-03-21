@@ -6,25 +6,31 @@ class TryCatchThrowable extends Model {
   }
 
   /**
-   * exemplo de try catch com Throwable
+   * try catch com Throwable 
+   * @see fetchAll
    */
   public function exampleThrowable() {
     try {
-      $stmt = $this->db->prepare("
-            SELECT * 
+      $stmt = $this->db->prepare("SELECT * 
             FROM lgn_logins 
-            WHERE idLogin = :id
-        ");
+            WHERE idLogin = :id");
 
       $stmt->execute([':id' => 2400]);
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $result ?: [];
-      
+      // opção 1: return $result ?: [];
+
+      // opcao2: caso queria contar 
+      $count = count($result);
+      if ($count > 0) return $result ?: [];
     } catch (\Throwable $t) {
       throw new \RuntimeException("Erro ao executar operação", 0, $t);
     }
   }
 
+  /**
+   * prepare
+   * @see INSERT + lastInsertId
+   */
   public function exampleThrowableINSERT() {
     try {
 
@@ -43,23 +49,45 @@ class TryCatchThrowable extends Model {
   }
 
   /**
-   * PREPARE VERSION
-   * @see Evita SQL injection e separa dados de query
+   * exemplo didático e real de bindParam() com loop
+   * REAPROVEITAMENTO DA VARIAVEL prepare no loop de dados  
    */
-  public function exampleThrowableINSERT2() {
+  public function exampleThrowableINSERT_bind_loop() {
     try {
 
       $stmt = $this->db->prepare("INSERT INTO notes (notescol, age) VALUES (:notescol, :age)");
-      $res = $stmt->execute([
-        ':notescol' => 'texto',
-        ':age' => 'GeraldoDev2'
-      ]);
 
-      if ($res) {
-        $lastId = $this->db->lastInsertId();
-        return ['ok' => true, 'message' => 'success ID: ' . $lastId];
+      // Variáveis que serão ligadas por referência
+      $notescol = null;
+      $age      = null;
+
+      // bind por referência
+      $stmt->bindParam(':notescol', $notescol);
+      $stmt->bindParam(':age', $age);
+
+      $dados = [
+        ['notescol' => 'texto 1', 'age' => 'GeraldoDev1'],
+        ['notescol' => 'texto 2', 'age' => 'GeraldoDev2'],
+        ['notescol' => 'texto 3', 'age' => 'GeraldoDev3'],
+      ];
+
+      $inserts = 0;
+
+      foreach ($dados as $d) {
+
+        // alterando os valores (bindParam pega aqui 👇)
+        $notescol = $d['notescol'];
+        $age      = $d['age'];
+
+        $stmt->execute();
+        $inserts += $stmt->rowCount();
       }
-      return ['ok' => false, 'message' => 'not success'];
+
+      return [
+        'ok' => true,
+        'rows' => $inserts,
+        'message' => "Inseridos {$inserts} registros"
+      ];
     } catch (\Throwable $t) {
       throw new \RuntimeException("Erro ao executar operação", 0, $t);
     }
