@@ -15,11 +15,17 @@ class TryCatchThrowable extends Model {
             FROM lgn_logins 
             WHERE idLogin = :id");
 
+      // bind + execute ao mesmo tempo
       $stmt->execute([':id' => 2400]);
-      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      // opção 1: return $result ?: [];
 
-      // opcao2: caso queria contar 
+      /* mesma coisa mais verbosa: $stmt->bindParam(':id', $id);
+      $stmt->execute(); */
+
+      // opção 1:
+      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $result ?: [];
+
+      // opção 2: caso queria contar 
       $count = count($result);
       if ($count > 0) return $result ?: [];
     } catch (\Throwable $t) {
