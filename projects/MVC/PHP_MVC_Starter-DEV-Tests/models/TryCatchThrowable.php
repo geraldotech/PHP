@@ -17,10 +17,10 @@ class TryCatchThrowable extends Model {
 
       $stmt = $this->db->prepare($stmt);
       $stmt->execute([':id' => 2400]);
-     // $res = $stmt->rowCount();
+      // $res = $stmt->rowCount();
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
       if ($result) {
-        var_dump($result[0]);
+        return $result;
       }
       //var_dump($res);
 
@@ -29,15 +29,21 @@ class TryCatchThrowable extends Model {
     }
   }
 
+  /**
+   * 
+   */
   public function exampleThrowableINSERT() {
     try {
-      $stmt = $this->db->query("INSERT INTO notes (notescol, age) VALUES ('texto', 'GeraldoDev2')");
-      $stmt->execute();
-      $res = $stmt->rowCount();
 
-      if ($res > 0) {
-        return $res;
+      $stmt = "INSERT INTO notes (notescol, age) VALUES ('texto', 'GeraldoDev2')";
+      $stmt = $this->db->prepare($stmt);
+      $res = $stmt->execute();
+
+      if ($res) {
+        $lastId = $this->db->lastInsertId();
+        return ['ok' => true, 'message' => 'success ID: ' . $lastId];
       }
+      return ['ok' => false, 'message' => 'not success'];
     } catch (\Throwable $t) {
       throw new \RuntimeException("Erro ao executar operação", 0, $t);
     }

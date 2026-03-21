@@ -4,16 +4,11 @@
 define('BASE_PATH', $_SERVER['DOCUMENT_ROOT']. ':8080/' . 'PHP_MVC_Starter-DEV-Tests');
 define('LOG_PATH', BASE_PATH.'/logs');
 define("SYS_EMAIL_ADMIN", 'gmapdev@geraldox.com');
-
 //define("URL", 'http://php.localhost/projects/MVC/PHP_MVC_Starter-DEV-Tests');
 
 define("PATH", ':8080/PHP/projects/MVC/PHP_MVC_Starter-DEV-Tests');
 define("SERVER_NAME", '127.0.0.1');
 define("URL", 'http://'.SERVER_NAME.PATH);
-
-
-global $config;
-global $db;
 
 /** cumprimento - horario **/
 if (date('H') < 12)     { $cumprimento = "Bom dia";     }

@@ -6,16 +6,16 @@ class Trycatchsql2Controller extends Controller {
     $this->helper = new Helper();
   }
 
-  public function index() {
-    $data = [];
+  public function index() {    
     $conf = new TryCatchThrowable();
-     $res = $conf->exampleThrowable();  
+    $res = $conf->exampleThrowable();
     $res2 = $conf->exampleThrowableINSERT();
+
+    echo '<h5>exampleThrowable</h5>';
     print_r($res);
-    //print_r($res2);
-    /**  @see array from model */
-    /*       
-          */
+
+    echo '<h5>exampleThrowableINSERT</h5>';
+    print_r($res2);
 
     exit;
 
