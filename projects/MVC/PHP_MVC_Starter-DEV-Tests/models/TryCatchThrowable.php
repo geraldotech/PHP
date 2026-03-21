@@ -49,6 +49,29 @@ class TryCatchThrowable extends Model {
   }
 
   /**
+   * PREPARE VERSION
+   * @see Evita SQL injection e separa dados de query
+   */
+  public function exampleThrowableINSERT2() {
+    try {
+
+      $stmt = $this->db->prepare("INSERT INTO notes (notescol, age) VALUES (:notescol, :age)");
+      $res = $stmt->execute([
+        ':notescol' => 'texto',
+        ':age' => 'GeraldoDev2'
+      ]);
+
+      if ($res) {
+        $lastId = $this->db->lastInsertId();
+        return ['ok' => true, 'message' => 'success ID: ' . $lastId];
+      }
+      return ['ok' => false, 'message' => 'not success'];
+    } catch (\Throwable $t) {
+      throw new \RuntimeException("Erro ao executar operação", 0, $t);
+    }
+  }
+
+  /**
    * exemplo didático e real de bindParam() com loop
    * REAPROVEITAMENTO DA VARIAVEL prepare no loop de dados  
    */
@@ -74,8 +97,7 @@ class TryCatchThrowable extends Model {
       $inserts = 0;
 
       foreach ($dados as $d) {
-
-        // alterando os valores (bindParam pega aqui 👇)
+        // bindParam 
         $notescol = $d['notescol'];
         $age      = $d['age'];
 

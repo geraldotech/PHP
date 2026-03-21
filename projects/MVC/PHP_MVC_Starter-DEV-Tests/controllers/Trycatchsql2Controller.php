@@ -11,16 +11,18 @@ class Trycatchsql2Controller extends Controller {
     $res = $conf->exampleThrowable();
     $res2 = $conf->exampleThrowableINSERT();
 
-    echo '<h5>exampleThrowable</h5>';
+    echo '<h2>exampleThrowable</h2>';
     print_r($res);
 
-    echo '<h5>exampleThrowableINSERT</h5>';
+    echo '<h2>exampleThrowableINSERT</h2>';
     print_r($res2);
 
-    echo '<h5>exampleThrowableINSERT2</h5>';
+    echo '<h2>exampleThrowableINSERT2</h2>';
     print_r($conf->exampleThrowableINSERT2());
 
+
+    echo '<h2>exampleThrowableINSERT_bind_loop</h2>';
+    print_r($conf->exampleThrowableINSERT_bind_loop());
     exit;
-    //$this->loadTemplate('trycatch', $data);
   }
 }
