@@ -14,7 +14,6 @@ class TryCatchThrowable extends Model {
 
       /* === CONSULTA DENTRO DA TRANSACAO ===  */
       $stmt = "SELECT * FROM lgn_logins WHERE idLogin = :id";
-
       $stmt = $this->db->prepare($stmt);
       $stmt->execute([':id' => 2400]);
       // $res = $stmt->rowCount();
@@ -38,6 +37,29 @@ class TryCatchThrowable extends Model {
       $stmt = "INSERT INTO notes (notescol, age) VALUES ('texto', 'GeraldoDev2')";
       $stmt = $this->db->prepare($stmt);
       $res = $stmt->execute();
+
+      if ($res) {
+        $lastId = $this->db->lastInsertId();
+        return ['ok' => true, 'message' => 'success ID: ' . $lastId];
+      }
+      return ['ok' => false, 'message' => 'not success'];
+    } catch (\Throwable $t) {
+      throw new \RuntimeException("Erro ao executar operação", 0, $t);
+    }
+  }
+
+  /**
+   * PREPARE VERSION
+   * @see Evita SQL injection e separa dados de query
+   */
+  public function exampleThrowableINSERT2() {
+    try {
+
+      $stmt = $this->db->prepare("INSERT INTO notes (notescol, age) VALUES (:notescol, :age)");
+      $res = $stmt->execute([
+        ':notescol' => 'texto',
+        ':age' => 'GeraldoDev2'
+      ]);      
 
       if ($res) {
         $lastId = $this->db->lastInsertId();

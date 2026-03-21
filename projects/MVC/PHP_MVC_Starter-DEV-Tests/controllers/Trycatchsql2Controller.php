@@ -6,7 +6,7 @@ class Trycatchsql2Controller extends Controller {
     $this->helper = new Helper();
   }
 
-  public function index() {    
+  public function index() {
     $conf = new TryCatchThrowable();
     $res = $conf->exampleThrowable();
     $res2 = $conf->exampleThrowableINSERT();
@@ -17,8 +17,10 @@ class Trycatchsql2Controller extends Controller {
     echo '<h5>exampleThrowableINSERT</h5>';
     print_r($res2);
 
-    exit;
+    echo '<h5>exampleThrowableINSERT2</h5>';
+    print_r($conf->exampleThrowableINSERT2());
 
+    exit;
     //$this->loadTemplate('trycatch', $data);
   }
 }
