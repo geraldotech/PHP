@@ -23,6 +23,9 @@ class Trycatchsql2Controller extends Controller {
 
     echo '<h2>exampleThrowableINSERT_bind_loop</h2>';
     print_r($conf->exampleThrowableINSERT_bind_loop());
+
+    echo '<h2>exampleDelete</h2>';
+    print_r($conf->exampleDelete(1));
     exit;
   }
 }

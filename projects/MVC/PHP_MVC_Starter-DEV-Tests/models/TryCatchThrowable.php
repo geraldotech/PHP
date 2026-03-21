@@ -23,11 +23,39 @@ class TryCatchThrowable extends Model {
 
       // opção 1:
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $result ?: [];
+      //return $result ?: [];
+      if ($result) {
+        return [
+          'results' => $result,
+          'total' => $stmt->rowCount()
+        ];
+      }
 
       // opção 2: caso queria contar 
       $count = count($result);
       if ($count > 0) return $result ?: [];
+    } catch (\Throwable $t) {
+      throw new \RuntimeException("Erro ao executar operação", 0, $t);
+    }
+  }
+
+  /**
+   * try catch com Throwable 
+   * @see fetchAll
+   */
+  public function exampleDelete($idnotes) {
+
+    if (empty($idnotes)) {
+      return ['missing $idnotes params'];
+    }
+
+    try {
+      $stmt = $this->db->prepare("DELETE FROM notes WHERE idnotes = :idnotes");
+      // bind + execute ao mesmo tempo
+      $stmt->execute([':idnotes' => $idnotes]);
+      $res = $stmt->rowCount();
+
+      return 'Deletados: ' . $res;
     } catch (\Throwable $t) {
       throw new \RuntimeException("Erro ao executar operação", 0, $t);
     }
