@@ -37,6 +37,9 @@
         <li>
           <a href="<?= URL . '/Serialize' ?>">Fetch JSON and Serialize</a>
         </li>
+        <li title="Try Catch Throwable">
+          <a href="<?= URL . '/TryCatchThrowable' ?>">Try Catch Throwable</a>
+        </li>
       </ul>      
        
   </nav> 

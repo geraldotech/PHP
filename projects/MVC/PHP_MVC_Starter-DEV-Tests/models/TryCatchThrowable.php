@@ -6,66 +6,63 @@ class TryCatchThrowable extends Model {
   }
 
   /**
-   * try catch com Throwable 
+   * try catch com Throwable +  throw new
    * @see fetchAll
    */
-  public function exampleThrowable() {
+  public function throwableSelect($id = null) {
     try {
+
+
+      if (empty($id)) {
+        throw new \Exception('id do login não foi definido');
+      }
+
       $stmt = $this->db->prepare("SELECT * 
             FROM lgn_logins 
             WHERE idLogin = :id");
 
-      // bind + execute ao mesmo tempo
-      $stmt->execute([':id' => 2400]);
+      /* ===  execute direto sem bind === */
+      //$stmt->execute([':id' => $id]);
 
-      /* mesma coisa mais verbosa: $stmt->bindParam(':id', $id);
-      $stmt->execute(); */
+      /* === bindParam + execute (mais verboso) === */
 
-      // opção 1:
+      //$stmt->bindParam(':id', $id);
+      $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+      $ret = $stmt->execute();
+
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $total = $stmt->rowCount();
       //return $result ?: [];
+
       if ($result) {
         return [
+          'ok' => true,
           'results' => $result,
-          'total' => $stmt->rowCount()
+          'message' => 'consulta retornou dados',
+          'total' => $total
         ];
       }
 
+      return [
+        'ok' => false,
+        'message' => 'nada encontrado',
+        'total' => $total
+      ];
+
       // opção 2: caso queria contar 
-      $count = count($result);
-      if ($count > 0) return $result ?: [];
+   /*    $count = count($result);
+      if ($count > 0) return $result ?: []; */
     } catch (\Throwable $t) {
       throw new \RuntimeException("Erro ao executar operação", 0, $t);
     }
   }
 
-  /**
-   * try catch com Throwable 
-   * @see fetchAll
-   */
-  public function exampleDelete($idnotes) {
-
-    if (empty($idnotes)) {
-      return ['missing $idnotes params'];
-    }
-
-    try {
-      $stmt = $this->db->prepare("DELETE FROM notes WHERE idnotes = :idnotes");
-      // bind + execute ao mesmo tempo
-      $stmt->execute([':idnotes' => $idnotes]);
-      $res = $stmt->rowCount();
-
-      return 'Deletados: ' . $res;
-    } catch (\Throwable $t) {
-      throw new \RuntimeException("Erro ao executar operação", 0, $t);
-    }
-  }
 
   /**
    * prepare
    * @see INSERT + lastInsertId
    */
-  public function exampleThrowableINSERT() {
+  public function throwableINSERT() {
     try {
 
       $stmt = "INSERT INTO notes (notescol, age) VALUES ('texto', 'GeraldoDev2')";
@@ -86,7 +83,7 @@ class TryCatchThrowable extends Model {
    * PREPARE VERSION
    * @see Evita SQL injection e separa dados de query
    */
-  public function exampleThrowableINSERT2() {
+  public function throwableINSERT2() {
     try {
 
       $stmt = $this->db->prepare("INSERT INTO notes (notescol, age) VALUES (:notescol, :age)");
@@ -109,7 +106,7 @@ class TryCatchThrowable extends Model {
    * exemplo didático e real de bindParam() com loop
    * REAPROVEITAMENTO DA VARIAVEL prepare no loop de dados  
    */
-  public function exampleThrowableINSERT_bind_loop() {
+  public function throwableINSERT_bind_loop() {
     try {
 
       $stmt = $this->db->prepare("INSERT INTO notes (notescol, age) VALUES (:notescol, :age)");
@@ -144,6 +141,28 @@ class TryCatchThrowable extends Model {
         'rows' => $inserts,
         'message' => "Inseridos {$inserts} registros"
       ];
+    } catch (\Throwable $t) {
+      throw new \RuntimeException("Erro ao executar operação", 0, $t);
+    }
+  }
+
+  /**
+   * try catch com Throwable 
+   * @see fetchAll
+   */
+  public function throwableDelete($idnotes) {
+
+    if (empty($idnotes)) {
+      return ['missing $idnotes params'];
+    }
+
+    try {
+      $stmt = $this->db->prepare("DELETE FROM notes WHERE idnotes = :idnotes");
+      // bind + execute ao mesmo tempo
+      $stmt->execute([':idnotes' => $idnotes]);
+      $res = $stmt->rowCount();
+
+      return 'Deletados: ' . $res;
     } catch (\Throwable $t) {
       throw new \RuntimeException("Erro ao executar operação", 0, $t);
     }

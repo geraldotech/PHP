@@ -39,3 +39,6 @@ body {
   color: #fff;
   border-radius: 10px;
 }
+.container {
+  padding: 1rem !important;
+}
