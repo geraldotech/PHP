@@ -1,5 +1,6 @@
 <?php
 // session_save_path('tmp');
+date_default_timezone_set('America/Sao_Paulo');
 session_start();
 //require 'vendor/autoload.php';
 require 'config.php';

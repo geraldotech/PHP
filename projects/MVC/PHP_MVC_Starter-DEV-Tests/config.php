@@ -15,14 +15,12 @@ if (date('H') < 12)     { $cumprimento = "Bom dia";     }
 elseif (date('H') < 18) { $cumprimento = "Boa tarde";   }
 else                    { $cumprimento = "Boa noite";   }
 
-
 /* BANCO DE DADOS */
 define("DB_DATABASE",   "logins");
 define("DB_HOST",       "db"); // docker host
 define("DB_USER",       "root");
 define("DB_PASSWORD",   "root");
 define("DB_PORT",       "3306");
-
 
 /**
  * PDO - CONEXAO COM BANCO DE DADOS

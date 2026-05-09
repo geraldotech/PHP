@@ -32,6 +32,8 @@
   <?php include('header.php') ?>
   <!-- page content -->
   <div class="container">
+    <?php $cumprimento = $GLOBALS['cumprimento'] ?? ''; ?>
+    <?php echo $cumprimento; ?>
     <?php
     $this->loadViewInTemplate($viewName, $viewData);
     ?>
